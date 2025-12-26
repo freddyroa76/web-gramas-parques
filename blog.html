@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es-CO" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blog de Ingeniería Recreativa | Gramas y Parques Colombia</title>
+    <meta
+      name="description"
+      content="Noticias, guías de mantenimiento y normativa sobre canchas sintéticas, parques infantiles y mobiliario urbano en Colombia."
+    />
+    <link rel="canonical" href="https://gramasyparquescolombia.com/blog.html" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Blog de Ingeniería Recreativa y Espacios Deportivos"
+    />
+    <meta
+      property="og:description"
+      content="Consejos expertos sobre construcción de canchas y parques en Colombia."
+    />
+    <meta
+      property="og:url"
+      content="https://gramasyparquescolombia.com/blog.html"
+    />
+    <meta property="og:site_name" content="Gramas y Parques Colombia" />
+    <meta
+      property="og:image"
+      content="https://gramasyparquescolombia.com/img/blog-cover.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "headline": "Blog de Ingeniería Recreativa",
+        "description": "Artículos técnicos sobre construcción de escenarios deportivos.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Gramas y Parques Colombia",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://gramasyparquescolombia.com/img/logo.png"
+          }
+        }
+      }
+    </script>
+
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      /* Estilos del Blog */
+      .blog-header {
+        text-align: center;
+        padding: 60px 20px;
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #eee;
+      }
+      .blog-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border: 1px solid #eee;
+      }
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+      .blog-img-box {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+      }
+      .blog-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .blog-card:hover .blog-img-box img {
+        transform: scale(1.05);
+      }
+      .blog-tag {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        padding: 5px 12px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: white;
+        text-transform: uppercase;
+      }
+      .tag-green {
+        background-color: var(--verde-principal, #4caf50);
+      }
+      .tag-orange {
+        background-color: var(--naranja-urgencia, #ff6600);
+      }
+      .tag-blue {
+        background-color: #0277bd;
+      }
+      .blog-body {
+        padding: 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .blog-meta {
+        font-size: 0.85rem;
+        color: #888;
+        margin-bottom: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .blog-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        color: #333;
+      }
+      .blog-title a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .blog-title a:hover {
+        color: var(--naranja-urgencia);
+      }
+      .blog-excerpt {
+        font-size: 0.95rem;
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        flex-grow: 1;
+      }
+      .blog-link {
+        color: var(--verde-principal, #4caf50);
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: gap 0.3s ease;
+      }
+      .blog-link:hover {
+        gap: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el
+      país
+    </div>
+
+    <header>
+      <div class="container navbar">
+        <a href="index.html" class="logo-container">
+          <img
+            src="img/logo.png"
+            alt="Gramas y Parques Colombia"
+            class="logo-img"
+          />
+        </a>
+        <div class="mobile-toggle">☰</div>
+        <nav class="nav-menu">
+          <div class="dropdown">
+            <a href="productos/gramas.html" class="dropbtn">GRAMAS</a>
+            <span class="submenu-toggle">▼</span>
+            <div class="dropdown-content">
+              <a href="productos/gramas.html"
+                ><strong>Ver Todo Gramas</strong></a
+              >
+              <a href="productos/gramas-paisajismo.html"
+                >Paisajismo y Decoración</a
+              >
+              <a href="productos/gramas-deportivas.html">Deportivas</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="productos/canchas-sinteticas.html" class="dropbtn"
+              >CANCHAS DEPORTIVAS</a
+            >
+            <span class="submenu-toggle">▼</span>
+            <div class="dropdown-content">
+              <a href="productos/canchas-sinteticas.html"
+                ><strong>Ver Todo Canchas</strong></a
+              >
+              <a href="productos/canchas-sinteticas.html#sinteticas"
+                >Canchas Sintéticas</a
+              >
+              <a href="productos/canchas-sinteticas.html#multiples"
+                >Canchas Múltiples</a
+              >
+              <a href="productos/canchas-sinteticas.html#arcos"
+                >Arcos y Tableros</a
+              >
+              <a href="productos/canchas-sinteticas.html#mallas"
+                >Mallas Perimetrales</a
+              >
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="productos/parques.html" class="dropbtn">PARQUES</a>
+            <span class="submenu-toggle">▼</span>
+            <div class="dropdown-content">
+              <a href="productos/parques.html"
+                ><strong>Ver Todo Parques</strong></a
+              >
+              <a href="productos/parques-madera.html"
+                >Línea Madera Inmunizada</a
+              >
+              <a href="productos/parques-metalicos.html"
+                >Línea Metálica (Alto Tráfico)</a
+              >
+              <a href="productos/parques-playground-importados.html"
+                >Playground Importados</a
+              >
+              <a href="productos/mantenimiento-parques.html"
+                >Mantenimiento y Repuestos</a
+              >
+            </div>
+          </div>
+
+          <a href="productos/Biosaludables.html">BIOSALUDABLES</a>
+
+          <div class="dropdown">
+            <a href="productos/mobiliario-urbano.html" class="dropbtn"
+              >MOBILIARIO</a
+            >
+            <span class="submenu-toggle">▼</span>
+            <div class="dropdown-content">
+              <a href="productos/mobiliario-urbano.html"
+                ><strong>Ver Todo Mobiliario</strong></a
+              >
+              <a href="productos/mobiliario-urbano.html#madera"
+                >Bancas de Madera</a
+              >
+              <a href="productos/mobiliario-urbano.html#concreto"
+                >Bancas de Granito</a
+              >
+              <a href="productos/mobiliario-urbano.html#canecas"
+                >Canecas Acero Inox</a
+              >
+              <a href="productos/mobiliario-urbano.html#mesas"
+                >Mesas de Picnic</a
+              >
+            </div>
+          </div>
+
+          <a href="blog.html" style="font-weight: 700">BLOG</a>
+
+          <a href="contacto.html" class="contacto-link">CONTÁCTENOS</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="blog-header">
+      <div class="container">
+        <h1>
+          Actualidad y
+          <span style="color: var(--naranja-urgencia)">Guías Técnicas</span>
+        </h1>
+        <p style="max-width: 700px; margin: 0 auto; color: #666">
+          Recursos para administradores, constructores y rectores sobre
+          infraestructura recreativa.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div
+          class="grid-system"
+          style="
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+          "
+        >
+          <article class="blog-card">
+            <div class="blog-img-box">
+              <span class="blog-tag tag-green">Técnico</span>
+              <img
+                src="https://images.unsplash.com/photo-1529900748604-07564a03e7a6?auto=format&fit=crop&w=600"
+                alt="Mantenimiento cancha sintética"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <i class="far fa-calendar"></i> Octubre 20, 2025
+              </div>
+              <h3 class="blog-title">
+                <a href="blog/mantenimiento-canchas.html"
+                  >Guía de Mantenimiento para Canchas Sintéticas: Lo que nadie
+                  te dice</a
+                >
+              </h3>
+              <p class="blog-excerpt">
+                El cepillado y la descompactación son claves para no perder la
+                garantía de tu grama. Aprende cada cuánto hacerlo.
+              </p>
+              <a href="blog/mantenimiento-canchas.html" class="blog-link"
+                >Leer artículo completo <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-img-box">
+              <span class="blog-tag tag-blue">Normativa</span>
+              <img
+                src="https://images.unsplash.com/photo-1571210059434-edf0dc48e414?auto=format&fit=crop&w=600"
+                alt="Norma parques infantiles Colombia"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <i class="far fa-calendar"></i> Octubre 15, 2025
+              </div>
+              <h3 class="blog-title">
+                <a href="blog/normativa-parques-colombia.html"
+                  >Norma NTC 5176: ¿Tu parque infantil cumple con la ley?</a
+                >
+              </h3>
+              <p class="blog-excerpt">
+                Evita sanciones y accidentes. Conoce los requisitos obligatorios
+                de seguridad para parques en conjuntos y colegios.
+              </p>
+              <a href="blog/normativa-parques-colombia.html" class="blog-link"
+                >Leer artículo completo <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-img-box">
+              <span class="blog-tag tag-orange">Ahorro</span>
+              <img
+                src="https://images.unsplash.com/photo-1558905544-3ded6143c040?auto=format&fit=crop&w=600"
+                alt="Grama sintética vs natural"
+                loading="lazy"
+              />
+            </div>
+            <div class="blog-body">
+              <div class="blog-meta">
+                <i class="far fa-calendar"></i> Septiembre 28, 2025
+              </div>
+              <h3 class="blog-title">
+                <a href="blog/grama-sintetica-vs-natural.html"
+                  >Grama Sintética vs. Natural: ¿Cuál es más rentable?</a
+                >
+              </h3>
+              <p class="blog-excerpt">
+                Análisis de costos a 5 años. Descubre cuánto ahorras en agua y
+                jardinería instalando césped artificial.
+              </p>
+              <a href="blog/grama-sintetica-vs-natural.html" class="blog-link"
+                >Leer artículo completo <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h4>GRAMAS Y PARQUES COLOMBIA</h4>
+          <p>
+            Expertos en obras civiles recreativas. Transformamos espacios con
+            calidad y cumplimiento.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li>
+              <a href="productos/canchas-sinteticas.html">Canchas Deportivas</a>
+            </li>
+            <li><a href="productos/parques.html">Parques Infantiles</a></li>
+            <li><a href="productos/Biosaludables.html">Biosaludables</a></li>
+            <li>
+              <a href="productos/mobiliario-urbano.html">Mobiliario Urbano</a>
+            </li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>
+            <i
+              class="fas fa-map-marker-alt"
+              style="color: var(--naranja-urgencia); margin-right: 5px"
+            ></i>
+            Barranquilla, Atlántico
+          </p>
+          <p>
+            <i
+              class="fas fa-phone-alt"
+              style="color: var(--naranja-urgencia); margin-right: 5px"
+            ></i>
+            (+57) 311 253 1330
+          </p>
+          <p>
+            <i
+              class="fas fa-envelope"
+              style="color: var(--naranja-urgencia); margin-right: 5px"
+            ></i>
+            comercial@gramasyparquescolombia.com
+          </p>
+        </div>
+      </div>
+
+      <div class="copyright-bar">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+          "
+        >
+          <span>© 2025 Gramas y Parques Colombia S.A.S.</span>
+        </div>
+      </div>
+    </footer>
+
+    <div class="whatsapp-float" id="wa-button">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+        class="whatsapp-icon"
+      />
+    </div>
+
+    <div class="wa-modal-overlay" id="wa-modal">
+      <div class="wa-modal-content">
+        <span class="close-modal" id="close-wa">×</span>
+        <div class="wa-header">
+          <h3>💬 Asesoría en Línea</h3>
+          <p>Ingeniería Recreativa</p>
+        </div>
+        <div class="wa-body">
+          <p style="font-size: 0.8rem; margin-bottom: 10px; color: #555">
+            Hola, para atenderte mejor por favor indícanos:
+          </p>
+          <label for="wa-name">Tu Nombre:</label>
+          <input type="text" id="wa-name" />
+          <label for="wa-interest">¿En qué estás interesado?</label>
+          <select id="wa-interest">
+            <option value="Cotización General">Quiero una cotización</option>
+            <option value="Gramas Sintéticas">Grama Sintética</option>
+            <option value="Canchas Deportivas">Canchas Deportivas</option>
+          </select>
+          <label for="wa-desc">Cuéntanos más (Opcional):</label>
+          <textarea id="wa-desc" rows="2"></textarea>
+          <button class="btn-whatsapp-send" id="btn-send-wa">
+            INICIAR CHAT 🚀
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <a
+      href="#"
+      class="btn-scroll-top"
+      id="scrollTopBtn"
+      aria-label="Subir al inicio"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

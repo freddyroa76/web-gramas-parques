@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobiliario Urbano Antivandálico | Bancas y Canecas</title>
+    <meta
+      name="description"
+      content="Fábrica de mobiliario urbano en concreto, granito y acero inoxidable. Bancas, canecas y mesas para parques y espacio público en Colombia."
+    />
+
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      .quick-nav-wrapper {
+        margin: 20px 0 40px 0;
+        text-align: center;
+      }
+      .quick-nav-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .btn-pill {
+        text-decoration: none;
+        background-color: white;
+        color: #333;
+        border: 1px solid var(--verde-principal, #4caf50);
+        padding: 8px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+      .btn-pill:hover {
+        background-color: var(--verde-principal, #4caf50);
+        color: white;
+        transform: translateY(-2px);
+      }
+      .titulo-seccion {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #eee;
+        color: var(--azul-oscuro, #2c3e50);
+      }
+
+      /* Proceso */
+      .process-step {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-bottom: 4px solid #6c757d;
+        height: 100%;
+        transition: transform 0.3s ease;
+      }
+      .process-step:hover {
+        transform: translateY(-5px);
+      }
+      .process-icon {
+        font-size: 2rem;
+        color: #6c757d;
+        margin-bottom: 15px;
+        background-color: #f8f9fa;
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+      .process-step h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta, la costa
+      y todo el país
+    </div>
+
+    <header>
+      <div class="container navbar">
+        <a href="../index.html" class="logo-container">
+          <img
+            src="../img/logo.png"
+            alt="Gramas y Parques Colombia"
+            class="logo-img"
+          />
+        </a>
+
+        <div class="mobile-toggle" aria-label="Abrir menú de navegación">☰</div>
+
+        <nav class="nav-menu">
+          <div class="dropdown">
+            <a href="gramas.html" class="dropbtn">GRAMAS</a>
+            <span class="submenu-toggle">▼</span>
+            <div class="dropdown-content">
+              <a href="gramas.html"><strong>Ver Todo Gramas</strong></a>
+              <a href="gramas-paisajismo.html">Paisajismo y Decoración</a>
+              <a href="gramas-deportivas.html">Deportivas</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="canchas-sinteticas.html" class="dropbtn"
+              >CANCHAS DEPORTIVAS</a
+            >
+            <span class="submenu-toggle">▼</span>
+            <div class="dropdown-content">
+              <a href="canchas-sinteticas.html"
+                ><strong>Ver Todo Canchas</strong></a
+              >
+              <a href="canchas-sinteticas.html#sinteticas"
+                >Canchas Sintéticas</a
+              >
+              <a href="canchas-sinteticas.html#multiples">Canchas Múltiples</a>
+              <a href="canchas-sinteticas.html#arcos">Arcos y Tableros</a>
+              <a href="canchas-sinteticas.html#mallas">Mallas Perimetrales</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="parques.html" class="dropbtn">PARQUES</a>
+            <span class="submenu-toggle">▼</span>
+            <div class="dropdown-content">
+              <a href="parques.html"><strong>Ver Todo Parques</strong></a>
+              <a href="parques.html#madera">Línea Madera Inmunizada</a>
+              <a href="parques.html#metalica">Línea Metálica (Alto Tráfico)</a>
+              <a href="parques.html#playground">Playground Importados</a>
+              <a href="parques.html#mantenimiento">Mantenimiento y Repuestos</a>
+            </div>
+          </div>
+
+          <a href="Biosaludables.html">BIOSALUDABLES</a>
+
+          <div class="dropdown">
+            <a
+              href="mobiliario-urbano.html"
+              class="dropbtn"
+              style="color: var(--naranja-urgencia)"
+              >MOBILIARIO</a
+            >
+            <span class="submenu-toggle">▼</span>
+            <div class="dropdown-content">
+              <a href="mobiliario-urbano.html"
+                ><strong>Ver Todo Mobiliario</strong></a
+              >
+              <a href="mobiliario-urbano.html#concreto">Bancas de Concreto</a>
+              <a href="mobiliario-urbano.html#madera">Bancas de Madera</a>
+              <a href="mobiliario-urbano.html#canecas">Canecas Acero Inox</a>
+              <a href="mobiliario-urbano.html#mesas">Mesas de Picnic</a>
+            </div>
+          </div>
+
+          <a href="../blog.html" style="font-weight: 800">BLOG</a>
+
+          <a href="../contacto.html" class="contacto-link">CONTÁCTENOS</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section bg-light">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 40px">
+          <h1>
+            Mobiliario Urbano <span style="color: #555">Antivandálico</span>
+          </h1>
+          <p class="intro-text">
+            Dotación de espacio público diseñada para resistir el clima y el uso
+            rudo.
+          </p>
+          <div class="quick-nav-wrapper">
+            <div class="quick-nav-buttons">
+              <a href="#concreto" class="btn-pill">🪨 Concreto/Granito</a>
+              <a href="#madera" class="btn-pill">🪵 Madera/Metal</a>
+              <a href="#canecas" class="btn-pill">🗑️ Canecas</a>
+              <a href="#mesas" class="btn-pill">♟️ Mesas</a>
+            </div>
+          </div>
+        </div>
+
+        <h2 id="concreto" class="titulo-seccion">
+          Bancas de Concreto y Granito
+        </h2>
+        <div class="grid-system">
+          <article class="card">
+            <div class="card-img-box">
+              <img
+                src="https://images.unsplash.com/photo-1596230529625-7ee541361297?auto=format&fit=crop&w=600"
+                alt="Banca M30"
+              />
+            </div>
+            <div class="card-body">
+              <h3>Banca M-30 (Con Espaldar)</h3>
+              <p>
+                Clásica banca de parque en concreto gris o granito pulido. Peso
+                350kg.
+              </p>
+              <a href="../contacto.html" class="link-btn">Cotizar →</a>
+            </div>
+          </article>
+        </div>
+
+        <h2 id="madera" class="titulo-seccion" style="margin-top: 50px">
+          Bancas Mixtas (Madera/Metal)
+        </h2>
+        <div class="grid-system">
+          <article class="card">
+            <div class="card-img-box">
+              <img
+                src="https://images.unsplash.com/photo-1564613469736-234b33b79dae?auto=format&fit=crop&w=600"
+                alt="Banca Madera Plástica"
+              />
+            </div>
+            <div class="card-body">
+              <h3>Banca Ecológica</h3>
+              <p>
+                Estructura en hierro y listones en madera plástica (No requiere
+                mantenimiento).
+              </p>
+              <a href="../contacto.html" class="link-btn">Cotizar →</a>
+            </div>
+          </article>
+        </div>
+
+        <h2 id="canecas" class="titulo-seccion" style="margin-top: 50px">
+          Canecas y Bolardos
+        </h2>
+        <div class="grid-system">
+          <article class="card">
+            <div class="card-img-box">
+              <img
+                src="https://images.unsplash.com/photo-1622312675979-37397b973c73?auto=format&fit=crop&w=600"
+                alt="Caneca Acero"
+              />
+            </div>
+            <div class="card-body">
+              <h3>Caneca Acero Inox</h3>
+              <p>Sistema basculante para fácil limpieza. Acero 304.</p>
+              <a href="../contacto.html" class="link-btn">Cotizar →</a>
+            </div>
+          </article>
+        </div>
+
+        <h2 id="mesas" class="titulo-seccion" style="margin-top: 50px">
+          Mesas de Picnic y Ajedrez
+        </h2>
+        <div class="grid-system">
+          <article class="card">
+            <div class="card-img-box">
+              <img
+                src="https://images.unsplash.com/photo-1596230529625-7ee541361297?auto=format&fit=crop&w=600"
+                alt="Mesa Concreto Ajedrez"
+              />
+            </div>
+            <div class="card-body">
+              <h3>Mesa Ajedrez (4 Puestos)</h3>
+              <p>
+                Mesa en concreto con tablero de ajedrez/parqués incrustado en
+                granito.
+              </p>
+              <a href="../contacto.html" class="link-btn">Cotizar →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: #f8f9fa; padding: 60px 0">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 40px">
+          <h2 style="color: #6c757d; font-weight: 800">Calidad que perdura</h2>
+          <p>Mobiliario para toda la vida.</p>
+        </div>
+        <div
+          class="grid-system"
+          style="
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+          "
+        >
+          <div class="process-step text-center">
+            <div class="process-icon"><i class="fas fa-pencil-ruler"></i></div>
+            <h3>1. Diseño Urbano</h3>
+            <p>Adaptamos el mobiliario al entorno arquitectónico.</p>
+          </div>
+          <div class="process-step text-center">
+            <div class="process-icon"><i class="fas fa-cubes"></i></div>
+            <h3>2. Materiales</h3>
+            <p>Concreto de 3.000 PSI y Acero calibre certificado.</p>
+          </div>
+          <div class="process-step text-center">
+            <div class="process-icon"><i class="fas fa-truck-loading"></i></div>
+            <h3>3. Logística</h3>
+            <p>Transporte e instalación con grúa si se requiere.</p>
+          </div>
+          <div class="process-step text-center">
+            <div class="process-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>4. Durabilidad</h3>
+            <p>Productos antivandálicos de bajo mantenimiento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h4>GRAMAS Y PARQUES COLOMBIA</h4>
+          <p>Expertos en obras civiles recreativas.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="canchas-sinteticas.html">Canchas Deportivas</a></li>
+            <li><a href="parques.html">Parques Infantiles</a></li>
+            <li><a href="Biosaludables.html">Biosaludables</a></li>
+            <li><a href="mobiliario-urbano.html">Mobiliario Urbano</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Cra 19D #52-85, Barranquilla
+          </p>
+          <p><i class="fas fa-phone-alt"></i> (+57) 311 253 1330</p>
+          <p>
+            <i class="fas fa-envelope"></i> comercial@gramasyparquescolombia.com
+          </p>
+        </div>
+      </div>
+      <div class="copyright-bar">
+        <div class="container">
+          <span>© 2025 Gramas y Parques Colombia</span>
+        </div>
+      </div>
+    </footer>
+    <div class="whatsapp-float" id="wa-button">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+      />
+    </div>
+    <a href="#" class="btn-scroll-top" id="scrollTopBtn"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
