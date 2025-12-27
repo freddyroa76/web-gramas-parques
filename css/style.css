@@ -1383,3 +1383,19 @@ footer::before {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+/* --- NUEVO: MEJORA LEGIBILIDAD MÓVIL (Google Mobile Friendly) --- */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem; /* Asegura que el H1 no sea demasiado gigante en móvil */
+    line-height: 1.2;
+  }
+  p {
+    font-size: 1rem; /* Texto base legible (Google recomienda min 16px) */
+  }
+  /* Espaciado táctil para enlaces */
+  .nav-menu a,
+  .footer-links a {
+    padding: 12px 15px;
+  }
+}
