@@ -399,7 +399,6 @@ header {
 /* 9. GRID PRODUCTOS [OPTIMIZADO Y FLEXIBLE] */
 .grid-system {
   display: grid;
-  /* Inteligencia: Se adapta automáticamente. Si hay 2 ítems, los centra. Si hay 3, llena la fila. */
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
   margin-top: 60px;
@@ -423,20 +422,21 @@ header {
   border-color: var(--verde-natural);
 }
 
-/* [MEJORA CORE WEB VITALS: CLS] */
+/* [MEJORA CORE WEB VITALS: CLS + AJUSTE IMAGEN COMPLETA] */
 .card-img-box {
-  /* Reserva espacio para la imagen (Evita saltos visuales) */
   aspect-ratio: 4/3;
   min-height: 220px;
   overflow: hidden;
   position: relative;
-  background-color: #f0f0f0;
+  /* CAMBIO: Fondo blanco para rellenar espacios si la foto no es cuadrada */
+  background-color: #ffffff;
 }
 .card-img-box img {
   width: 100%;
   height: 100%;
   transition: 0.5s;
-  object-fit: cover;
+  /* CAMBIO: "contain" asegura que la foto se vea COMPLETA sin recortar */
+  object-fit: contain;
 }
 .card:hover img {
   transform: scale(1.1);
@@ -447,26 +447,18 @@ header {
   top: 15px;
   right: 15px;
 
-  /* CAMBIO CLAVE: Usamos RGBA */
-  /* 255, 102, 0 es tu naranja. 0.85 es la transparencia (85% visible) */
-  background: rgba(255, 102, 0, 0.85) !important;
-
-  /* OPCIONAL: Efecto "Vidrio Esmerilado" (Blur) */
-  /* Esto hace que la foto detrás del botón se vea borrosa, mejorando la lectura */
+  /* Estilos Badge (Pastilla Transparente) */
+  background: rgba(234, 88, 12, 0.85) !important;
   backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px); /* Para Safari */
-
+  -webkit-backdrop-filter: blur(4px);
   color: white;
-  padding: 5px 12px;
-
-  /* Mantenemos el borde de 6px para la forma rectangular suave */
-  border-radius: 6px;
-
+  padding: 8px 20px;
+  border-radius: 50px; /* Redondo completo */
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   z-index: 2;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Sombra un poco más suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   letter-spacing: 0.5px;
 }
 
@@ -1109,41 +1101,12 @@ footer::before {
   height: 100%;
   overflow: hidden;
 }
+/* CAMBIO APLICADO: Fotos enteras en fichas técnicas */
 .tech-img-box img.main-photo {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-}
-
-.badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-
-  /* --- CAMBIOS APLICADOS --- */
-
-  /* 1. Forma de pastilla (semicírculo perfecto) */
-  border-radius: 50px;
-
-  /* 2. Color naranja (#ea580c) con transparencia 0.85 (Texto se mantiene blanco) */
-  background: rgba(234, 88, 12, 0.85) !important;
-
-  /* 3. Más espacio a los lados (20px) para que el texto no toque la curva */
-  padding: 8px 20px;
-
-  /* ------------------------- */
-
-  /* Efecto de desenfoque trasero (vidrio) para mejor lectura */
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-
-  color: white;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  z-index: 2;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  letter-spacing: 0.5px;
+  object-fit: contain; /* Foto completa */
+  background-color: #ffffff; /* Fondo blanco por si sobra espacio */
 }
 
 .zoom-circle {

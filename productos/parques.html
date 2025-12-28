@@ -135,14 +135,21 @@
             <span class="submenu-toggle">▼</span>
             <div class="dropdown-content">
               <a href="canchas-sinteticas.html"
-                ><strong>Ver Todo Canchas</strong></a
+                ><strong>Ver Portafolio</strong></a
               >
+
               <a href="canchas-sinteticas.html#sinteticas"
-                >Canchas Sintéticas</a
+                >Sintéticas y Múltiples</a
               >
-              <a href="canchas-sinteticas.html#multiples">Canchas Múltiples</a>
-              <a href="canchas-sinteticas.html#arcos">Arcos y Tableros</a>
-              <a href="canchas-sinteticas.html#mallas">Mallas Perimetrales</a>
+              <a href="canchas-sinteticas.html#cubiertas"
+                >Cubiertas y Estructuras</a
+              >
+              <a href="canchas-sinteticas.html#cerramientos"
+                >Cerramientos y Mallas</a
+              >
+              <a href="canchas-sinteticas.html#dotacion"
+                >Dotación Profesional</a
+              >
             </div>
           </div>
 
@@ -365,28 +372,145 @@
       <div class="container footer-grid">
         <div class="footer-col">
           <h4>GRAMAS Y PARQUES COLOMBIA</h4>
-          <p>Expertos en obras civiles recreativas.</p>
+          <p style="color: #ffffff">
+            Expertos en obras civiles recreativas. Transformamos espacios con
+            calidad y cumplimiento.
+          </p>
+
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/gramasyparquescolombia/"
+              aria-label="Instagram"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://web.facebook.com/gramasyparquescolombia"
+              aria-label="Facebook"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
         </div>
+
+        <div class="footer-col">
+          <h4>Enlaces Rápidos</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+
+            <li>
+              <a href="canchas-sinteticas.html">Canchas Deportivas</a>
+            </li>
+            <li><a href="parques.html">Parques Infantiles</a></li>
+            <li><a href="Biosaludables.html">Biosaludables</a></li>
+            <li>
+              <a href="mobiliario-urbano.html">Mobiliario Urbano</a>
+            </li>
+
+            <li><a href="../blog.html">Blog de Noticias</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
         <div class="footer-col">
           <h4>Contacto</h4>
-          <p>
-            <i class="fas fa-map-marker-alt"></i> Cra 19D #52-85, Barranquilla
+          <p style="color: #ffffff">
+            <i
+              class="fas fa-map-marker-alt"
+              style="color: var(--naranja-urgencia); margin-right: 5px"
+            ></i>
+            Cra 19D #52-85, Barranquilla - Atlántico
           </p>
-          <p><i class="fas fa-phone-alt"></i> (+57) 311 253 1330</p>
+          <p>
+            <a href="tel:+573112531330" style="color: #ffffff">
+              <i
+                class="fas fa-phone-alt"
+                style="color: var(--naranja-urgencia); margin-right: 5px"
+              ></i>
+              (+57) 311 253 1330
+            </a>
+          </p>
+          <p>
+            <a
+              href="mailto:comercial@gramasyparquescolombia.com"
+              style="color: #ffffff"
+            >
+              <i
+                class="fas fa-envelope"
+                style="color: var(--naranja-urgencia); margin-right: 5px"
+              ></i>
+              comercial@gramasyparquescolombia.com
+            </a>
+          </p>
         </div>
       </div>
+
       <div class="copyright-bar">
-        <div class="container">
+        <div
+          class="container"
+          style="
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+          "
+        >
           <span>© 2025 Gramas y Parques Colombia</span>
         </div>
       </div>
     </footer>
+
     <div class="whatsapp-float" id="wa-button">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
         alt="WhatsApp"
+        class="whatsapp-icon"
       />
     </div>
+
+    <div class="wa-modal-overlay" id="wa-modal">
+      <div class="wa-modal-content">
+        <span class="close-modal" id="close-wa">&times;</span>
+        <div class="wa-header">
+          <h3>💬 Asesoría en Línea</h3>
+          <p>Ingeniería Recreativa</p>
+        </div>
+        <div class="wa-body">
+          <p style="font-size: 0.8rem; margin-bottom: 10px; color: #555">
+            Hola, para atenderte mejor por favor indícanos:
+          </p>
+          <label for="wa-name">Tu Nombre:</label>
+          <input type="text" id="wa-name" />
+          <label for="wa-interest">¿En qué estás interesado?</label>
+          <select id="wa-interest">
+            <option value="Cotización General">Quiero una cotización</option>
+            <option value="Gramas Sintéticas">Grama Sintética</option>
+            <option value="Canchas Deportivas">Canchas Deportivas</option>
+            <option value="Parques Infantiles">Parques Infantiles</option>
+            <option value="Biosaludables">Parques Biosaludables</option>
+            <option value="Mobiliario">Mobiliario Urbano</option>
+          </select>
+          <label for="wa-desc">Cuéntanos más (Opcional):</label>
+          <textarea id="wa-desc" rows="2"></textarea>
+          <button class="btn-whatsapp-send" id="btn-send-wa">
+            INICIAR CHAT 🚀
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <a
+      href="#"
+      class="btn-scroll-top"
+      id="scrollTopBtn"
+      aria-label="Subir al inicio"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
     <script src="../js/main.js" defer></script>
   </body>
 </html>

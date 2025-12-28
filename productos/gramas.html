@@ -3,15 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>
-      Venta de Grama Sintética en Barranquilla y Costa Atlántica | Precios de
-      Fábrica
-    </title>
     <meta
       name="description"
-      content="Grama sintética certificada para canchas y paisajismo. Resistente al sol y salitre de la Costa. Instalación en Cartagena, Santa Marta y toda Colombia."
+      content="Catálogo técnico de Gramas Sintéticas en Colombia 2025. Deportivas FIFA, Paisajismo Ultra Grass y Decorativas Tapigrass."
     />
+    <title>Catálogo Gramas Sintéticas 2026 | Precios y Especificaciones</title>
 
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../css/style.css" />
@@ -27,13 +23,42 @@
     />
 
     <style>
+      /* Ajustes específicos para las fichas técnicas */
+      .badge-tech {
+        border-radius: 50px;
+        padding: 5px 15px;
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+      .specs-table {
+        background: #f8fafc;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 0.85rem;
+      }
+      .spec-row {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dashed #cbd5e1;
+        padding: 6px 0;
+      }
+      .spec-row:last-child {
+        border-bottom: none;
+      }
+      .spec-row strong {
+        color: var(--azul-confianza);
+      }
+
+      /* Proceso */
       .process-step {
         background: white;
         padding: 30px 20px;
         border-radius: 12px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         transition: transform 0.3s ease;
-        border-bottom: 4px solid var(--naranja-urgencia, #ff6600);
+        border-bottom: 4px solid var(--naranja-urgencia);
         height: 100%;
       }
       .process-step:hover {
@@ -41,26 +66,18 @@
       }
       .process-icon {
         font-size: 2rem;
-        color: var(--naranja-urgencia, #ff6600);
+        color: var(--naranja-urgencia);
         margin-bottom: 15px;
-        background-color: #fff3e0;
+        background-color: #fff7ed; /* Naranja muy suave */
         width: 70px;
         height: 70px;
         line-height: 70px;
         border-radius: 50%;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
       }
-      .process-step h3 {
-        font-size: 1.1rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: #333;
-      }
-      .process-step p {
-        font-size: 0.9rem;
-        color: #666;
-        line-height: 1.5;
-      }
+
+      /* Navegación rápida */
       .quick-nav-wrapper {
         margin: 20px 0 40px 0;
         text-align: center;
@@ -75,7 +92,7 @@
         text-decoration: none;
         background-color: white;
         color: #333;
-        border: 1px solid var(--naranja-urgencia, #ff6600);
+        border: 1px solid var(--naranja-urgencia);
         padding: 8px 25px;
         border-radius: 50px;
         font-weight: 600;
@@ -84,17 +101,15 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
       }
       .btn-pill:hover {
-        background-color: var(--naranja-urgencia, #ff6600);
+        background-color: var(--naranja-urgencia);
         color: white;
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
       }
     </style>
   </head>
   <body>
     <div class="top-bar">
-      📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el
-      país
+      📍 Envíos a todo Colombia: Barranquilla, Cartagena, Santa Marta y más.
     </div>
 
     <header>
@@ -106,22 +121,22 @@
             class="logo-img"
           />
         </a>
-
-        <div class="mobile-toggle" aria-label="Abrir menú de navegación">☰</div>
+        <div class="mobile-toggle" aria-label="Abrir menú">☰</div>
 
         <nav class="nav-menu">
           <div class="dropdown">
             <a
               href="gramas.html"
               class="dropbtn"
-              style="color: var(--naranja-urgencia)"
+              style="color: var(--naranja-urgencia); font-weight: 800"
               >GRAMAS</a
             >
             <span class="submenu-toggle">▼</span>
             <div class="dropdown-content">
-              <a href="gramas.html"><strong>Ver Todo Gramas</strong></a>
-              <a href="#paisajismo">Paisajismo y Decoración</a>
-              <a href="#deportivas">Deportivas</a>
+              <a href="gramas.html"><strong>Ver Catalogo 2026</strong></a>
+              <a href="#deportivas">Línea Deportiva FIFA</a>
+              <a href="#paisajismo">Línea Ultra Grass (Paisajismo)</a>
+              <a href="#decorativa">Línea Tapigrass (Decorativa)</a>
             </div>
           </div>
 
@@ -132,14 +147,21 @@
             <span class="submenu-toggle">▼</span>
             <div class="dropdown-content">
               <a href="canchas-sinteticas.html"
-                ><strong>Ver Todo Canchas</strong></a
+                ><strong>Ver Portafolio</strong></a
               >
+
               <a href="canchas-sinteticas.html#sinteticas"
-                >Canchas Sintéticas</a
+                >Sintéticas y Múltiples</a
               >
-              <a href="canchas-sinteticas.html#multiples">Canchas Múltiples</a>
-              <a href="canchas-sinteticas.html#arcos">Arcos y Tableros</a>
-              <a href="canchas-sinteticas.html#mallas">Mallas Perimetrales</a>
+              <a href="canchas-sinteticas.html#cubiertas"
+                >Cubiertas y Estructuras</a
+              >
+              <a href="canchas-sinteticas.html#cerramientos"
+                >Cerramientos y Mallas</a
+              >
+              <a href="canchas-sinteticas.html#dotacion"
+                >Dotación Profesional</a
+              >
             </div>
           </div>
 
@@ -147,11 +169,10 @@
             <a href="parques.html" class="dropbtn">PARQUES</a>
             <span class="submenu-toggle">▼</span>
             <div class="dropdown-content">
-              <a href="parques.html"><strong>Ver Todo Parques</strong></a>
-              <a href="parques.html#madera">Línea Madera Inmunizada</a>
-              <a href="parques.html#metalica">Línea Metálica (Alto Tráfico)</a>
-              <a href="parques.html#playground">Playground Importados</a>
-              <a href="parques.html#mantenimiento">Mantenimiento y Repuestos</a>
+              <a href="parques.html">Ver Todo Parques</a>
+              <a href="parques.html#madera">Madera Inmunizada</a>
+              <a href="parques.html#metalica">Metálicos</a>
+              <a href="parques.html#mantenimiento">Mantenimiento</a>
             </div>
           </div>
 
@@ -161,18 +182,14 @@
             <a href="mobiliario-urbano.html" class="dropbtn">MOBILIARIO</a>
             <span class="submenu-toggle">▼</span>
             <div class="dropdown-content">
-              <a href="mobiliario-urbano.html"
-                ><strong>Ver Todo Mobiliario</strong></a
-              >
-              <a href="mobiliario-urbano.html#concreto">Bancas de Concreto</a>
-              <a href="mobiliario-urbano.html#madera">Bancas de Madera</a>
-              <a href="mobiliario-urbano.html#canecas">Canecas Acero Inox</a>
-              <a href="mobiliario-urbano.html#mesas">Mesas de Picnic</a>
+              <a href="mobiliario-urbano.html">Ver Todo</a>
+              <a href="mobiliario-urbano.html#concreto">Concreto</a>
+              <a href="mobiliario-urbano.html#madera">Madera</a>
+              <a href="mobiliario-urbano.html#canecas">Canecas</a>
             </div>
           </div>
 
-          <a href="../blog.html" style="font-weight: 800">BLOG</a>
-
+          <a href="../blog.html" style="font-weight: 700">BLOG</a>
           <a href="../contacto.html" class="contacto-link">CONTÁCTENOS</a>
         </nav>
       </div>
@@ -181,19 +198,33 @@
     <section class="section bg-light page-header">
       <div class="container text-center">
         <h1>
-          Catálogo Técnico de
-          <span style="color: var(--naranja-urgencia)">Gramas Sintéticas</span>
+          Catálogo Gramas Sintéticas
+          <span style="color: var(--naranja-urgencia)">2026</span>
         </h1>
         <p class="section-desc">
-          Fibras certificadas de alta calidad para proyectos profesionales.
+          Fibras de última tecnología con especificaciones reales del catálogo.
         </p>
 
         <div class="quick-nav-wrapper">
-          <p class="quick-nav-label">Ir a:</p>
+          <p
+            class="quick-nav-label"
+            style="font-weight: 600; color: #666; margin-bottom: 10px"
+          >
+            CATEGORÍAS:
+          </p>
           <div class="quick-nav-buttons">
-            <a href="#deportivas" class="btn-pill">⚽ Deportivas</a>
-            <a href="#paisajismo" class="btn-pill">🏡 Paisajismo</a>
-            <a href="#decorativa" class="btn-pill">✨ Decorativa</a>
+            <a href="#deportivas" class="btn-pill">⚽ Deportiva FIFA</a>
+            <a href="#paisajismo" class="btn-pill">🏡 Ultra Grass</a>
+            <a href="#decorativa" class="btn-pill">✨ Tapigrass</a>
+            <a
+              href="#instalacion"
+              class="btn-pill"
+              style="
+                border-color: var(--azul-oscuro);
+                color: var(--azul-oscuro);
+              "
+              >🛠️ Instalación</a
+            >
           </div>
         </div>
       </div>
@@ -203,7 +234,10 @@
       <div class="container">
         <div class="category-header">
           <h2 class="section-title">Línea Deportiva Profesional</h2>
-          <p>Cumplimiento de estándares de calidad para alto rendimiento.</p>
+          <p>
+            Cumple estándares de calidad FIFA. Precios por m² instalado
+            disponibles.
+          </p>
         </div>
 
         <div class="products-list-tech">
@@ -213,7 +247,6 @@
                 src="../img/productos/gramas/grama-monofilamento.webp"
                 alt="Grama Monofilamento 50mm"
                 class="main-photo"
-                loading="lazy"
               />
               <div
                 class="zoom-circle"
@@ -221,29 +254,41 @@
                   background-image: url('../img/productos/gramas/grama-monofilamento-zoom.webp');
                 "
               ></div>
-              <span class="badge-tech">FIFA PREFERRED</span>
+              <span
+                class="badge-tech"
+                style="background: var(--azul-confianza); color: white"
+                >FIFA STANDARD</span
+              >
             </div>
             <div class="tech-info">
-              <h3>Grama Monofilamentada 50mm</h3>
+              <h3>Monofilamento 50mm</h3>
               <p class="desc">
-                Fibra de polietileno de alta resistencia. Especificaciones
-                calidad FIFA.
+                Fibra de polietileno de alta resistencia para fútbol
+                profesional.
               </p>
               <div class="specs-table">
                 <div class="spec-row">
                   <span>Altura:</span> <strong>50 mm</strong>
                 </div>
                 <div class="spec-row">
-                  <span>Dtex:</span> <strong>12.000</strong>
+                  <span>Galga:</span> <strong>5/8"</strong>
                 </div>
                 <div class="spec-row">
                   <span>Densidad:</span> <strong>9.450 /m²</strong>
                 </div>
                 <div class="spec-row">
-                  <span>Material:</span> <strong>Polietileno</strong>
+                  <span>Peso Fibra:</span> <strong>1.224 g/m²</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Peso Total:</span> <strong>2.565 g/m²</strong>
                 </div>
               </div>
-              <a href="../contacto.html" class="btn-card">COTIZAR</a>
+              <a
+                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20Grama%20Monofilamento%2050mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
             </div>
           </article>
 
@@ -253,7 +298,6 @@
                 src="../img/productos/gramas/grama-fibrilada.webp"
                 alt="Grama Fibrilada 50mm"
                 class="main-photo"
-                loading="lazy"
               />
               <div
                 class="zoom-circle"
@@ -263,7 +307,7 @@
               ></div>
             </div>
             <div class="tech-info">
-              <h3>Grama Fibrilada 50mm</h3>
+              <h3>Fibrilada 50mm</h3>
               <p class="desc">
                 Excelente estabilidad estructural, mantiene el caucho en su
                 lugar.
@@ -273,16 +317,24 @@
                   <span>Altura:</span> <strong>50 mm</strong>
                 </div>
                 <div class="spec-row">
+                  <span>Galga:</span> <strong>3/4"</strong>
+                </div>
+                <div class="spec-row">
                   <span>Dtex:</span> <strong>8.000</strong>
                 </div>
                 <div class="spec-row">
                   <span>Densidad:</span> <strong>10.499 /m²</strong>
                 </div>
                 <div class="spec-row">
-                  <span>Material:</span> <strong>Polietileno</strong>
+                  <span>Peso Fibra:</span> <strong>900 g/m²</strong>
                 </div>
               </div>
-              <a href="../contacto.html" class="btn-card">COTIZAR</a>
+              <a
+                href="https://wa.me/573112531330?text=Hola,%20cotizar%20Grama%20Fibrilada%2050mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
             </div>
           </article>
 
@@ -292,7 +344,6 @@
                 src="../img/productos/gramas/grama-sin-relleno.webp"
                 alt="Grama Fútbol Sin Relleno"
                 class="main-photo"
-                loading="lazy"
               />
               <div
                 class="zoom-circle"
@@ -300,18 +351,21 @@
                   background-image: url('../img/productos/gramas/grama-sin-relleno-zoom.webp');
                 "
               ></div>
-              <span class="badge-tech" style="background-color: #555"
-                >SIN RELLENO</span
+              <span class="badge-tech" style="background: #333; color: white"
+                >NO REQUIERE CAUCHO</span
               >
             </div>
             <div class="tech-info">
-              <h3>Grama Fútbol Sin Relleno 25mm</h3>
+              <h3>Fútbol Sin Relleno 25mm</h3>
               <p class="desc">
-                No requiere caucho ni arena. Ideal para proyectos pequeños.
+                Ideal para proyectos pequeños o canchas de fútbol 5 rápido.
               </p>
               <div class="specs-table">
                 <div class="spec-row">
                   <span>Altura:</span> <strong>25 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>3/8"</strong>
                 </div>
                 <div class="spec-row">
                   <span>Dtex:</span> <strong>8.000</strong>
@@ -323,7 +377,12 @@
                   <span>Material:</span> <strong>PP + PE</strong>
                 </div>
               </div>
-              <a href="../contacto.html" class="btn-card">COTIZAR</a>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Grama%20Sin%20Relleno%2025mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
             </div>
           </article>
 
@@ -333,7 +392,6 @@
                 src="../img/productos/gramas/grama-tennis.webp"
                 alt="Grama Sintética Tennis"
                 class="main-photo"
-                loading="lazy"
               />
               <div
                 class="zoom-circle"
@@ -343,14 +401,16 @@
               ></div>
             </div>
             <div class="tech-info">
-              <h3>Grama Tipo Tennis 10mm</h3>
+              <h3>Tipo Tennis 10mm</h3>
               <p class="desc">
-                Superficie de alta densidad especializada para la práctica de
-                tennis.
+                Superficie de alta densidad para rebote controlado de pelota.
               </p>
               <div class="specs-table">
                 <div class="spec-row">
                   <span>Altura:</span> <strong>10 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>3/16"</strong>
                 </div>
                 <div class="spec-row">
                   <span>Dtex:</span> <strong>12.000</strong>
@@ -359,10 +419,15 @@
                   <span>Densidad:</span> <strong>62.992 /m²</strong>
                 </div>
                 <div class="spec-row">
-                  <span>Galga:</span> <strong>3/16"</strong>
+                  <span>Peso Fibra:</span> <strong>950 g/m²</strong>
                 </div>
               </div>
-              <a href="../contacto.html" class="btn-card">COTIZAR</a>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Grama%20Tennis"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
             </div>
           </article>
         </div>
@@ -374,8 +439,8 @@
         <div class="category-header">
           <h2 class="section-title">Paisajismo: Línea Ultra Grass</h2>
           <p>
-            Aspecto natural y alta resistencia al tráfico. La mejor opción en el
-            mercado.
+            Aspecto natural (PP+PE), rollo de 3.7m de ancho. No requiere
+            relleno.
           </p>
         </div>
 
@@ -384,14 +449,13 @@
             <div class="tech-img-box">
               <span
                 class="badge-tech"
-                style="background-color: var(--naranja-urgencia)"
-                >MÁS VENDIDA</span
+                style="background: var(--naranja-urgencia); color: white"
+                >ECONÓMICA</span
               >
               <img
                 src="../img/productos/gramas/paisajismo-20.webp"
                 alt="Ultra Grass 20mm"
                 class="main-photo"
-                loading="lazy"
               />
               <div
                 class="zoom-circle"
@@ -402,10 +466,15 @@
             </div>
             <div class="tech-info">
               <h3>Ultra Grass 20mm</h3>
-              <p class="desc">Línea Ultra Grass de apariencia superior.</p>
+              <p class="desc">
+                Ideal para zonas residenciales y decoración básica.
+              </p>
               <div class="specs-table">
                 <div class="spec-row">
                   <span>Altura:</span> <strong>20 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>3/8"</strong>
                 </div>
                 <div class="spec-row">
                   <span>Dtex:</span> <strong>12.000</strong>
@@ -414,20 +483,72 @@
                   <span>Densidad:</span> <strong>14.698 /m²</strong>
                 </div>
                 <div class="spec-row">
-                  <span>Rollo:</span> <strong>3.7 m ancho</strong>
+                  <span>Peso Fibra:</span> <strong>850 g/m²</strong>
                 </div>
               </div>
-              <a href="https://wa.me/573112531330" class="btn-card">COTIZAR</a>
+              <a
+                href="https://wa.me/573112531330?text=Me%20interesa%20Ultra%20Grass%2020mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
             </div>
           </article>
 
           <article class="tech-card">
             <div class="tech-img-box">
               <img
+                src="../img/productos/gramas/paisajismo-25.webp"
+                alt="Ultra Grass 25mm"
+                class="main-photo"
+              />
+              <div
+                class="zoom-circle"
+                style="
+                  background-image: url('../img/productos/gramas/paisajismo-25-zoom.webp');
+                "
+              ></div>
+            </div>
+            <div class="tech-info">
+              <h3>Ultra Grass 25mm</h3>
+              <p class="desc">Mayor densidad para un acabado más estético.</p>
+              <div class="specs-table">
+                <div class="spec-row">
+                  <span>Altura:</span> <strong>25 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>3/8"</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Dtex:</span> <strong>12.000</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Densidad:</span> <strong>15.748 /m²</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Peso Fibra:</span> <strong>1.110 g/m²</strong>
+                </div>
+              </div>
+              <a
+                href="https://wa.me/573112531330?text=Me%20interesa%20Ultra%20Grass%2025mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-img-box">
+              <span
+                class="badge-tech"
+                style="background: var(--verde-principal); color: white"
+                >MÁS VENDIDA</span
+              >
+              <img
                 src="../img/productos/gramas/paisajismo-30.webp"
                 alt="Ultra Grass 30mm"
                 class="main-photo"
-                loading="lazy"
               />
               <div
                 class="zoom-circle"
@@ -439,11 +560,14 @@
             <div class="tech-info">
               <h3>Ultra Grass 30mm</h3>
               <p class="desc">
-                La favorita para terrazas. Alta densidad (16.798) y confort.
+                La favorita para terrazas. Alta densidad y confort.
               </p>
               <div class="specs-table">
                 <div class="spec-row">
                   <span>Altura:</span> <strong>30 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>3/8"</strong>
                 </div>
                 <div class="spec-row">
                   <span>Dtex:</span> <strong>12.000</strong>
@@ -452,10 +576,15 @@
                   <span>Densidad:</span> <strong>16.798 /m²</strong>
                 </div>
                 <div class="spec-row">
-                  <span>Peso Fibra:</span> <strong>1.300 g</strong>
+                  <span>Peso Fibra:</span> <strong>1.300 g/m²</strong>
                 </div>
               </div>
-              <a href="https://wa.me/573112531330" class="btn-card">COTIZAR</a>
+              <a
+                href="https://wa.me/573112531330?text=Me%20interesa%20Ultra%20Grass%2030mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
             </div>
           </article>
 
@@ -465,7 +594,6 @@
                 src="../img/productos/gramas/paisajismo-38.webp"
                 alt="Ultra Grass 38mm"
                 class="main-photo"
-                loading="lazy"
               />
               <div
                 class="zoom-circle"
@@ -476,10 +604,13 @@
             </div>
             <div class="tech-info">
               <h3>Ultra Grass 38mm</h3>
-              <p class="desc">Altura premium, sensación de césped maduro.</p>
+              <p class="desc">Fibra alta de lujo para jardines exigentes.</p>
               <div class="specs-table">
                 <div class="spec-row">
                   <span>Altura:</span> <strong>38 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>3/8"</strong>
                 </div>
                 <div class="spec-row">
                   <span>Dtex:</span> <strong>12.000</strong>
@@ -488,20 +619,27 @@
                   <span>Densidad:</span> <strong>14.700 /m²</strong>
                 </div>
                 <div class="spec-row">
-                  <span>Material:</span> <strong>PP + PE</strong>
+                  <span>Peso Fibra:</span> <strong>1.200 g/m²</strong>
                 </div>
               </div>
-              <a href="https://wa.me/573112531330" class="btn-card">COTIZAR</a>
+              <a
+                href="https://wa.me/573112531330?text=Me%20interesa%20Ultra%20Grass%2038mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
             </div>
           </article>
 
           <article class="tech-card">
             <div class="tech-img-box">
+              <span class="badge-tech" style="background: #000; color: white"
+                >PREMIUM</span
+              >
               <img
                 src="../img/productos/gramas/paisajismo-40.webp"
                 alt="Ultra Grass 40mm"
                 class="main-photo"
-                loading="lazy"
               />
               <div
                 class="zoom-circle"
@@ -509,18 +647,16 @@
                   background-image: url('../img/productos/gramas/paisajismo-40-zoom.webp');
                 "
               ></div>
-              <span class="badge-tech" style="background-color: #000"
-                >PREMIUM</span
-              >
             </div>
             <div class="tech-info">
               <h3>Ultra Grass 40mm</h3>
-              <p class="desc">
-                Máximo lujo. Nuestra referencia más alta y pesada.
-              </p>
+              <p class="desc">Máxima frondosidad y peso de fibra superior.</p>
               <div class="specs-table">
                 <div class="spec-row">
                   <span>Altura:</span> <strong>40 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>3/8"</strong>
                 </div>
                 <div class="spec-row">
                   <span>Dtex:</span> <strong>12.000</strong>
@@ -529,10 +665,15 @@
                   <span>Densidad:</span> <strong>14.698 /m²</strong>
                 </div>
                 <div class="spec-row">
-                  <span>Peso Total:</span> <strong>2.580 g/m²</strong>
+                  <span>Peso Fibra:</span> <strong>1.380 g/m²</strong>
                 </div>
               </div>
-              <a href="https://wa.me/573112531330" class="btn-card">COTIZAR</a>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Ultra%20Grass%2040mm%20Premium"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
             </div>
           </article>
         </div>
@@ -551,11 +692,53 @@
         <div class="products-list-tech">
           <article class="tech-card">
             <div class="tech-img-box">
+              <span class="badge-tech" style="background: #666; color: white"
+                >FERIAS</span
+              >
+              <img
+                src="../img/productos/gramas/tapigrass-4.webp"
+                alt="Tapigrass 4mm"
+                class="main-photo"
+              />
+              <div
+                class="zoom-circle"
+                style="
+                  background-image: url('../img/productos/gramas/tapigrass-4-zoom.webp');
+                "
+              ></div>
+            </div>
+            <div class="tech-info">
+              <h3>Tapigrass 350 (4mm)</h3>
+              <p class="desc">La opción más económica para eventos efímeros.</p>
+              <div class="specs-table">
+                <div class="spec-row">
+                  <span>Altura:</span> <strong>4 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>1/8"</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Peso Fibra:</span> <strong>280 g</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Tráfico:</span> <strong>Intermedio</strong>
+                </div>
+              </div>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Tapigrass%204mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-img-box">
               <img
                 src="../img/productos/gramas/tapigrass-7.webp"
                 alt="Tapigrass 7mm"
                 class="main-photo"
-                loading="lazy"
               />
               <div
                 class="zoom-circle"
@@ -566,79 +749,339 @@
             </div>
             <div class="tech-info">
               <h3>Tapigrass 500 (7mm)</h3>
-              <p class="desc">Grama corta de alta densidad (70.551/m²).</p>
+              <p class="desc">Grama corta clásica.</p>
               <div class="specs-table">
                 <div class="spec-row">
                   <span>Altura:</span> <strong>7 mm</strong>
                 </div>
                 <div class="spec-row">
+                  <span>Material:</span> <strong>Polipropileno</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Uso:</span> <strong>Decorativo</strong>
+                </div>
+              </div>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Tapigrass%207mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-img-box">
+              <img
+                src="../img/productos/gramas/tapigrass-10.webp"
+                alt="Tapigrass 10mm"
+                class="main-photo"
+              />
+              <div
+                class="zoom-circle"
+                style="
+                  background-image: url('../img/productos/gramas/tapigrass-10-zoom.webp');
+                "
+              ></div>
+            </div>
+            <div class="tech-info">
+              <h3>Tapigrass 600 (10mm)</h3>
+              <p class="desc">Alta densidad para zonas de juegos interiores.</p>
+              <div class="specs-table">
+                <div class="spec-row">
+                  <span>Altura:</span> <strong>10 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>5/32"</strong>
+                </div>
+                <div class="spec-row">
                   <span>Dtex:</span> <strong>2.200</strong>
                 </div>
                 <div class="spec-row">
-                  <span>Material:</span> <strong>Polipropileno</strong>
+                  <span>Densidad:</span> <strong>80.630 /m²</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Peso Fibra:</span> <strong>500 g</strong>
                 </div>
               </div>
-              <a href="../contacto.html" class="btn-card">COTIZAR</a>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Tapigrass%2010mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="tech-card">
+            <div class="tech-img-box">
+              <img
+                src="../img/productos/gramas/tapigrass-15.webp"
+                alt="Tapigrass 15mm"
+                class="main-photo"
+              />
+              <div
+                class="zoom-circle"
+                style="
+                  background-image: url('../img/productos/gramas/tapigrass-15.webp');
+                "
+              ></div>
+            </div>
+            <div class="tech-info">
+              <h3>Tapigrass 800 (15mm)</h3>
+              <p class="desc">
+                La más alta y tupida de la línea decorativa económica.
+              </p>
+              <div class="specs-table">
+                <div class="spec-row">
+                  <span>Altura:</span> <strong>15 mm</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Galga:</span> <strong>5/32"</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Dtex:</span> <strong>2.200</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Densidad:</span> <strong>75.591 /m²</strong>
+                </div>
+                <div class="spec-row">
+                  <span>Peso Fibra:</span> <strong>800 g</strong>
+                </div>
+              </div>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Tapigrass%2015mm"
+                class="btn-card"
+                target="_blank"
+                >COTIZAR</a
+              >
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" style="background-color: #f8f9fa; padding: 60px 0">
+    <section id="instalacion" class="section bg-light">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 40px">
-          <h2 style="color: var(--naranja-urgencia, #ff6600); font-weight: 800">
-            Instalación Profesional
-          </h2>
-          <p>
-            Aseguramos la vida útil de tu grama con un proceso técnico
-            certificado.
+        <div class="category-header text-center" style="margin-bottom: 40px">
+          <h2 class="section-title">Instalación Profesional</h2>
+          <h3 style="color: var(--azul-oscuro); margin-top: 10px">
+            ¿Cómo es nuestro proceso?
+          </h3>
+          <p style="max-width: 700px; margin: 0 auto">
+            Servicio llave en mano para canchas y jardines en Barranquilla y
+            toda Colombia.
           </p>
         </div>
 
         <div
-          class="grid-system"
           style="
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
           "
         >
-          <div class="process-step text-center">
-            <div class="process-icon">
-              <i class="fas fa-clipboard-check"></i>
+          <div
+            style="
+              flex: 1;
+              min-width: 300px;
+              max-width: 500px;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+            "
+          >
+            <div
+              style="
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                transform: translateZ(0);
+              "
+            >
+              <img
+                src="../img/productos/gramas/instalacion-grama-sintetica.webp"
+                alt="Instalación de grama sintética en Barranquilla y la Costa"
+                style="
+                  width: 100%;
+                  height: auto;
+                  display: block;
+                  object-fit: cover;
+                  min-height: 300px;
+                "
+                loading="lazy"
+              />
+
+              <div
+                style="
+                  position: absolute;
+                  bottom: 20px;
+                  left: 20px;
+                  background: rgba(
+                    10,
+                    35,
+                    66,
+                    0.85
+                  ); /* Azul corporativo oscuro semi-transparente */
+                  backdrop-filter: blur(4px); /* Efecto vidrio esmerilado */
+                  padding: 12px 25px;
+                  border-radius: 50px; /* Bordes estilo píldora */
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  border: 1px solid rgba(255, 255, 255, 0.15); /* Borde sutil brillante */
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                  max-width: calc(
+                    100% - 40px
+                  ); /* Asegura que no se salga en móviles pequeños */
+                "
+              >
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="color: var(--naranja-urgencia); font-size: 1.3rem"
+                ></i>
+
+                <div style="color: white">
+                  <p
+                    style="
+                      margin: 0;
+                      font-weight: 800;
+                      font-size: 0.9rem;
+                      text-transform: uppercase;
+                      letter-spacing: 1px;
+                      line-height: 1.2;
+                    "
+                  >
+                    Cobertura en toda la Costa
+                  </p>
+                  <small
+                    style="font-size: 0.75rem; opacity: 0.9; font-weight: 300"
+                    >Barranquilla, Cartagena, Santa Marta</small
+                  >
+                </div>
+              </div>
             </div>
-            <h3>1. Asesoría Técnica</h3>
-            <p>
-              Te ayudamos a elegir la fibra correcta (Deportiva o Paisajismo)
-              según el tráfico.
-            </p>
+
+            <a
+              href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20la%20instalaci%C3%B3n%20de%20grama%20sint%C3%A9tica"
+              class="btn-card"
+              style="
+                background-color: var(--naranja-urgencia);
+                color: #ffffff !important;
+                text-align: center;
+                padding: 15px 20px;
+                border-radius: 50px;
+                font-weight: 800;
+                text-decoration: none;
+                box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
+                display: block;
+                width: 100%;
+                font-size: 1.1rem;
+              "
+            >
+              COTIZAR INSTALACIÓN
+            </a>
           </div>
-          <div class="process-step text-center">
-            <div class="process-icon"><i class="fas fa-layer-group"></i></div>
-            <h3>2. Adecuación</h3>
-            <p>
-              Nivelación del terreno, compactación y construcción de filtros de
-              drenaje.
-            </p>
-          </div>
-          <div class="process-step text-center">
-            <div class="process-icon"><i class="fas fa-tools"></i></div>
-            <h3>3. Instalación</h3>
-            <p>Cortes precisos, unión de rollos y anclaje perimetral seguro.</p>
-          </div>
-          <div class="process-step text-center">
-            <div class="process-icon"><i class="fas fa-broom"></i></div>
-            <h3>4. Acabado Final</h3>
-            <p>
-              Aplicación de arena sílice/caucho y cepillado mecánico de las
-              fibras.
-            </p>
+
+          <div style="flex: 1; min-width: 300px">
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+              "
+            >
+              <div
+                class="process-step"
+                style="
+                  text-align: center;
+                  border-radius: 12px;
+                  padding: 25px 15px;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                  background: white;
+                "
+              >
+                <div class="process-icon" style="margin: 0 auto 15px auto">
+                  <i class="fas fa-ruler-combined"></i>
+                </div>
+                <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
+                  1. Adecuación
+                </h4>
+                <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
+                  Nivelación topográfica, excavación y filtros de drenaje.
+                </p>
+              </div>
+
+              <div
+                class="process-step"
+                style="
+                  text-align: center;
+                  border-radius: 12px;
+                  padding: 25px 15px;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                  background: white;
+                "
+              >
+                <div class="process-icon" style="margin: 0 auto 15px auto">
+                  <i class="fas fa-layer-group"></i>
+                </div>
+                <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
+                  2. Base
+                </h4>
+                <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
+                  Compactación de terreno y construcción de base granular.
+                </p>
+              </div>
+
+              <div
+                class="process-step"
+                style="
+                  text-align: center;
+                  border-radius: 12px;
+                  padding: 25px 15px;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                  background: white;
+                "
+              >
+                <div class="process-icon" style="margin: 0 auto 15px auto">
+                  <i class="fas fa-tools"></i>
+                </div>
+                <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
+                  3. Instalación
+                </h4>
+                <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
+                  Unión profesional de rollos con pegante de poliuretano.
+                </p>
+              </div>
+
+              <div
+                class="process-step"
+                style="
+                  text-align: center;
+                  border-radius: 12px;
+                  padding: 25px 15px;
+                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                  background: white;
+                "
+              >
+                <div class="process-icon" style="margin: 0 auto 15px auto">
+                  <i class="fas fa-check-circle"></i>
+                </div>
+                <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
+                  4. Acabados
+                </h4>
+                <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
+                  Cepillado mecánico, arena de sílice y caucho granulado.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
     <footer>
       <div class="container footer-grid">
         <div class="footer-col">
@@ -647,91 +1090,159 @@
             Expertos en obras civiles recreativas. Transformamos espacios con
             calidad y cumplimiento.
           </p>
+
           <div class="social-links">
-            <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="#" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
+            <a
+              href="https://www.instagram.com/gramasyparquescolombia/"
+              aria-label="Instagram"
+              target="_blank"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a
+              href="https://web.facebook.com/gramasyparquescolombia"
+              aria-label="Facebook"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-f"></i>
+            </a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4>ENLACES RÁPIDOS</h4>
+          <h4>Enlaces Rápidos</h4>
           <ul class="footer-links">
             <li><a href="../index.html">Inicio</a></li>
-            <li><a href="canchas-sinteticas.html">Canchas Deportivas</a></li>
+
+            <li>
+              <a href="canchas-sinteticas.html">Canchas Deportivas</a>
+            </li>
             <li><a href="parques.html">Parques Infantiles</a></li>
             <li><a href="Biosaludables.html">Biosaludables</a></li>
-            <li><a href="mobiliario-urbano.html">Mobiliario Urbano</a></li>
+            <li>
+              <a href="mobiliario-urbano.html">Mobiliario Urbano</a>
+            </li>
+
+            <li><a href="../blog.html">Blog de Noticias</a></li>
             <li><a href="../contacto.html">Contacto</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>CONTACTO</h4>
+          <h4>Contacto</h4>
           <p style="color: #ffffff">
             <i
               class="fas fa-map-marker-alt"
-              style="color: var(--naranja-urgencia); margin-right: 10px"
+              style="color: var(--naranja-urgencia); margin-right: 5px"
             ></i>
             Cra 19D #52-85, Barranquilla - Atlántico
           </p>
           <p>
-            <a href="tel:+573112531330" style="color: #ffffff"
-              ><i
+            <a href="tel:+573112531330" style="color: #ffffff">
+              <i
                 class="fas fa-phone-alt"
-                style="color: var(--naranja-urgencia); margin-right: 10px"
+                style="color: var(--naranja-urgencia); margin-right: 5px"
               ></i>
-              (+57) 311 253 1330</a
-            >
+              (+57) 311 253 1330
+            </a>
           </p>
           <p>
             <a
               href="mailto:comercial@gramasyparquescolombia.com"
               style="color: #ffffff"
-              ><i
-                class="fas fa-envelope"
-                style="color: var(--naranja-urgencia); margin-right: 10px"
-              ></i>
-              comercial@gramasyparquescolombia.com</a
             >
+              <i
+                class="fas fa-envelope"
+                style="color: var(--naranja-urgencia); margin-right: 5px"
+              ></i>
+              comercial@gramasyparquescolombia.com
+            </a>
           </p>
         </div>
       </div>
 
       <div class="copyright-bar">
-        <div class="container text-center">
-          <p style="margin: 0">© 2025 Gramas y Parques Colombia</p>
+        <div
+          class="container"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            text-align: center;
+          "
+        >
+          <span>© 2025 Gramas y Parques Colombia</span>
+          <div
+            class="legal-links"
+            style="font-size: 0.8rem; opacity: 0.6; font-weight: 300"
+          >
+            <a
+              href="politica-de-privacidad.html"
+              style="color: inherit; text-decoration: none"
+              >Política de Privacidad</a
+            >
+            <span style="margin: 0 5px">|</span>
+            <a
+              href="terminos-y-condiciones.html"
+              style="color: inherit; text-decoration: none"
+              >Términos y Condiciones</a
+            >
+          </div>
         </div>
       </div>
     </footer>
 
-    <script src="../js/main.js" defer></script>
+    <div class="whatsapp-float" id="wa-button">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"
+        class="whatsapp-icon"
+      />
+    </div>
+
+    <div class="wa-modal-overlay" id="wa-modal">
+      <div class="wa-modal-content">
+        <span class="close-modal" id="close-wa">&times;</span>
+        <div class="wa-header">
+          <h3>💬 Asesoría en Línea</h3>
+          <p>Ingeniería Recreativa</p>
+        </div>
+        <div class="wa-body">
+          <p style="font-size: 0.8rem; margin-bottom: 10px; color: #555">
+            Hola, para atenderte mejor por favor indícanos:
+          </p>
+          <label for="wa-name">Tu Nombre:</label>
+          <input type="text" id="wa-name" />
+          <label for="wa-interest">¿En qué estás interesado?</label>
+          <select id="wa-interest">
+            <option value="Cotización General">Quiero una cotización</option>
+            <option value="Gramas Sintéticas">Grama Sintética</option>
+            <option value="Canchas Deportivas">Canchas Deportivas</option>
+            <option value="Parques Infantiles">Parques Infantiles</option>
+            <option value="Biosaludables">Parques Biosaludables</option>
+            <option value="Mobiliario">Mobiliario Urbano</option>
+          </select>
+          <label for="wa-desc">Cuéntanos más (Opcional):</label>
+          <textarea id="wa-desc" rows="2"></textarea>
+          <button class="btn-whatsapp-send" id="btn-send-wa">
+            INICIAR CHAT 🚀
+          </button>
+        </div>
+      </div>
+    </div>
 
     <a
       href="#"
       class="btn-scroll-top"
       id="scrollTopBtn"
-      title="Volver al inicio"
-      ><i class="fas fa-arrow-up"></i
-    ></a>
-
-    <a
-      href="https://wa.me/573112531330"
-      class="whatsapp-float"
-      target="_blank"
-      aria-label="Chatear en WhatsApp"
+      aria-label="Subir al inicio"
     >
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-        alt="WhatsApp"
-        style="width: 35px"
-      />
+      <i class="fas fa-arrow-up"></i>
     </a>
+
+    <script src="../js/main.js" defer></script>
   </body>
 </html>
