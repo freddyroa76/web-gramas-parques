@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Título del Artículo Aquí | Blog Gramas y Parques</title>
+    <meta
+      name="description"
+      content="Resumen atractivo del artículo para Google. Enfocado en la solución que ofreces."
+    />
+    <link
+      rel="canonical"
+      href="https://gramasyparquescolombia.com/blog/url-articulo.html"
+    />
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      /* Layout */
+      .blog-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 0;
+      }
+      @media (min-width: 992px) {
+        .blog-container {
+          grid-template-columns: 2.5fr 1fr;
+        }
+      }
+
+      /* Tipografía de Venta */
+      .article-content {
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #444;
+      }
+      .article-content h1 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: #111;
+        font-weight: 800;
+      }
+      .article-content h2 {
+        font-family: "Montserrat", sans-serif;
+        color: var(--azul-oscuro, #0a2342);
+        margin-top: 35px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+      }
+      .article-content img {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 25px 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .article-content ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+      .article-content li {
+        margin-bottom: 10px;
+      }
+
+      /* Sidebar */
+      .sidebar-widget {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+      .breadcrumbs {
+        background: #f8f9fa;
+        padding: 15px 0;
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .breadcrumbs a {
+        color: #0277bd;
+        text-decoration: none;
+      }
+
+      /* BOTÓN FINAL DE ARTÍCULO (Naranja - Acción Principal) */
+      .btn-orange-cta {
+        display: inline-block;
+        background-color: #ff6600 !important;
+        color: #ffffff !important;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+        transition: transform 0.2s ease;
+        text-transform: uppercase;
+      }
+      .btn-orange-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+      }
+
+      /* BOTÓN SIDEBAR (Verde WhatsApp - Contacto Rápido) */
+      .btn-sidebar-whatsapp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        background-color: #25d366 !important; /* Verde WhatsApp Oficial */
+        color: white !important;
+        padding: 12px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.95rem;
+        box-shadow: 0 3px 8px rgba(37, 211, 102, 0.3);
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      .btn-sidebar-whatsapp:hover {
+        background-color: #128c7e !important; /* Verde Oscuro al pasar mouse */
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">📍 Envíos e Instalación en todo Colombia</div>
+    <header>
+      <div class="container navbar">
+        <a href="../index.html" class="logo-container"
+          ><img src="../img/logo.png" alt="Logo" class="logo-img"
+        /></a>
+        <nav class="nav-menu">
+          <a href="../index.html">INICIO</a>
+          <a href="../productos/gramas.html">GRAMAS</a>
+          <a href="../blog.html">BLOG</a>
+          <a href="../contacto.html" class="contacto-link">COTIZAR</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="breadcrumbs">
+      <div class="container">
+        <a href="../index.html">Inicio</a> / <a href="../blog.html">Blog</a> /
+        <span>Tema del Artículo</span>
+      </div>
+    </div>
+
+    <section class="container blog-container">
+      <article class="article-content">
+        <h1>Título Atractivo que Prometa un Beneficio Claro</h1>
+
+        <div
+          class="article-meta"
+          style="
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+          "
+        >
+          <i class="far fa-calendar"></i> 2025 |
+          <span style="color: var(--naranja-urgencia)"
+            >Ingeniería Gramas y Parques</span
+          >
+        </div>
+
+        <img
+          src="img/nombre-imagen-portada.webp"
+          alt="Descripción optimizada para SEO"
+          style="width: 100%; height: auto; display: block"
+        />
+
+        <p
+          class="lead"
+          style="
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 30px;
+          "
+        >
+          Párrafo de introducción que enganche al lector presentando el problema
+          y prometiendo la solución en las siguientes líneas.
+        </p>
+
+        <h2>Subtítulo Relevante</h2>
+        <p>
+          Desarrollo del contenido enfocado en beneficios, no solo
+          características.
+        </p>
+
+        <div
+          style="
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: #fff5eb;
+            border-radius: 10px;
+          "
+        >
+          <h3 style="margin-top: 0; color: #333">
+            ¿Listo para iniciar tu proyecto?
+          </h3>
+          <p style="margin-bottom: 20px">
+            No dejes tu obra en manos inexpertas.
+          </p>
+          <a href="../contacto.html" class="btn-orange-cta"
+            >SOLICITAR COTIZACIÓN</a
+          >
+        </div>
+      </article>
+
+      <aside>
+        <div
+          class="sidebar-widget text-center"
+          style="position: sticky; top: 20px"
+        >
+          <h4 style="margin-bottom: 10px; color: #222">¿Necesitas Asesoría?</h4>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: #666;
+              margin-bottom: 20px;
+              line-height: 1.4;
+            "
+          >
+            Nuestros ingenieros te responden en menos de 10 minutos.
+          </p>
+          <a href="https://wa.me/573112531330" class="btn-sidebar-whatsapp">
+            <i class="fab fa-whatsapp" style="font-size: 1.2rem"></i> Cotizar
+            por WhatsApp
+          </a>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      <div class="container text-center" style="padding: 20px">
+        <p>© 2025 Gramas y Parques Colombia</p>
+      </div>
+    </footer>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

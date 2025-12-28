@@ -1396,3 +1396,44 @@ footer::before {
     padding: 12px 15px;
   }
 }
+/* =========================================
+   ESTILOS BREADCRUMBS (MIGAS DE PAN)
+   ========================================= */
+.breadcrumbs {
+  background-color: var(--gris-fondo); /* #f8fafc */
+  padding: 12px 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  margin-bottom: 0;
+}
+
+.breadcrumbs .container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.breadcrumbs a {
+  color: var(--azul-confianza);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  color: var(--naranja-urgencia);
+  text-decoration: underline;
+}
+
+.breadcrumbs span.separator {
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+.breadcrumbs .current {
+  color: #6c757d;
+  font-weight: 400;
+  pointer-events: none;
+}
