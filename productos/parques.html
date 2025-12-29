@@ -3,17 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Parques Infantiles Certificados en Colombia | Madera, Metal y Playground
-    </title>
     <meta
       name="description"
-      content="Fábrica de parques infantiles seguros (Norma NTC 5176). Juegos de madera, metálicos y playgrounds importados. Mantenimiento en Barranquilla y la Costa."
+      content="Catálogo Oficial de Parques Infantiles 2025. Fabricantes directos de Parques en Madera, Metálicos y Playgrounds. Diseños a medida en Colombia."
     />
+    <title>Catálogo Parques Infantiles 2025 | Gramas y Parques Colombia</title>
 
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../css/style.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap"
@@ -21,88 +18,217 @@
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <style>
-      .quick-nav-wrapper {
-        margin: 20px 0 40px 0;
-        text-align: center;
-      }
-      .quick-nav-label {
+      /* --- ESTILOS MEJORADOS PARA EL CATÁLOGO --- */
+
+      /* CORRECCIÓN 1: ESTILOS MIGAS DE PAN (BREADCRUMBS) */
+      .breadcrumbs {
+        background-color: #f8f9fa;
+        padding: 12px 0;
+        border-bottom: 1px solid #e9ecef;
         font-size: 0.9rem;
         color: #666;
-        margin-bottom: 10px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
       }
-      .quick-nav-buttons {
+      .breadcrumbs .container {
         display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
       }
-      .btn-pill {
+      .breadcrumbs a {
+        color: var(--azul-confianza);
         text-decoration: none;
-        background-color: white;
-        color: #333;
-        border: 1px solid var(--verde-principal, #4caf50);
-        padding: 8px 25px;
-        border-radius: 50px;
         font-weight: 600;
-        font-size: 0.95rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: color 0.3s;
       }
-      .btn-pill:hover {
-        background-color: var(--verde-principal, #4caf50);
-        color: white;
-        transform: translateY(-2px);
+      .breadcrumbs a:hover {
+        color: var(--naranja-urgencia);
+        text-decoration: underline;
       }
-      .titulo-seccion {
-        margin-top: 60px;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #eee;
-        color: var(--azul-oscuro, #2c3e50);
+      .breadcrumbs span.separator {
+        color: #ccc;
+        font-size: 0.8rem;
       }
-      /* Proceso */
-      .process-step {
-        background: white;
-        padding: 30px 20px;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
-        border-bottom: 4px solid var(--brand-blue, #007bff);
-        height: 100%;
+      .breadcrumbs .current {
+        color: #6c757d;
+        font-weight: 400;
+        pointer-events: none;
       }
-      .process-step:hover {
-        transform: translateY(-5px);
+
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
       }
-      .process-icon {
-        font-size: 2rem;
-        color: var(--brand-blue, #007bff);
-        margin-bottom: 15px;
-        background-color: #e6f0ff;
-        width: 70px;
-        height: 70px;
-        line-height: 70px;
-        border-radius: 50%;
-        margin: 0 auto;
+
+      /* Navegación Sticky */
+      .category-nav {
+        position: sticky;
+        top: 0;
+        z-index: 90;
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        padding: 15px 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        border-bottom: 1px solid #eee;
       }
-      .process-step h3 {
-        font-size: 1.1rem;
+
+      /* CORRECCIÓN 2: BOTONES CON BORDE DE 2PX */
+      .cat-link {
+        display: inline-block;
+        padding: 8px 18px;
+        margin: 0 4px;
+        border-radius: 50px;
+        color: #444;
         font-weight: 700;
+        text-decoration: none;
+        /* Borde naranja sólido de 2px */
+        border: 2px solid var(--naranja-urgencia);
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        background-color: white;
+      }
+      .cat-link:hover,
+      .cat-link.active {
+        background: var(--naranja-urgencia);
+        color: white;
+        border-color: var(--naranja-urgencia);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(249, 115, 22, 0.2);
+      }
+
+      /* Tarjetas UNIFORMES */
+      .park-card {
+        background: white;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      .park-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        border-color: var(--azul-confianza);
+      }
+      .park-img-box {
+        position: relative;
+        height: 220px;
+        background: #f9f9f9;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #eee;
+      }
+      .park-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .park-card:hover .park-img {
+        transform: scale(1.05);
+      }
+      .park-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: var(--naranja-urgencia);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        z-index: 2;
+      }
+      /* Badge gris para los Dummies */
+      .park-badge.dummy {
+        background: #999;
+      }
+
+      .park-content {
+        padding: 18px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .park-title {
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--azul-oscuro);
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+      .park-dims {
+        font-size: 0.8rem;
+        color: #888;
+        font-weight: 600;
         margin-bottom: 10px;
-        color: #333;
+        display: block;
+      }
+      .specs-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 15px 0;
+        font-size: 0.85rem;
+        color: #555;
+      }
+      .specs-list li {
+        margin-bottom: 4px;
+        padding-left: 15px;
+        position: relative;
+      }
+      .specs-list li::before {
+        content: "•";
+        color: var(--naranja-urgencia);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+      .btn-quote {
+        margin-top: auto;
+        display: block;
+        text-align: center;
+        background: var(--naranja-urgencia);
+        color: white;
+        padding: 10px;
+        border-radius: 6px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: background 0.3s;
+      }
+      .btn-quote:hover {
+        background: #e65c00;
+      }
+      /* Botón gris para dummies */
+      .btn-quote.disabled {
+        background: #ccc;
+        pointer-events: none;
+      }
+
+      /* Mantenimiento */
+      .maintenance-section {
+        background-color: #f1f5f9;
+        border-radius: 20px;
+        padding: 40px;
+        margin-top: 60px;
       }
     </style>
   </head>
   <body>
     <div class="top-bar">
-      📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el
-      país
+      📍 Fabricación e Importación Directa. Envíos e Instalación en toda
+      Colombia.
     </div>
 
     <header>
@@ -114,17 +240,19 @@
             class="logo-img"
           />
         </a>
-
-        <div class="mobile-toggle" aria-label="Abrir menú de navegación">☰</div>
+        <div class="mobile-toggle" aria-label="Abrir menú">☰</div>
 
         <nav class="nav-menu">
           <div class="dropdown">
             <a href="gramas.html" class="dropbtn">GRAMAS</a>
             <span class="submenu-toggle">▼</span>
             <div class="dropdown-content">
-              <a href="gramas.html"><strong>Ver Todo Gramas</strong></a>
-              <a href="gramas-paisajismo.html">Paisajismo y Decoración</a>
-              <a href="gramas-deportivas.html">Deportivas</a>
+              <a href="gramas.html"><strong>Ver Catálogo</strong></a>
+              <a href="gramas.html#deportivas">Línea Deportiva FIFA</a>
+              <a href="gramas.html#paisajismo"
+                >Línea Ultra Grass (Paisajismo)</a
+              >
+              <a href="gramas.html#decorativa">Línea Tapigrass (Decorativa)</a>
             </div>
           </div>
 
@@ -137,7 +265,6 @@
               <a href="canchas-sinteticas.html"
                 ><strong>Ver Portafolio</strong></a
               >
-
               <a href="canchas-sinteticas.html#sinteticas"
                 >Sintéticas y Múltiples</a
               >
@@ -157,16 +284,17 @@
             <a
               href="parques.html"
               class="dropbtn"
-              style="color: var(--naranja-urgencia)"
+              style="color: var(--naranja-urgencia); font-weight: 800"
               >PARQUES</a
             >
             <span class="submenu-toggle">▼</span>
             <div class="dropdown-content">
               <a href="parques.html"><strong>Ver Todo Parques</strong></a>
-              <a href="parques.html#madera">Línea Madera Inmunizada</a>
-              <a href="parques.html#metalica">Línea Metálica (Alto Tráfico)</a>
-              <a href="parques.html#playground">Playground Importados</a>
-              <a href="parques.html#mantenimiento">Mantenimiento y Repuestos</a>
+              <a href="#metalica">Metálicos</a>
+              <a href="#madera">Madera Inmunizada</a>
+              <a href="#playground">Playgrounds Importados</a>
+              <a href="#acuaticos">Acuaparques</a>
+              <a href="#mantenimiento">Mantenimiento</a>
             </div>
           </div>
 
@@ -181,196 +309,1357 @@
               >
               <a href="mobiliario-urbano.html#concreto">Bancas de Concreto</a>
               <a href="mobiliario-urbano.html#madera">Bancas de Madera</a>
-              <a href="mobiliario-urbano.html#canecas">Canecas Acero Inox</a>
-              <a href="mobiliario-urbano.html#mesas">Mesas de Picnic</a>
+              <a href="mobiliario-urbano.html#canecas">Canecas</a>
             </div>
           </div>
 
-          <a href="../blog.html" style="font-weight: 800">BLOG</a>
-
+          <a href="../blog.html" style="font-weight: 700">BLOG</a>
           <a href="../contacto.html" class="contacto-link">CONTÁCTENOS</a>
         </nav>
       </div>
     </header>
+
     <div class="breadcrumbs">
       <div class="container">
         <a href="../index.html">Inicio</a>
         <span class="separator">/</span>
-        <span class="current">Parques infantiles</span>
+        <span class="current">Parques Infantiles</span>
       </div>
     </div>
-    <section class="section bg-light">
+
+    <section class="section bg-light page-header">
+      <div class="container text-center">
+        <h1>
+          Portafolio de Parques
+          <span style="color: var(--naranja-urgencia)"
+            >y Soluciones a Medida</span
+          >
+        </h1>
+        <p
+          class="section-desc"
+          style="max-width: 800px; margin: 0 auto; line-height: 1.6"
+        >
+          <strong>¿No encuentra medidas exactas? No se preocupe.</strong><br />
+          Como fabricantes directos, este catálogo es solo el punto de partida.
+          Diseñamos, ajustamos colores y adaptamos cualquier modelo a su espacio
+          y presupuesto.
+        </p>
+
+        <div style="margin-top: 25px">
+          <a
+            href="https://wa.me/573112531330?text=Hola,%20necesito%20un%20dise%C3%B1o%20especial%20a%20medida"
+            class="btn-quote"
+            style="
+              display: inline-block;
+              background: var(--azul-oscuro);
+              width: auto;
+              padding: 12px 30px;
+            "
+          >
+            <i class="fas fa-pencil-ruler" style="margin-right: 8px"></i>
+            SOLICITAR DISEÑO PERSONALIZADO
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="category-nav">
+      <div class="container text-center">
+        <a href="#metalica" class="cat-link">🏗️ Metálicos</a>
+        <a href="#madera" class="cat-link">🌲 Madera</a>
+        <a href="#playground" class="cat-link">🏰 Playgrounds</a>
+        <a href="#acuaticos" class="cat-link">💦 Acuaparques</a>
+        <a href="#mantenimiento" class="cat-link">🛠️ Mantenimiento</a>
+      </div>
+    </div>
+
+    <section id="metalica" class="section">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 40px">
-          <h1>
-            Parques Infantiles <span style="color: #007bff">Certificados</span>
-          </h1>
-          <p class="intro-text">
-            Espacios de recreación seguros y duraderos, diseñados bajo norma NTC
-            5176.
+        <div class="category-header">
+          <h2 class="section-title">Parques Infantiles Metálicos</h2>
+          <p>
+            Tubería galvanizada de 2mm con pintura electrostática y accesorios
+            en fibra de vidrio. Ideales para alto tráfico.
           </p>
-          <div class="quick-nav-wrapper">
-            <div class="quick-nav-buttons">
-              <a href="#madera" class="btn-pill">🌲 Madera</a>
-              <a href="#metalica" class="btn-pill">🏗️ Metálica</a>
-              <a href="#playground" class="btn-pill">🏰 Playground</a>
-              <a href="#mantenimiento" class="btn-pill">🔧 Mantenimiento</a>
-            </div>
-          </div>
         </div>
 
-        <h2 id="madera" class="titulo-seccion">
-          Línea Ecológica (Madera Inmunizada)
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Ecológico</span>
+        <div class="products-grid">
+          <article class="park-card">
+            <div class="park-img-box">
               <img
-                src="https://images.unsplash.com/photo-1596464716127-f9a862557965?auto=format&fit=crop&w=600"
-                alt="Parque Infantil Madera"
+                src="../img/productos/parques/metalicos/parque-metalico-alejo.webp"
+                alt="Alejo"
+                class="park-img"
                 loading="lazy"
               />
             </div>
-            <div class="card-body">
-              <h3>Ref: Parque Polux</h3>
-              <p>
-                Diseño compacto en Pino Pátula inmunizado. Ideal para conjuntos
-                residenciales.
-              </p>
-              <a href="../contacto.html" class="link-btn">Cotizar →</a>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-img-box">
-              <img
-                src="https://images.unsplash.com/photo-1629910972413-7922d9c34b6b?auto=format&fit=crop&w=600"
-                alt="Parque Infantil Aventura"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Ref: Parque Aventura</h3>
-              <p>
-                Sistema modular con puente colgante y muro de escalar. Diversión
-                garantizada.
-              </p>
-              <a href="../contacto.html" class="link-btn">Cotizar →</a>
-            </div>
-          </article>
-        </div>
-
-        <h2 id="metalica" class="titulo-seccion">
-          Línea Metálica (Alto Tráfico)
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Antivandálico</span>
-              <img
-                src="https://images.unsplash.com/photo-1551838183-a006bf23d742?auto=format&fit=crop&w=600"
-                alt="Parque Metálico Público"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Parques Metálicos</h3>
-              <p>
-                Tubería estructural con pintura electrostática al horno. Máxima
-                resistencia a la intemperie.
-              </p>
-              <a href="../contacto.html" class="link-btn">Cotizar →</a>
-            </div>
-          </article>
-        </div>
-
-        <h2 id="playground" class="titulo-seccion">Playground Importados</h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge" style="background-color: #673ab7"
-                >Importado</span
+            <div class="park-content">
+              <h3 class="park-title">Modelo Alejo</h3>
+              <span class="park-dims">Dimensiones: 6 x 9 m</span>
+              <ul class="specs-list">
+                <li>3 Plataformas + 1 Techo fibra</li>
+                <li>2 Rodaderos fibra</li>
+                <li>Escalera gato y paso hundido</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Alejo"
+                class="btn-quote"
+                >COTIZAR</a
               >
-              <img
-                src="https://images.unsplash.com/photo-1560252829-8472906c5205?auto=format&fit=crop&w=600"
-                alt="Playground Plástico"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Playgrounds Temáticos</h3>
-              <p>
-                Estructuras modulares en plástico rotomoldeado y metal. Colores
-                vibrantes y seguros.
-              </p>
-              <a href="../contacto.html" class="link-btn">Ver Catálogo →</a>
             </div>
           </article>
-        </div>
 
-        <h2 id="mantenimiento" class="titulo-seccion">
-          Mantenimiento y Repuestos
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
+          <article class="park-card">
+            <div class="park-img-box">
               <img
-                src="https://images.unsplash.com/photo-1584285498306-0336209b0b4f?auto=format&fit=crop&w=600"
-                alt="Mantenimiento Parques"
+                src="../img/productos/parques/metalicos/parque-metalico-mafe.webp"
+                alt="Mafe"
+                class="park-img"
                 loading="lazy"
               />
             </div>
-            <div class="card-body">
-              <h3>Reparación y Pintura</h3>
-              <p>
-                Servicio técnico para restauración de parques, cambio de piezas
-                y pintura.
-              </p>
-              <a href="../contacto.html" class="link-btn">Solicitar Visita →</a>
+            <div class="park-content">
+              <h3 class="park-title">Modelo MAFE</h3>
+              <span class="park-dims">Dimensiones: 7 x 10 m</span>
+              <ul class="specs-list">
+                <li>5 Plataformas + 3 Techos</li>
+                <li>4 Resbaladeros en fibra</li>
+                <li>Pasamanos lágrima y recto</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Mafe"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/metalicos/parque-metalico-sebas.webp"
+                alt="Sebas"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Sebas</h3>
+              <span class="park-dims">Dimensiones: 5 x 5 m</span>
+              <ul class="specs-list">
+                <li>1 Plataforma + Techo fibra</li>
+                <li>2 Resbaladeros</li>
+                <li>1 Escaladora</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Sebas"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/metalicos/parque-metalico-salome.webp"
+                alt="Salome"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Salomé</h3>
+              <span class="park-dims">Dimensiones: 8 x 10 m</span>
+              <ul class="specs-list">
+                <li>4 Plataformas + 1 Techo</li>
+                <li>3 Resbaladeros</li>
+                <li>Escalera de árbol y gato</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Salome"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/metalicos/parque-metalico-juan-david.webp"
+                alt="Juan David"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Juan David</h3>
+              <span class="park-dims">Dimensiones: 5 x 5 m</span>
+              <ul class="specs-list">
+                <li>1 Plataforma + Techo fibra</li>
+                <li>1 Resbaladero fibra</li>
+                <li>Columpio 2 puestos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Juan%20David"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/metalicos/parque-metalico-matias.webp"
+                alt="Matias"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Matias</h3>
+              <span class="park-dims">Dimensiones: 7 x 5 m</span>
+              <ul class="specs-list">
+                <li>2 Plataformas + 1 Techo</li>
+                <li>2 Columpios</li>
+                <li>Escalera árbol y gato</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Matias"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/metalicos/parque-metalico-luciana.webp"
+                alt="Luciana"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Luciana</h3>
+              <span class="park-dims">Dimensiones: 8 x 6 m</span>
+              <ul class="specs-list">
+                <li>Casa con techo fibra</li>
+                <li>2 Resbaladeros + Puente</li>
+                <li>Columpio 2 puestos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Luciana"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/metalicos/parque-metalico-emmanuel.webp"
+                alt="Emmanuel"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Emmanuel</h3>
+              <span class="park-dims">Dimensiones: 7 x 6 m</span>
+              <ul class="specs-list">
+                <li>Caseta metálica</li>
+                <li>Muro de escalar + Trapecio</li>
+                <li>Columpio 2 puestos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Emmanuel"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/metalicos/parque-metalico-mariana.webp"
+                alt="Mariana"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Mariana</h3>
+              <span class="park-dims">Dimensiones: 7 x 5 m</span>
+              <ul class="specs-list">
+                <li>1 Plataforma + Techo</li>
+                <li>2 Resbaladeros fibra</li>
+                <li>Columpio 2 puestos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Mariana"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/metalicos/parque-metalico-nicolas.webp"
+                alt="Nicolas"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Nicolás</h3>
+              <span class="park-dims">Dimensiones: 4 x 4 m</span>
+              <ul class="specs-list">
+                <li>Plataforma con Techo</li>
+                <li>Deslizadero ondulado</li>
+                <li>Muro de escalar</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Nicolas"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/metalicos/parque-metalico-isabella.webp"
+                alt="Isabella"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Isabella</h3>
+              <span class="park-dims">Dimensiones: 6 x 6 m</span>
+              <ul class="specs-list">
+                <li>2 Plataformas (1 con techo)</li>
+                <li>Túnel de fibra</li>
+                <li>Deslizadero ondulado</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Isabella"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <span class="park-badge dummy">PRÓXIMAMENTE</span>
+              <img
+                src="https://via.placeholder.com/800x600?text=Nuevo+Modelo"
+                alt="Modelo Nuevo"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Nuevo</h3>
+              <span class="park-dims">Dimensiones por definir</span>
+              <ul class="specs-list">
+                <li>Estructura Galvanizada</li>
+                <li>Accesorios personalizables</li>
+                <li>Diseño antivandálico</li>
+              </ul>
+              <a href="#" class="btn-quote disabled">MUY PRONTO</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" style="background-color: #f8f9fa; padding: 60px 0">
+    <section id="madera" class="section bg-light">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 40px">
-          <h2 style="color: var(--brand-blue, #007bff); font-weight: 800">
-            Calidad Certificada
-          </h2>
-          <p>Seguridad y diversión garantizada.</p>
+        <div class="category-header">
+          <h2 class="section-title">Parques Infantiles de Madera</h2>
+          <p>
+            Madera de pino inmunizada, ideal para integración con naturaleza.
+            Accesorios en fibra y tornillería galvanizada.
+          </p>
         </div>
-        <div
-          class="grid-system"
+
+        <div class="products-grid">
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/parque-madera-juan-jose.webp"
+                alt="Juan Jose"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Juan José</h3>
+              <span class="park-dims">Dimensiones: 8 x 7 m</span>
+              <ul class="specs-list">
+                <li>Techo en madera + Puente</li>
+                <li>Tubo de bomberos</li>
+                <li>Columpio 2 puestos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Juan%20Jose"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/parque-madera-gabriela.webp"
+                alt="Gabriela"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Gabriela</h3>
+              <span class="park-dims">Dimensiones: 5 x 4 m</span>
+              <ul class="specs-list">
+                <li>Techo madera</li>
+                <li>Resbaladero fibra</li>
+                <li>Columpio 2 puestos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Gabriela"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/parque-madera-valentina.webp"
+                alt="Valentina"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Valentina</h3>
+              <span class="park-dims">Dimensiones: 11 x 6 m</span>
+              <ul class="specs-list">
+                <li>2 Techos fibra + Puente</li>
+                <li>2 Rodaderos + Túnel fibra</li>
+                <li>Columpio 2 puestos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Valentina"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/parque-madera-miguel-angel.webp"
+                alt="Miguel Angel"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Miguel Ángel</h3>
+              <span class="park-dims">Dimensiones: 11 x 6 m</span>
+              <ul class="specs-list">
+                <li>2 Techos + Puente madera</li>
+                <li>Rodaderos y Túnel fibra</li>
+                <li>Pasamanos recto y Tubo</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Miguel%20Angel"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/parque-madera-mariangel.webp"
+                alt="Mariangel"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Mariangel</h3>
+              <span class="park-dims">Dimensiones: 7 x 5 m</span>
+              <ul class="specs-list">
+                <li>2 Techos fibra</li>
+                <li>Puente madera</li>
+                <li>2 Rodaderos fibra</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Parque%20Mariangel"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <span class="park-badge dummy">PRÓXIMAMENTE</span>
+              <img
+                src="https://via.placeholder.com/800x600?text=Nuevo+Modelo+Madera"
+                alt="Nuevo"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Nuevo 1</h3>
+              <span class="park-dims">Madera Inmunizada</span>
+              <ul class="specs-list">
+                <li>Diseño personalizado</li>
+                <li>Integración natural</li>
+                <li>Alta resistencia</li>
+              </ul>
+              <a href="#" class="btn-quote disabled">MUY PRONTO</a>
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <span class="park-badge dummy">PRÓXIMAMENTE</span>
+              <img
+                src="https://via.placeholder.com/800x600?text=Nuevo+Modelo+Madera"
+                alt="Nuevo"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Nuevo 2</h3>
+              <span class="park-dims">Madera Inmunizada</span>
+              <ul class="specs-list">
+                <li>Diseño personalizado</li>
+                <li>Integración natural</li>
+                <li>Alta resistencia</li>
+              </ul>
+              <a href="#" class="btn-quote disabled">MUY PRONTO</a>
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <span class="park-badge dummy">PRÓXIMAMENTE</span>
+              <img
+                src="https://via.placeholder.com/800x600?text=Nuevo+Modelo+Madera"
+                alt="Nuevo"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Nuevo 3</h3>
+              <span class="park-dims">Madera Inmunizada</span>
+              <ul class="specs-list">
+                <li>Diseño personalizado</li>
+                <li>Integración natural</li>
+                <li>Alta resistencia</li>
+              </ul>
+              <a href="#" class="btn-quote disabled">MUY PRONTO</a>
+            </div>
+          </article>
+        </div>
+
+        <h3
           style="
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
+            margin-top: 50px;
+            text-align: center;
+            color: var(--azul-oscuro);
           "
         >
-          <div class="process-step text-center">
-            <div class="process-icon">
-              <i class="fas fa-drafting-compass"></i>
+          Complementos en Madera
+        </h3>
+        <div class="products-grid">
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/columpio-madera-dos-puestos.webp"
+                alt="Columpio 2p"
+                class="park-img"
+                onerror="this.src='https://via.placeholder.com/800x600?text=Columpio+2P'"
+              />
             </div>
-            <h3>1. Diseño</h3>
-            <p>Diseñamos el área de juego según el espacio y edades.</p>
-          </div>
-          <div class="process-step text-center">
-            <div class="process-icon"><i class="fas fa-industry"></i></div>
-            <h3>2. Fabricación</h3>
-            <p>Construcción bajo normas de seguridad NTC.</p>
-          </div>
-          <div class="process-step text-center">
-            <div class="process-icon"><i class="fas fa-tools"></i></div>
-            <h3>3. Instalación</h3>
-            <p>Anclaje seguro y acabados de protección.</p>
-          </div>
-          <div class="process-step text-center">
-            <div class="process-icon"><i class="fas fa-shield-alt"></i></div>
-            <h3>4. Garantía</h3>
-            <p>Respaldo total en estructura y materiales.</p>
-          </div>
+            <div class="park-content">
+              <h3 class="park-title">Columpio 2 Puestos</h3>
+              <span class="park-dims">2.4 x 3 m</span>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Columpio%202p"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/columpio-madera-tres-puestos.webp"
+                alt="Columpio 3p"
+                class="park-img"
+                onerror="this.src='https://via.placeholder.com/800x600?text=Columpio+3P'"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Columpio 3 Puestos (Grande)</h3>
+              <span class="park-dims">3.0 x 3.0 m</span>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Columpio%203p%20Grande"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/columpio-lineal.webp"
+                alt="Columpio Lineal"
+                class="park-img"
+                onerror="this.src='https://via.placeholder.com/800x600?text=Columpio+Lineal'"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Columpio 3 Puestos (Lineal)</h3>
+              <span class="park-dims">1.0 x 2.6 m</span>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Columpio%203p%20Lineal"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/sube-baja-1p.webp"
+                alt="Sube Baja 1p"
+                class="park-img"
+                onerror="this.src='https://via.placeholder.com/800x600?text=Sube+y+Baja+1P'"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Sube y Baja (1 Puesto)</h3>
+              <span class="park-dims">Individual (2.4 x 0.3 m)</span>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Sube%20y%20Baja%201p"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/sube-baja-2p.webp"
+                alt="Sube Baja 2p"
+                class="park-img"
+                onerror="this.src='https://via.placeholder.com/800x600?text=Sube+y+Baja+2P'"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Sube y Baja (2 Puestos)</h3>
+              <span class="park-dims">Doble (2.4 x 1.3 m)</span>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Sube%20y%20Baja%202p"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/madera/sube-baja-3p.webp"
+                alt="Sube Baja 3p"
+                class="park-img"
+                onerror="this.src='https://via.placeholder.com/800x600?text=Sube+y+Baja+3P'"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Sube y Baja (3 Puestos)</h3>
+              <span class="park-dims">Triple (2.4 x 2.0 m)</span>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Sube%20y%20Baja%203p"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <span class="park-badge dummy">PRÓXIMAMENTE</span>
+              <img
+                src="https://via.placeholder.com/800x600?text=Nuevo+Accesorio"
+                alt="Nuevo"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Nuevo Accesorio</h3>
+              <span class="park-dims">Complemento Individual</span>
+              <a href="#" class="btn-quote disabled">MUY PRONTO</a>
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <span class="park-badge dummy">PRÓXIMAMENTE</span>
+              <img
+                src="https://via.placeholder.com/800x600?text=Nuevo+Accesorio"
+                alt="Nuevo"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Nuevo Accesorio</h3>
+              <span class="park-dims">Complemento Individual</span>
+              <a href="#" class="btn-quote disabled">MUY PRONTO</a>
+            </div>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <section id="playground" class="section">
+      <div class="container">
+        <div class="category-header">
+          <h2 class="section-title">Playgrounds Importados</h2>
+          <p>
+            Estructuras modulares en Polietileno Anti-UV. Diseños temáticos de
+            alta seguridad.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-modelo-home.webp"
+                alt="Home"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo HOME</h3>
+              <ul class="specs-list">
+                <li>2 columpios sencillos + 1 doble</li>
+                <li>Rodadero doble</li>
+                <li>Tableros didácticos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Home"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-modelo-swing.webp"
+                alt="Swing"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo SWING</h3>
+              <ul class="specs-list">
+                <li>4 Columpios</li>
+                <li>Rodadero doble</li>
+                <li>2 Tableros laterales</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Swing"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-modelo-petit.webp"
+                alt="Petit"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo PETIT</h3>
+              <ul class="specs-list">
+                <li>2 columpios sencillos</li>
+                <li>1 columpio doble</li>
+                <li>1 Deslizadero</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Petit"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-tigre-mariposa.webp"
+                alt="Tigre"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Tigre y Mariposa</h3>
+              <span class="park-dims">7.0 x 3.0 m</span>
+              <ul class="specs-list">
+                <li>Temática animales</li>
+                <li>Deslizaderos altura 2.1m y 1.8m</li>
+                <li>Niños hasta 12 años</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Tigre"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-rey-selva.webp"
+                alt="Rey Selva"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Rey de la Selva</h3>
+              <span class="park-dims">5.6 x 3.2 m</span>
+              <ul class="specs-list">
+                <li>Temática León</li>
+                <li>Tobogán espiral</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20ReySelva"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-castle-king.webp"
+                alt="Castle King"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Castle & King</h3>
+              <span class="park-dims">7.0 x 4.6 m</span>
+              <ul class="specs-list">
+                <li>Temática Castillo</li>
+                <li>Gran capacidad</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20CastleKing"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-diversion-extrema.webp"
+                alt="Extrema"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Diversión Extrema</h3>
+              <span class="park-dims">7.3 x 4.6 m</span>
+              <ul class="specs-list">
+                <li>Rodadero cerrado transparente</li>
+                <li>Deslizadero doble</li>
+                <li>Caída de 3.0m</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Extrema"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-viaje-espacial.webp"
+                alt="Espacial"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Viaje Espacial</h3>
+              <span class="park-dims">7.5 x 6.0 m</span>
+              <ul class="specs-list">
+                <li>Tubo transparente (3.45m caída)</li>
+                <li>Deslizadero doble</li>
+                <li>Temática Futuro</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Espacial"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-mega-castillo.webp"
+                alt="Mega Castillo"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Mega Castillo Extremo</h3>
+              <span class="park-dims">11.8 x 9.5 m</span>
+              <ul class="specs-list">
+                <li>GIGANTE: 4 Resbaladeros</li>
+                <li>Espiral de 2.6m</li>
+                <li>Capacidad masiva</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Mega%20Castillo"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-tropico.webp"
+                alt="Tropico"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Trópico</h3>
+              <span class="park-dims">9.7 x 6.9 m</span>
+              <ul class="specs-list">
+                <li>Espiral + Deslizadero Doble</li>
+                <li>Deslizadero Sencillo</li>
+                <li>Decoración Palmeras</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Tropico"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-girasol.webp"
+                alt="Girasol"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Girasol</h3>
+              <span class="park-dims">8.0 x 4.0 m</span>
+              <ul class="specs-list">
+                <li>Temática Flores</li>
+                <li>Multijuegos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Girasol"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-diversion-caribe.webp"
+                alt="Caribe"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Diversión Caribe</h3>
+              <span class="park-dims">9.0 x 4.0 m</span>
+              <ul class="specs-list">
+                <li>Diseño Tropical</li>
+                <li>Múltiples accesos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Caribe"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-caracoles.webp"
+                alt="Caracoles"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Caracoles de Colores</h3>
+              <span class="park-dims">10.0 x 9.5 m</span>
+              <ul class="specs-list">
+                <li>Temática Jardín</li>
+                <li>Estructura compleja</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Caracoles"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-soft-bebes.webp"
+                alt="Soft"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Playground Soft</h3>
+              <span class="park-dims">4.0 x 3.0 m</span>
+              <ul class="specs-list">
+                <li>Línea Liviana</li>
+                <li>Seguro para pequeños</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Soft"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-nuestra-tierra.webp"
+                alt="Nuestra Tierra"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Nuestra Tierra</h3>
+              <span class="park-dims">7.3 x 3.3 m</span>
+              <ul class="specs-list">
+                <li>Deslizadero de 1.8m</li>
+                <li>Diseño clásico</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Tierra"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-huerta-infantil.webp"
+                alt="Huerta"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Huerta Infantil</h3>
+              <span class="park-dims">7.0 x 3.3 m</span>
+              <ul class="specs-list">
+                <li>Temática Vegetales</li>
+                <li>Rodadero Espiral</li>
+                <li>2 Deslizaderos</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Huerta"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-calabaza.webp"
+                alt="Calabaza"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Calabaza</h3>
+              <span class="park-dims">5.5 x 2.3 m</span>
+              <ul class="specs-list">
+                <li>Compacto (Restaurantes)</li>
+                <li>Espiral + Deslizadero</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20Calabaza"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/playground-rey-princesa.webp"
+                alt="Rey Princesa"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Rey y Princesa</h3>
+              <span class="park-dims">4.0 x 3.0 m</span>
+              <ul class="specs-list">
+                <li>Castillo Pequeño</li>
+                <li>Espiral + Deslizadero Doble</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Playground%20ReyPrincesa"
+                class="btn-quote"
+                >CONSULTAR PRECIO</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <span class="park-badge dummy">PRÓXIMAMENTE</span>
+              <img
+                src="https://via.placeholder.com/800x600?text=Modelo+Importado+Nuevo"
+                alt="Nuevo"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Nuevo 1</h3>
+              <span class="park-dims">Dimensiones por definir</span>
+              <ul class="specs-list">
+                <li>Importado</li>
+                <li>Polietileno UV</li>
+                <li>Alta resistencia</li>
+              </ul>
+              <a href="#" class="btn-quote disabled">MUY PRONTO</a>
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <span class="park-badge dummy">PRÓXIMAMENTE</span>
+              <img
+                src="https://via.placeholder.com/800x600?text=Modelo+Importado+Nuevo"
+                alt="Nuevo"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Modelo Nuevo 2</h3>
+              <span class="park-dims">Dimensiones por definir</span>
+              <ul class="specs-list">
+                <li>Importado</li>
+                <li>Polietileno UV</li>
+                <li>Alta resistencia</li>
+              </ul>
+              <a href="#" class="btn-quote disabled">MUY PRONTO</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="acuaticos" class="section bg-light">
+      <div class="container">
+        <div class="category-header">
+          <h2 class="section-title">Acuaparques (Para Piscinas)</h2>
+          <p>
+            Estructuras inoxidables diseñadas para contacto constante con agua
+            clorada y sol.
+          </p>
+        </div>
+
+        <div class="products-grid">
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/acuaparque-mar-azul.webp"
+                alt="Mar Azul"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Mar Azul</h3>
+              <span class="park-dims">6.2 x 5.6 m</span>
+              <ul class="specs-list">
+                <li>Espiral + Tobogán</li>
+                <li>Deslizadero sencillo</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Acuaparque%20MarAzul"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/acuaparque-delfines-tiburones.webp"
+                alt="Delfines Tiburones"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Delfines y Tiburones</h3>
+              <span class="park-dims">10.4 x 4.6 m</span>
+              <ul class="specs-list">
+                <li>Grande y Completo</li>
+                <li>2 Espirales + Deslizadero Doble</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Acuaparque%20Delfines"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/acuaparque-delfin-lineal.webp"
+                alt="Delfin"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Acuaparque Delfín</h3>
+              <span class="park-dims">8.6 x 2.9 m</span>
+              <ul class="specs-list">
+                <li>Diseño Lineal</li>
+                <li>2 Espirales + Deslizadero</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Acuaparque%20Delfin"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/parques/importados/acuaparque-pulpo.webp"
+                alt="Pulpo"
+                class="park-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Acuaparque Pulpo</h3>
+              <span class="park-dims">Temático</span>
+              <ul class="specs-list">
+                <li>2 Rodaderos sencillos</li>
+                <li>2 Toboganes laterales</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Info%20Acuaparque%20Pulpo"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="mantenimiento" class="section">
+      <div class="container text-center">
+        <h2 class="section-title">Servicio Técnico y Mantenimiento</h2>
+        <p style="max-width: 700px; margin: 0 auto 30px auto">
+          Restauración total de parques infantiles: Soldadura, Pintura
+          electrostática y cambio de piezas.
+        </p>
+        <a
+          href="https://wa.me/573112531330?text=Solicito%20visita%20mantenimiento"
+          class="btn-card"
+          style="display: inline-block"
+          >SOLICITAR VISITA TÉCNICA</a
+        >
       </div>
     </section>
 
@@ -459,9 +1748,11 @@
           class="container"
           style="
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 5px;
+            text-align: center;
           "
         >
           <span>© 2025 Gramas y Parques Colombia</span>

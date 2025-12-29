@@ -56,13 +56,16 @@
         background: white;
         padding: 30px 20px;
         border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        /* Quitamos la sombra aquí porque el contenedor padre ya tendrá una */
+        border: 1px solid #f0f0f0;
         transition: transform 0.3s ease;
         border-bottom: 4px solid var(--naranja-urgencia);
         height: 100%;
+        text-align: center;
       }
       .process-step:hover {
         transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
       }
       .process-icon {
         font-size: 2rem;
@@ -75,6 +78,9 @@
         border-radius: 50%;
         margin-left: auto;
         margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
       /* Navegación rápida */
@@ -871,12 +877,16 @@
       <div class="container">
         <div class="category-header text-center" style="margin-bottom: 40px">
           <h2 class="section-title">Instalación Profesional</h2>
-          <h3 style="color: var(--azul-oscuro); margin-top: 10px">
-            ¿Cómo es nuestro proceso?
-          </h3>
-          <p style="max-width: 700px; margin: 0 auto">
-            Servicio llave en mano para canchas y jardines en Barranquilla y
-            toda Colombia.
+          <p
+            style="
+              max-width: 700px;
+              margin: 0 auto;
+              font-size: 1.1rem;
+              color: #555;
+            "
+          >
+            Servicio llave en mano. Transformamos tu espacio en 4 etapas
+            certificadas.
           </p>
         </div>
 
@@ -887,207 +897,202 @@
             gap: 40px;
             align-items: center;
             justify-content: center;
+            margin-bottom: 60px;
           "
         >
-          <div
-            style="
-              flex: 1;
-              min-width: 300px;
-              max-width: 500px;
-              display: flex;
-              flex-direction: column;
-              gap: 20px;
-            "
-          >
+          <div style="flex: 1; min-width: 300px; position: relative">
             <div
               style="
                 position: relative;
                 overflow: hidden;
-                border-radius: 15px;
-                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-                transform: translateZ(0);
+                border-radius: 20px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
               "
             >
               <img
                 src="../img/productos/gramas/instalacion-grama-sintetica.webp"
-                alt="Instalación de grama sintética en Barranquilla y la Costa"
+                alt="Instalación profesional de grama sintética"
                 style="
                   width: 100%;
-                  height: auto;
                   display: block;
                   object-fit: cover;
-                  min-height: 300px;
+                  aspect-ratio: 16/9;
                 "
                 loading="lazy"
               />
-
               <div
                 style="
                   position: absolute;
                   bottom: 20px;
                   left: 20px;
-                  background: rgba(
-                    10,
-                    35,
-                    66,
-                    0.85
-                  ); /* Azul corporativo oscuro semi-transparente */
-                  backdrop-filter: blur(4px); /* Efecto vidrio esmerilado */
-                  padding: 12px 25px;
-                  border-radius: 50px; /* Bordes estilo píldora */
+                  background: rgba(255, 255, 255, 0.95);
+                  padding: 10px 20px;
+                  border-radius: 50px;
                   display: flex;
                   align-items: center;
-                  gap: 12px;
-                  border: 1px solid rgba(255, 255, 255, 0.15); /* Borde sutil brillante */
-                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-                  max-width: calc(
-                    100% - 40px
-                  ); /* Asegura que no se salga en móviles pequeños */
+                  gap: 10px;
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
                 "
               >
                 <i
                   class="fas fa-map-marker-alt"
-                  style="color: var(--naranja-urgencia); font-size: 1.3rem"
+                  style="color: var(--naranja-urgencia)"
                 ></i>
-
-                <div style="color: white">
-                  <p
+                <div>
+                  <strong
                     style="
-                      margin: 0;
-                      font-weight: 800;
+                      display: block;
                       font-size: 0.9rem;
-                      text-transform: uppercase;
-                      letter-spacing: 1px;
-                      line-height: 1.2;
+                      color: var(--azul-oscuro);
                     "
+                    >Cobertura Costa Atlántica</strong
                   >
-                    Cobertura en toda la Costa
-                  </p>
-                  <small
-                    style="font-size: 0.75rem; opacity: 0.9; font-weight: 300"
-                    >Barranquilla, Cartagena, Santa Marta</small
+                  <span style="font-size: 0.75rem; color: #666"
+                    >Barranquilla • Cartagena • Sta. Marta</span
                   >
                 </div>
               </div>
             </div>
+          </div>
 
+          <div style="flex: 1; min-width: 300px; text-align: left">
+            <h3
+              style="
+                color: var(--azul-oscuro);
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+              "
+            >
+              ¿Por qué elegir nuestra instalación?
+            </h3>
+            <ul
+              style="
+                list-style: none;
+                padding: 0;
+                margin-bottom: 25px;
+                font-size: 1rem;
+                color: #555;
+              "
+            >
+              <li style="margin-bottom: 10px">
+                <i
+                  class="fas fa-check-circle"
+                  style="color: var(--verde-principal); margin-right: 10px"
+                ></i
+                >Personal asegurado y certificado.
+              </li>
+              <li style="margin-bottom: 10px">
+                <i
+                  class="fas fa-check-circle"
+                  style="color: var(--verde-principal); margin-right: 10px"
+                ></i
+                >Maquinaria especializada para cepillado.
+              </li>
+              <li style="margin-bottom: 10px">
+                <i
+                  class="fas fa-check-circle"
+                  style="color: var(--verde-principal); margin-right: 10px"
+                ></i
+                >Garantía real sobre mano de obra.
+              </li>
+            </ul>
             <a
-              href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20la%20instalaci%C3%B3n%20de%20grama%20sint%C3%A9tica"
+              href="https://wa.me/573112531330?text=Hola,%20cotizar%20instalaci%C3%B3n"
               class="btn-card"
               style="
+                display: inline-block;
                 background-color: var(--naranja-urgencia);
-                color: #ffffff !important;
-                text-align: center;
-                padding: 15px 20px;
+                color: white !important;
+                padding: 15px 35px;
                 border-radius: 50px;
                 font-weight: 800;
                 text-decoration: none;
-                box-shadow: 0 4px 10px rgba(255, 102, 0, 0.3);
-                display: block;
-                width: 100%;
-                font-size: 1.1rem;
+                box-shadow: 0 10px 20px rgba(255, 102, 0, 0.3);
+                transition: transform 0.3s;
               "
             >
-              COTIZAR INSTALACIÓN
+              COTIZAR INSTALACIÓN AHORA
             </a>
           </div>
+        </div>
 
-          <div style="flex: 1; min-width: 300px">
-            <div
-              style="
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-              "
-            >
-              <div
-                class="process-step"
-                style="
-                  text-align: center;
-                  border-radius: 12px;
-                  padding: 25px 15px;
-                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                  background: white;
-                "
-              >
-                <div class="process-icon" style="margin: 0 auto 15px auto">
-                  <i class="fas fa-ruler-combined"></i>
-                </div>
-                <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
-                  1. Adecuación
-                </h4>
-                <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
-                  Nivelación topográfica, excavación y filtros de drenaje.
-                </p>
-              </div>
+        <div
+          style="
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+          "
+        >
+          <h3
+            style="
+              text-align: center;
+              color: var(--azul-oscuro);
+              margin-bottom: 40px;
+            "
+          >
+            Proceso Paso a Paso
+          </h3>
 
-              <div
-                class="process-step"
-                style="
-                  text-align: center;
-                  border-radius: 12px;
-                  padding: 25px 15px;
-                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                  background: white;
-                "
-              >
-                <div class="process-icon" style="margin: 0 auto 15px auto">
-                  <i class="fas fa-layer-group"></i>
-                </div>
-                <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
-                  2. Base
-                </h4>
-                <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
-                  Compactación de terreno y construcción de base granular.
-                </p>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+              gap: 30px;
+            "
+          >
+            <div class="process-step">
+              <div class="process-icon">
+                <i class="fas fa-ruler-combined"></i>
               </div>
+              <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
+                1. Adecuación
+              </h4>
+              <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
+                Nivelación topográfica, excavación y filtros de drenaje.
+              </p>
+            </div>
 
-              <div
-                class="process-step"
-                style="
-                  text-align: center;
-                  border-radius: 12px;
-                  padding: 25px 15px;
-                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                  background: white;
-                "
-              >
-                <div class="process-icon" style="margin: 0 auto 15px auto">
-                  <i class="fas fa-tools"></i>
-                </div>
-                <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
-                  3. Instalación
-                </h4>
-                <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
-                  Unión profesional de rollos con pegante de poliuretano.
-                </p>
+            <div class="process-step">
+              <div class="process-icon">
+                <i class="fas fa-layer-group"></i>
               </div>
+              <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
+                2. Base
+              </h4>
+              <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
+                Compactación de terreno y construcción de base granular.
+              </p>
+            </div>
 
-              <div
-                class="process-step"
-                style="
-                  text-align: center;
-                  border-radius: 12px;
-                  padding: 25px 15px;
-                  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-                  background: white;
-                "
-              >
-                <div class="process-icon" style="margin: 0 auto 15px auto">
-                  <i class="fas fa-check-circle"></i>
-                </div>
-                <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
-                  4. Acabados
-                </h4>
-                <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
-                  Cepillado mecánico, arena de sílice y caucho granulado.
-                </p>
+            <div class="process-step">
+              <div class="process-icon">
+                <i class="fas fa-tools"></i>
               </div>
+              <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
+                3. Instalación
+              </h4>
+              <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
+                Unión profesional de rollos con pegante de poliuretano.
+              </p>
+            </div>
+
+            <div class="process-step">
+              <div class="process-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <h4 style="margin-bottom: 10px; color: var(--azul-oscuro)">
+                4. Acabados
+              </h4>
+              <p style="font-size: 0.85rem; color: #666; line-height: 1.4">
+                Cepillado mecánico, arena de sílice y caucho granulado.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <footer>
       <div class="container footer-grid">
         <div class="footer-col">
@@ -1181,22 +1186,6 @@
           "
         >
           <span>© 2025 Gramas y Parques Colombia</span>
-          <div
-            class="legal-links"
-            style="font-size: 0.8rem; opacity: 0.6; font-weight: 300"
-          >
-            <a
-              href="politica-de-privacidad.html"
-              style="color: inherit; text-decoration: none"
-              >Política de Privacidad</a
-            >
-            <span style="margin: 0 5px">|</span>
-            <a
-              href="terminos-y-condiciones.html"
-              style="color: inherit; text-decoration: none"
-              >Términos y Condiciones</a
-            >
-          </div>
         </div>
       </div>
     </footer>
