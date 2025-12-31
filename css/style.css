@@ -1527,3 +1527,39 @@ footer::before {
     width: 100%;
   }
 }
+/* --- NAVEGACIÓN STICKY (Tipo Parques) --- */
+.category-nav {
+  position: sticky; /* Esto hace la magia */
+  top: 0;
+  z-index: 90; /* Asegura que quede por encima del contenido */
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 15px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 40px; /* Espacio para que no se pegue al contenido de abajo */
+}
+
+/* Estilo de los botones (igual al de parques) */
+.cat-link {
+  display: inline-block;
+  padding: 8px 18px;
+  margin: 0 4px;
+  border-radius: 50px;
+  color: #444;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--naranja-urgencia); /* Borde naranja */
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.cat-link:hover {
+  background: var(--naranja-urgencia);
+  color: white;
+  border-color: var(--naranja-urgencia);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(249, 115, 22, 0.2);
+}

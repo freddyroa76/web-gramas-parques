@@ -38,23 +38,15 @@
       /* --- OPTIMIZACIÓN VISUAL Y CLS --- */
       .card-img-box {
         background-color: #f0f0f0;
-        aspect-ratio: 4/3; /* Reserva el espacio de la imagen */
+        aspect-ratio: 4/3;
         position: relative;
         overflow: hidden;
       }
 
-      /* Botones de Navegación Rápida */
+      /* Estilos para botones viejos (por seguridad) */
       .quick-nav-wrapper {
         margin: 20px 0 40px 0;
         text-align: center;
-      }
-      .quick-nav-label {
-        font-size: 0.9rem;
-        color: #666;
-        margin-bottom: 10px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
       }
       .quick-nav-buttons {
         display: flex;
@@ -88,7 +80,7 @@
         padding-bottom: 15px;
         border-bottom: 2px solid #eee;
         color: var(--azul-oscuro, #2c3e50);
-        scroll-margin-top: 120px; /* Evita que el menú tape el título */
+        scroll-margin-top: 120px;
       }
 
       /* Grid Responsivo Inteligente */
@@ -96,7 +88,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
-        justify-content: center; /* Centra las tarjetas si hay pocas */
+        justify-content: center;
       }
 
       /* Tarjetas */
@@ -181,9 +173,10 @@
         <span class="current">Canchas deportivas</span>
       </div>
     </div>
-    <section class="section bg-light">
+
+    <section class="section bg-light" style="padding-bottom: 20px">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 40px">
+        <div class="text-center" style="margin-bottom: 10px">
           <h1>
             Ingeniería de
             <span style="color: var(--verde-principal, #4caf50)"
@@ -194,21 +187,25 @@
             Soluciones llave en mano: Obra civil, cubiertas metálicas,
             superficies certificadas y dotación profesional.
           </p>
-
-          <div class="quick-nav-wrapper">
-            <p class="quick-nav-label">soluciones:</p>
-            <div class="quick-nav-buttons">
-              <a href="#sinteticas" class="btn-pill">⚽ Canchas</a>
-              <a href="#cubiertas" class="btn-pill">🏗️ Estructuras</a>
-              <a href="#cerramientos" class="btn-pill">🕸 Cerramientos</a>
-              <a href="#dotacion" class="btn-pill">🏀 Dotación</a>
-            </div>
-          </div>
         </div>
+      </div>
+    </section>
 
-        <h2 id="sinteticas" class="titulo-seccion">
+    <div class="category-nav" style="margin-bottom: 0">
+      <div class="container text-center">
+        <a href="#sinteticas" class="cat-link">⚽ Canchas</a>
+        <a href="#cubiertas" class="cat-link">🏗️ Estructuras</a>
+        <a href="#cerramientos" class="cat-link">🕸 Cerramientos</a>
+        <a href="#dotacion" class="cat-link">🏀 Dotación</a>
+      </div>
+    </div>
+
+    <section class="section bg-light" style="padding-top: 30px">
+      <div class="container">
+        <h2 id="sinteticas" class="titulo-seccion" style="margin-top: 0">
           Canchas Sintéticas, Pádel y Múltiples
         </h2>
+
         <div class="grid-system">
           <article class="card">
             <div class="card-img-box">
