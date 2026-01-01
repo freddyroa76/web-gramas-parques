@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("⚡ JS Iniciado: Gramas y Parques");
+
   // ======================================================
-  // 1. INYECCIÓN DEL MENÚ UNIVERSAL
+  // 1. INYECCIÓN DEL MENÚ PRINCIPAL (HEADER)
   // ======================================================
   const path = window.location.pathname;
+  // Detectar si estamos en carpeta hija (productos/ o blog/)
   const isSubfolder = path.includes("/productos/") || path.includes("/blog/");
   const ruta = isSubfolder ? "../" : "./";
   const rutaProd = isSubfolder ? "./" : "./productos/";
@@ -68,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </header>
   `;
 
+  // Inyectar Menú
   const menuContainer = document.getElementById("menu-universal");
   if (menuContainer) {
     menuContainer.innerHTML = menuHTML;
@@ -75,41 +79,35 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ======================================================
-  // 2. EJECUTAR CONVERSIÓN STICKY
+  // 2. EJECUTAR LA CONVERSIÓN A STICKY AUTOMÁTICAMENTE
   // ======================================================
-  convertirMenuSticky();
+  // Intentamos convertir inmediatamente
+  try {
+    convertirMenuSticky();
+  } catch (error) {
+    console.error("Error al crear menú sticky:", error);
+  }
 
   // ======================================================
-  // 3. INTERACCIONES (Móvil, Scroll, WhatsApp, Lightbox)
+  // 3. INTERACCIONES DEL SITIO
   // ======================================================
   const toggleButton = document.querySelector(".mobile-toggle");
   const navMenu = document.querySelector(".nav-menu");
-  const navLinks = document.querySelectorAll(".nav-menu a");
   const header = document.querySelector("header");
   const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-  // Menú Móvil
+  // A. Menú Móvil
   if (toggleButton && navMenu) {
-    const setMenuState = (isOpen) => {
-      toggleButton.innerHTML = isOpen ? "&#10005;" : "&#9776;";
-      toggleButton.style.color = isOpen
-        ? "var(--naranja-urgencia)"
-        : "var(--verde-natural)";
-      toggleButton.setAttribute("aria-expanded", isOpen);
-    };
     toggleButton.addEventListener("click", (e) => {
       e.stopPropagation();
       const isOpened = navMenu.classList.toggle("active");
-      setMenuState(isOpened);
+      toggleButton.innerHTML = isOpened ? "&#10005;" : "&#9776;";
+      toggleButton.style.color = isOpened
+        ? "var(--naranja-urgencia)"
+        : "var(--verde-natural)";
     });
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (!link.classList.contains("dropbtn")) {
-          navMenu.classList.remove("active");
-          setMenuState(false);
-        }
-      });
-    });
+
+    // Cerrar al dar click fuera
     document.addEventListener("click", (e) => {
       if (
         navMenu.classList.contains("active") &&
@@ -118,12 +116,13 @@ document.addEventListener("DOMContentLoaded", function () {
         !e.target.classList.contains("submenu-toggle")
       ) {
         navMenu.classList.remove("active");
-        setMenuState(false);
+        toggleButton.innerHTML = "&#9776;";
+        toggleButton.style.color = "var(--verde-natural)";
       }
     });
   }
 
-  // Submenús
+  // B. Submenús (Flechas)
   document.querySelectorAll(".submenu-toggle").forEach((toggle) => {
     toggle.addEventListener("click", (e) => {
       e.preventDefault();
@@ -132,36 +131,110 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Header Sticky (Sombra al bajar)
-  let lastScrollY = window.scrollY;
-  let ticking = false;
+  // C. Header Sombra al bajar
   if (header) {
     window.addEventListener(
       "scroll",
       () => {
-        lastScrollY = window.scrollY;
-        if (!ticking) {
-          window.requestAnimationFrame(() => {
-            header.classList.toggle("scrolled", lastScrollY > 50);
-            ticking = false;
-          });
-          ticking = true;
-        }
+        if (window.scrollY > 50) header.classList.add("scrolled");
+        else header.classList.remove("scrolled");
       },
       { passive: true }
     );
   }
 
-  // Inicializadores
+  // D. Inicializar componentes
   initWhatsApp();
   initScrollTop(scrollTopBtn);
   initLightbox();
 });
 
 // ======================================================
-// 4. FUNCIONES AUXILIARES
+// 4. FUNCIÓN MÁGICA (STICKY FIX)
 // ======================================================
+function convertirMenuSticky() {
+  // Buscar el menú viejo por su clase
+  const oldWrapper = document.querySelector(".quick-nav-wrapper");
 
+  // Si no existe, significa que la página ya está arreglada o es index.html
+  if (!oldWrapper) {
+    console.log("No se encontró menú viejo para convertir. Todo OK.");
+    return;
+  }
+
+  console.log("⚠️ Menú viejo encontrado. Convirtiendo a Sticky...");
+
+  // Encontrar elementos padre
+  const textCenterDiv = oldWrapper.closest(".text-center");
+  const container = oldWrapper.closest(".container");
+  const headerSection = oldWrapper.closest("section");
+
+  if (!headerSection || !container || !textCenterDiv) return;
+
+  // 1. Extraer los enlaces viejos
+  const links = Array.from(oldWrapper.querySelectorAll("a")).map((a) => ({
+    href: a.getAttribute("href"),
+    text: a.innerText,
+  }));
+
+  // 2. Crear la barra Sticky nueva (Con estilos forzados)
+  const stickyBar = document.createElement("div");
+  stickyBar.className = "category-nav";
+  stickyBar.style.cssText = `
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+  `;
+
+  stickyBar.innerHTML = `
+    <div class="container">
+      ${links
+        .map(
+          (link) => `<a href="${link.href}" class="cat-link">${link.text}</a>`
+        )
+        .join("")}
+    </div>
+  `;
+
+  // 3. Crear nueva sección para el contenido de abajo
+  const newSection = document.createElement("section");
+  newSection.className = "section bg-light";
+  newSection.style.paddingTop = "20px"; // Espacio pequeño
+  const newContainer = document.createElement("div");
+  newContainer.className = "container";
+  newSection.appendChild(newContainer);
+
+  // 4. Mover el contenido (Títulos y tarjetas) a la nueva sección
+  // Todo lo que esté después del div del título (.text-center)
+  let nextNode = textCenterDiv.nextElementSibling;
+  while (nextNode) {
+    let nodeToMove = nextNode;
+    nextNode = nextNode.nextElementSibling;
+    newContainer.appendChild(nodeToMove);
+  }
+
+  // 5. Ajustar márgenes del header viejo
+  headerSection.style.paddingBottom = "0";
+  textCenterDiv.style.marginBottom = "15px";
+
+  // 6. Insertar en el DOM
+  // Insertamos la sección nueva DESPUÉS del header
+  headerSection.after(newSection);
+  // Insertamos la barra sticky ENTRE el header y la nueva sección
+  headerSection.after(stickyBar);
+
+  // 7. Eliminar el menú viejo
+  oldWrapper.remove();
+}
+
+// Funciones auxiliares
 function highlightCurrentPage(path) {
   const p = path.toLowerCase();
   const active = (id) => {
@@ -178,71 +251,6 @@ function highlightCurrentPage(path) {
   else if (p.includes("mobiliario")) active("link-mobiliario");
   else if (p.includes("blog")) active("link-blog");
   else if (p.includes("contacto")) active("link-contacto");
-}
-
-// ★ FUNCIÓN STICKY BLINDADA ★
-function convertirMenuSticky() {
-  const oldWrapper = document.querySelector(".quick-nav-wrapper");
-  if (!oldWrapper) return;
-
-  const headerSection = oldWrapper.closest("section");
-  const container = oldWrapper.closest(".container");
-  if (!headerSection || !container) return;
-
-  const links = Array.from(oldWrapper.querySelectorAll("a")).map((a) => ({
-    href: a.getAttribute("href"),
-    text: a.innerText,
-  }));
-
-  const stickyBar = document.createElement("div");
-  stickyBar.className = "category-nav";
-
-  // AQUÍ ESTÁ EL CAMBIO CLAVE: Forzamos los estilos inline para garantizar el Sticky
-  stickyBar.style.cssText = `
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    padding: 15px 0;
-    margin-bottom: 0;
-    width: 100%;
-  `;
-
-  stickyBar.innerHTML = `
-    <div class="container text-center">
-      ${links
-        .map(
-          (link) => `<a href="${link.href}" class="cat-link">${link.text}</a>`
-        )
-        .join("")}
-    </div>
-  `;
-
-  const newSection = document.createElement("section");
-  newSection.className = "section bg-light";
-  newSection.style.paddingTop = "20px";
-  const newContainer = document.createElement("div");
-  newContainer.className = "container";
-  newSection.appendChild(newContainer);
-
-  const textCenterDiv = oldWrapper.closest(".text-center");
-  if (textCenterDiv) {
-    headerSection.style.paddingBottom = "0";
-    textCenterDiv.style.marginBottom = "15px";
-
-    let nextNode = textCenterDiv.nextElementSibling;
-    while (nextNode) {
-      let nodeToMove = nextNode;
-      nextNode = nextNode.nextElementSibling;
-      newContainer.appendChild(nodeToMove);
-    }
-  }
-
-  headerSection.after(newSection);
-  headerSection.after(stickyBar);
-  oldWrapper.remove();
 }
 
 function initWhatsApp() {
@@ -265,17 +273,9 @@ function initWhatsApp() {
       const name = document.getElementById("wa-name").value.trim();
       const interest = document.getElementById("wa-interest").value;
       const desc = document.getElementById("wa-desc").value.trim();
-
-      if (name === "") {
-        alert("Por favor escribe tu nombre.");
-        return;
-      }
-
-      const message = `Hola, soy *${name}*. Me interesa *${interest}*. ${
-        desc ? "Detalle: " + desc : ""
-      }`;
+      const msg = `Hola, soy ${name}. Me interesa ${interest}. ${desc}`;
       window.open(
-        `https://wa.me/573112531330?text=${encodeURIComponent(message)}`,
+        `https://wa.me/573112531330?text=${encodeURIComponent(msg)}`,
         "_blank"
       );
       waModal.style.display = "none";
