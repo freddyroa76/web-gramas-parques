@@ -3,90 +3,114 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mobiliario Urbano Antivandálico | Bancas y Canecas</title>
+    <title>Mobiliario Urbano Antivandálico | Gramas y Parques Colombia</title>
     <meta
       name="description"
-      content="Fábrica de mobiliario urbano en concreto, granito y acero inoxidable. Bancas, canecas y mesas para parques y espacio público en Colombia."
+      content="Fábrica de mobiliario urbano en Barranquilla. Bancas de granito, canecas de acero inoxidable y mesas de picnic para parques en toda Colombia."
     />
 
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../css/style.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <style>
-      .quick-nav-wrapper {
-        margin: 20px 0 40px 0;
-        text-align: center;
+      /* ESTILOS DE TARJETAS (Uniformidad con Parques) */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
       }
-      .quick-nav-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .btn-pill {
-        text-decoration: none;
-        background-color: white;
-        color: #333;
-        border: 1px solid var(--verde-principal, #4caf50);
-        padding: 8px 25px;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      }
-      .btn-pill:hover {
-        background-color: var(--verde-principal, #4caf50);
-        color: white;
-        transform: translateY(-2px);
-      }
-      .titulo-seccion {
-        margin-top: 60px;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #eee;
-        color: var(--azul-oscuro, #2c3e50);
-      }
-
-      /* Proceso */
-      .process-step {
+      .park-card {
         background: white;
-        padding: 30px 20px;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        border-bottom: 4px solid #6c757d;
+        border-radius: 10px;
+        border: 1px solid #eee;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
         height: 100%;
-        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
       }
-      .process-step:hover {
+      .park-card:hover {
         transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        border-color: var(--azul-confianza);
       }
-      .process-icon {
-        font-size: 2rem;
-        color: #6c757d;
-        margin-bottom: 15px;
-        background-color: #f8f9fa;
-        width: 70px;
-        height: 70px;
-        line-height: 70px;
-        border-radius: 50%;
-        margin: 0 auto;
+      .park-img-box {
+        position: relative;
+        height: 240px;
+        background: #f9f9f9;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #eee;
       }
-      .process-step h3 {
+      .park-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Imagen llena el recuadro profesionalmente */
+        transition: transform 0.4s ease;
+        cursor: pointer;
+      }
+      .park-card:hover .park-img {
+        transform: scale(1.05); /* Efecto zoom al pasar el mouse */
+      }
+      .park-content {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .park-title {
         font-size: 1.1rem;
-        font-weight: 700;
+        font-weight: 800;
+        color: var(--azul-confianza);
         margin-bottom: 10px;
-        color: #333;
+        text-transform: uppercase;
+      }
+      .specs-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 15px 0;
+        font-size: 0.9rem;
+        color: #555;
+      }
+      .specs-list li {
+        margin-bottom: 5px;
+        padding-left: 15px;
+        position: relative;
+      }
+      .specs-list li::before {
+        content: "•";
+        color: var(--naranja-urgencia);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+      }
+      .btn-quote {
+        margin-top: auto;
+        display: block;
+        text-align: center;
+        background: var(--naranja-urgencia);
+        color: white;
+        padding: 12px;
+        border-radius: 6px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      .btn-quote:hover {
+        background: var(--naranja-hover);
       }
     </style>
   </head>
@@ -97,118 +121,161 @@
       <div class="container">
         <a href="../index.html">Inicio</a>
         <span class="separator">/</span>
-        <span class="current">Bancas y Mobiliario</span>
+        <span class="current">Mobiliario Urbano</span>
       </div>
     </div>
-    <section class="section bg-light" style="padding-bottom: 0;">
-      <div class="container">
-        <div class="text-center" style="margin-bottom: 15px;">
-          <h1>
-            Mobiliario Urbano <span style="color: #555">Antivandálico</span>
-          </h1>
-          <p class="intro-text">
-            Dotación de espacio público diseñada para resistir el clima y el uso
-            rudo.
-          </p>
-        </div>
+
+    <section class="section bg-light page-header">
+      <div class="container text-center">
+        <h1>
+          Mobiliario <span style="color: var(--naranja-urgencia)">Urbano</span>
+        </h1>
+        <p class="section-desc">
+          <strong>Fabricación propia en Barranquilla.</strong> Dotación de alta
+          resistencia en concreto, granito pulido y acero inoxidable para
+          parques y proyectos urbanos.
+        </p>
       </div>
     </section>
 
-    <div class="category-nav" style="margin-bottom: 0; z-index: 100;">
-      <div class="container text-center">
-        <a href="#concreto" class="cat-link">🪨 Concreto</a>
-        <a href="#madera" class="cat-link">🪵 Mixto</a>
-        <a href="#canecas" class="cat-link">🗑️ Canecas</a>
-        <a href="#mesas" class="cat-link">♟️ Mesas</a>
-      </div>
-    </div>
-
-    <section class="section bg-light" style="padding-top: 20px;">
+    <section class="section">
       <div class="container">
-        
-        <h2 id="concreto" class="titulo-seccion" style="margin-top: 0;">
-          Bancas de Concreto y Granito
-        </h2>
-          Bancas de Concreto y Granito
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
+        <div class="products-grid">
+          <article class="park-card">
+            <div class="park-img-box">
               <img
-                src="https://images.unsplash.com/photo-1596230529625-7ee541361297?auto=format&fit=crop&w=600"
-                alt="Banca M30"
+                src="../img/productos/mobiliario/banca-granito-espaldar-ss.webp"
+                alt="Banca de Granito con Espaldar Inox"
+                class="park-img"
               />
             </div>
-            <div class="card-body">
-              <h3>Banca M-30 (Con Espaldar)</h3>
-              <p>
-                Clásica banca de parque en concreto gris o granito pulido. Peso
-                350kg.
-              </p>
-              <a href="../contacto.html" class="link-btn">Cotizar →</a>
+            <div class="park-content">
+              <h3 class="park-title">Banca M-30 Premium</h3>
+              <ul class="specs-list">
+                <li>Granito pulido de alta densidad</li>
+                <li>Soportes en Acero Inoxidable 304</li>
+                <li>Diseño ergonómico antivandálico</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Banca%20Granito%20Premium"
+                class="btn-quote"
+                >COTIZAR</a
+              >
             </div>
           </article>
-        </div>
 
-        <h2 id="madera" class="titulo-seccion" style="margin-top: 50px">
-          Bancas Mixtas (Madera/Metal)
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
+          <article class="park-card">
+            <div class="park-img-box">
               <img
-                src="https://images.unsplash.com/photo-1564613469736-234b33b79dae?auto=format&fit=crop&w=600"
-                alt="Banca Madera Plástica"
+                src="../img/productos/mobiliario/banca-granito-medio-espaldar.webp"
+                alt="Banca Granito Medio Espaldar"
+                class="park-img"
               />
             </div>
-            <div class="card-body">
-              <h3>Banca Ecológica</h3>
-              <p>
-                Estructura en hierro y listones en madera plástica (No requiere
-                mantenimiento).
-              </p>
-              <a href="../contacto.html" class="link-btn">Cotizar →</a>
+            <div class="park-content">
+              <h3 class="park-title">Banca Granito Medio Espaldar</h3>
+              <ul class="specs-list">
+                <li>Acabado en granito gris o blanco</li>
+                <li>Ideal para plazas y bulevares</li>
+                <li>Resistente a la intemperie extrema</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Banca%20Medio%20Espaldar"
+                class="btn-quote"
+                >COTIZAR</a
+              >
             </div>
           </article>
-        </div>
 
-        <h2 id="canecas" class="titulo-seccion" style="margin-top: 50px">
-          Canecas y Bolardos
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
+          <article class="park-card">
+            <div class="park-img-box">
               <img
-                src="https://images.unsplash.com/photo-1622312675979-37397b973c73?auto=format&fit=crop&w=600"
-                alt="Caneca Acero"
+                src="../img/productos/mobiliario/banca-sin-espaldar.webp"
+                alt="Banca de Granito Sin Espaldar"
+                class="park-img"
               />
             </div>
-            <div class="card-body">
-              <h3>Caneca Acero Inox</h3>
-              <p>Sistema basculante para fácil limpieza. Acero 304.</p>
-              <a href="../contacto.html" class="link-btn">Cotizar →</a>
+            <div class="park-content">
+              <h3 class="park-title">Banca Recta (Sin Espaldar)</h3>
+              <ul class="specs-list">
+                <li>Diseño minimalista funcional</li>
+                <li>Concreto de 3.000 PSI reforzado</li>
+                <li>Bajo mantenimiento garantizado</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Banca%20Sin%20Espaldar"
+                class="btn-quote"
+                >COTIZAR</a
+              >
             </div>
           </article>
-        </div>
 
-        <h2 id="mesas" class="titulo-seccion" style="margin-top: 50px">
-          Mesas de Picnic y Ajedrez
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
+          <article class="park-card">
+            <div class="park-img-box">
               <img
-                src="https://images.unsplash.com/photo-1596230529625-7ee541361297?auto=format&fit=crop&w=600"
-                alt="Mesa Concreto Ajedrez"
+                src="../img/productos/mobiliario/caneca-inoxidable.webp"
+                alt="Caneca de Acero Inoxidable"
+                class="park-img"
               />
             </div>
-            <div class="card-body">
-              <h3>Mesa Ajedrez (4 Puestos)</h3>
-              <p>
-                Mesa en concreto con tablero de ajedrez/parqués incrustado en
-                granito.
-              </p>
-              <a href="../contacto.html" class="link-btn">Cotizar →</a>
+            <div class="park-content">
+              <h3 class="park-title">Caneca Basculante</h3>
+              <ul class="specs-list">
+                <li>Acero Inoxidable perforado</li>
+                <li>Sistema de vaciado fácil</li>
+                <li>Anclaje de seguridad a piso</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Caneca%20Inoxidable"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/mobiliario/mesa-ajedres.webp"
+                alt="Mesa de Ajedrez Concreto"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Mesa de Ajedrez / Parqués</h3>
+              <ul class="specs-list">
+                <li>Tablero incrustado en granito</li>
+                <li>Incluye 4 bancos de concreto</li>
+                <li>Acabado pulido brillante</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Mesa%20Ajedres"
+                class="btn-quote"
+                >COTIZAR</a
+              >
+            </div>
+          </article>
+
+          <article class="park-card">
+            <div class="park-img-box">
+              <img
+                src="../img/productos/mobiliario/mesa-picic.webp"
+                alt="Mesa Picnic Madera"
+                class="park-img"
+              />
+            </div>
+            <div class="park-content">
+              <h3 class="park-title">Mesa Picnic Madera</h3>
+              <ul class="specs-list">
+                <li>Madera de pino inmunizada</li>
+                <li>Capacidad para 6-8 personas</li>
+                <li>Ideal para zonas campestres</li>
+              </ul>
+              <a
+                href="https://wa.me/573112531330?text=Cotizar%20Mesa%20Picnic"
+                class="btn-quote"
+                >COTIZAR</a
+              >
             </div>
           </article>
         </div>
@@ -219,7 +286,10 @@
       <div class="container">
         <div class="text-center" style="margin-bottom: 40px">
           <h2 style="color: #6c757d; font-weight: 800">Calidad que perdura</h2>
-          <p>Mobiliario para toda la vida.</p>
+          <p>
+            Mobiliario diseñado para resistir el uso público y el clima de la
+            Costa.
+          </p>
         </div>
         <div
           class="grid-system"
@@ -236,12 +306,12 @@
           <div class="process-step text-center">
             <div class="process-icon"><i class="fas fa-cubes"></i></div>
             <h3>2. Materiales</h3>
-            <p>Concreto de 3.000 PSI y Acero calibre certificado.</p>
+            <p>Granito pulido, Concreto de 3.000 PSI, Acero inoxidable.</p>
           </div>
           <div class="process-step text-center">
             <div class="process-icon"><i class="fas fa-truck-loading"></i></div>
             <h3>3. Logística</h3>
-            <p>Transporte e instalación con grúa si se requiere.</p>
+            <p>Transporte e instalación con personal experto.</p>
           </div>
           <div class="process-step text-center">
             <div class="process-icon"><i class="fas fa-check-circle"></i></div>
@@ -256,92 +326,61 @@
       <div class="container footer-grid">
         <div class="footer-col">
           <h4>GRAMAS Y PARQUES COLOMBIA</h4>
-          <p style="color: #ffffff">
+          <p>
             Expertos en obras civiles recreativas. Transformamos espacios con
             calidad y cumplimiento.
           </p>
-
           <div class="social-links">
             <a
               href="https://www.instagram.com/gramasyparquescolombia/"
-              aria-label="Instagram"
               target="_blank"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-
+              ><i class="fab fa-instagram"></i
+            ></a>
             <a
               href="https://web.facebook.com/gramasyparquescolombia"
-              aria-label="Facebook"
               target="_blank"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
+              ><i class="fab fa-facebook-f"></i
+            ></a>
           </div>
         </div>
-
         <div class="footer-col">
           <h4>Enlaces Rápidos</h4>
           <ul class="footer-links">
             <li><a href="../index.html">Inicio</a></li>
-
-            <li>
-              <a href="canchas-sinteticas.html">Canchas Deportivas</a>
-            </li>
+            <li><a href="canchas-sinteticas.html">Canchas Deportivas</a></li>
             <li><a href="parques.html">Parques Infantiles</a></li>
-            <li><a href="Biosaludables.html">Biosaludables</a></li>
-            <li>
-              <a href="mobiliario-urbano.html">Mobiliario Urbano</a>
-            </li>
-
-            <li><a href="../blog.html">Blog de Noticias</a></li>
-            <li><a href="../contacto.html">Contacto</a></li>
+            <li><a href="biosaludables.html">Biosaludables</a></li>
+            <li><a href="mobiliario-urbano.html">Mobiliario Urbano</a></li>
+            <li><a href="../blog.html">Blog</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h4>Contacto</h4>
-          <p style="color: #ffffff">
+          <p>
             <i
               class="fas fa-map-marker-alt"
-              style="color: var(--naranja-urgencia); margin-right: 5px"
+              style="color: var(--naranja-urgencia)"
             ></i>
-            Cra 19D #52-85, Barranquilla - Atlántico
+            Cra 19D #52-85, Barranquilla
           </p>
           <p>
-            <a href="tel:+573112531330" style="color: #ffffff">
-              <i
-                class="fas fa-phone-alt"
-                style="color: var(--naranja-urgencia); margin-right: 5px"
-              ></i>
-              (+57) 311 253 1330
-            </a>
+            <i
+              class="fas fa-phone-alt"
+              style="color: var(--naranja-urgencia)"
+            ></i>
+            (+57) 311 253 1330
           </p>
           <p>
-            <a
-              href="mailto:comercial@gramasyparquescolombia.com"
-              style="color: #ffffff"
-            >
-              <i
-                class="fas fa-envelope"
-                style="color: var(--naranja-urgencia); margin-right: 5px"
-              ></i>
-              comercial@gramasyparquescolombia.com
-            </a>
+            <i
+              class="fas fa-envelope"
+              style="color: var(--naranja-urgencia)"
+            ></i>
+            comercial@gramasyparquescolombia.com
           </p>
         </div>
       </div>
-
       <div class="copyright-bar">
-        <div
-          class="container"
-          style="
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-          "
-        >
+        <div class="container text-center">
           <span>© 2025 Gramas y Parques Colombia</span>
         </div>
       </div>
@@ -354,7 +393,6 @@
         class="whatsapp-icon"
       />
     </div>
-
     <div class="wa-modal-overlay" id="wa-modal">
       <div class="wa-modal-content">
         <span class="close-modal" id="close-wa">&times;</span>
@@ -363,22 +401,12 @@
           <p>Ingeniería Recreativa</p>
         </div>
         <div class="wa-body">
-          <p style="font-size: 0.8rem; margin-bottom: 10px; color: #555">
-            Hola, para atenderte mejor por favor indícanos:
-          </p>
-          <label for="wa-name">Tu Nombre:</label>
-          <input type="text" id="wa-name" />
-          <label for="wa-interest">¿En qué estás interesado?</label>
+          <label>Tu Nombre:</label><input type="text" id="wa-name" />
+          <label>Interés:</label>
           <select id="wa-interest">
-            <option value="Cotización General">Quiero una cotización</option>
-            <option value="Gramas Sintéticas">Grama Sintética</option>
-            <option value="Canchas Deportivas">Canchas Deportivas</option>
-            <option value="Parques Infantiles">Parques Infantiles</option>
-            <option value="Biosaludables">Parques Biosaludables</option>
-            <option value="Mobiliario">Mobiliario Urbano</option>
+            <option value="Mobiliario Urbano">Mobiliario Urbano</option>
+            <option value="General">Consulta General</option>
           </select>
-          <label for="wa-desc">Cuéntanos más (Opcional):</label>
-          <textarea id="wa-desc" rows="2"></textarea>
           <button class="btn-whatsapp-send" id="btn-send-wa">
             INICIAR CHAT 🚀
           </button>
@@ -386,15 +414,14 @@
       </div>
     </div>
 
-    <a
-      href="#"
-      class="btn-scroll-top"
-      id="scrollTopBtn"
-      aria-label="Subir al inicio"
-    >
-      <i class="fas fa-arrow-up"></i>
-    </a>
-
+    <a href="#" class="btn-scroll-top" id="scrollTopBtn"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+    <div id="myLightbox" class="lightbox-modal">
+      <span class="close-lightbox">&times;</span
+      ><img class="lightbox-content" id="img01" />
+      <div id="caption"></div>
+    </div>
     <script src="../js/main.js" defer></script>
   </body>
 </html>
