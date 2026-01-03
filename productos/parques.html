@@ -225,50 +225,40 @@
       }
     </style>
   </head>
+
   <body>
     <div id="menu-universal"></div>
 
-    <div class="breadcrumbs">
+    <nav class="breadcrumbs">
       <div class="container">
         <a href="../index.html">Inicio</a>
         <span class="separator">/</span>
         <span class="current">Parques Infantiles</span>
       </div>
-    </div>
+    </nav>
 
-    <section class="section bg-light page-header">
+    <section
+      class="section bg-light page-header"
+      style="padding-top: 20px; padding-bottom: 30px"
+    >
       <div class="container text-center">
-        <h1>
+        <h1 class="titulo-seccion" style="margin-top: 0; margin-bottom: 15px">
           Portafolio de Parques
           <span style="color: var(--naranja-urgencia)"
             >y Soluciones a Medida</span
           >
         </h1>
-        <p
-          class="section-desc"
-          style="max-width: 800px; margin: 0 auto; line-height: 1.6"
-        >
-          <strong>¿No encuentra medidas exactas? No se preocupe.</strong><br />
-          Como fabricantes directos, este catálogo es solo el punto de partida.
-          Diseñamos, ajustamos colores y adaptamos cualquier modelo a su espacio
-          y presupuesto.
+        <p class="section-desc" style="margin-bottom: 20px">
+          <strong>¿No encuentra medidas exactas?</strong> Como fabricantes
+          directos, adaptamos cualquier modelo a su espacio.
         </p>
-
-        <div style="margin-top: 25px">
-          <a
-            href="https://wa.me/573112531330?text=Hola,%20necesito%20un%20dise%C3%B1o%20especial%20a%20medida"
-            class="btn-quote"
-            style="
-              display: inline-block;
-              background: var(--azul-oscuro);
-              width: auto;
-              padding: 12px 30px;
-            "
-          >
-            <i class="fas fa-pencil-ruler" style="margin-right: 8px"></i>
-            SOLICITAR DISEÑO PERSONALIZADO
-          </a>
-        </div>
+        <a
+          href="https://wa.me/573112531330"
+          class="btn-quote"
+          style="display: inline-block; width: auto; padding: 10px 25px"
+        >
+          SOLICITAR DISEÑO PERSONALIZADO
+        </a>
       </div>
     </section>
 
@@ -1348,7 +1338,12 @@
       </div>
     </footer>
 
-    <div class="whatsapp-float" id="wa-button">
+    <div
+      class="whatsapp-float"
+      id="wa-button"
+      role="button"
+      aria-label="Abrir chat de asesoría por WhatsApp"
+    >
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
         alt="WhatsApp"

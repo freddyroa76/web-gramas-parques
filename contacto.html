@@ -61,22 +61,30 @@
       }
     </script>
   </head>
+
   <body>
     <div id="menu-universal"></div>
-    <div class="breadcrumbs">
+
+    <nav class="breadcrumbs">
       <div class="container">
         <a href="index.html">Inicio</a>
         <span class="separator">/</span>
-        <span class="current">página de contacto</span>
+        <span class="current">Contacto</span>
       </div>
-    </div>
-    <section class="section bg-light page-header">
+    </nav>
+
+    <section
+      class="section bg-light page-header"
+      style="padding-top: 20px; padding-bottom: 20px"
+    >
       <div class="container text-center">
-        <h1>
+        <h1 class="titulo-seccion" style="margin-top: 0; margin-bottom: 10px">
           Hablemos de tu
           <span style="color: var(--naranja-urgencia)">Proyecto</span>
         </h1>
-        <p class="section-desc">Estamos listos para asesorarte.</p>
+        <p class="section-desc" style="margin-bottom: 0">
+          Estamos listos para asesorarte.
+        </p>
       </div>
     </section>
 
@@ -374,7 +382,12 @@
       </div>
     </footer>
 
-    <div class="whatsapp-float" id="wa-button">
+    <div
+      class="whatsapp-float"
+      id="wa-button"
+      role="button"
+      aria-label="Abrir chat de asesoría por WhatsApp"
+    >
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
         alt="WhatsApp"

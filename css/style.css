@@ -126,6 +126,20 @@ p {
   text-align: center;
 }
 
+/* --- ELIMINACIÓN DE ESPACIOS INNECESARIOS AL INICIO --- */
+
+/* Si la sección es la primera después del menú, reduce su espacio superior */
+.breadcrumbs + .section,
+.breadcrumbs + #catalogo {
+  padding-top: 25px !important; /* Bajamos de 80px a solo 25px */
+}
+
+/* Evita que el título principal de la página tenga margen arriba */
+.section:first-of-type .titulo-seccion,
+.section:first-of-type h1 {
+  margin-top: 0 !important;
+}
+
 /* 5. TOP BAR */
 .top-bar {
   background: linear-gradient(90deg, var(--verde-natural), var(--verde-acento));
@@ -152,7 +166,7 @@ header {
 .navbar {
   display: flex;
   align-items: center;
-  min-height: 80px;
+  min-height: 65px; /* <--- Reducido a 65px para ganar espacio */
   padding: 0 20px;
   flex-wrap: wrap;
 }
@@ -610,8 +624,8 @@ footer::before {
 /* 11. RESPONSIVE MÓVIL */
 @media (max-width: 900px) {
   .navbar {
-    padding: 10px 15px;
-    min-height: 70px;
+    padding: 0px 0px;
+    min-height: 60px;
     justify-content: space-between;
   }
   .logo-img {
@@ -1400,10 +1414,10 @@ footer::before {
    ESTILOS BREADCRUMBS (MIGAS DE PAN)
    ========================================= */
 .breadcrumbs {
-  background-color: var(--gris-fondo); /* #f8fafc */
-  padding: 12px 0;
+  background-color: var(--gris-fondo);
+  padding: 8px 0; /* <--- Reducido de 12 a 8 para que sea más fina */
   border-bottom: 1px solid #e9ecef;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--texto-secundario);
   margin-bottom: 0;
 }
@@ -1562,4 +1576,15 @@ footer::before {
   border-color: var(--naranja-urgencia);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(249, 115, 22, 0.2);
+}
+/* ELIMINAR ESPACIO MUERTO INICIAL */
+main > .section:first-of-type,
+#catalogo:first-of-type {
+  padding-top: 20px !important; /* Bajamos el vacío de 80px a solo 20px */
+}
+
+/* Quita el margen al primer título para que no empuje hacia abajo */
+.section:first-of-type .titulo-seccion,
+.section:first-of-type h1 {
+  margin-top: 0 !important;
 }

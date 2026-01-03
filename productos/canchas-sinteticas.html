@@ -163,29 +163,33 @@
       }
     </style>
   </head>
+
   <body>
     <div id="menu-universal"></div>
 
-    <div class="breadcrumbs">
+    <nav class="breadcrumbs">
       <div class="container">
         <a href="../index.html">Inicio</a>
         <span class="separator">/</span>
         <span class="current">Canchas deportivas</span>
       </div>
-    </div>
+    </nav>
 
-    <section class="section bg-light" style="padding-bottom: 20px">
+    <section
+      class="section bg-light"
+      style="padding-top: 20px; padding-bottom: 20px"
+    >
       <div class="container">
-        <div class="text-center" style="margin-bottom: 10px">
-          <h1>
+        <div class="text-center">
+          <h1 class="titulo-seccion" style="margin-top: 0; margin-bottom: 10px">
             Ingeniería de
-            <span style="color: var(--verde-principal, #4caf50)"
+            <span style="color: var(--verde-principal)"
               >Escenarios Deportivos</span
             >
           </h1>
-          <p class="intro-text">
-            Soluciones llave en mano: Obra civil, cubiertas metálicas,
-            superficies certificadas y dotación profesional.
+          <p class="intro-text" style="margin-bottom: 0">
+            Soluciones llave en mano: Obra civil, cubiertas y superficies
+            certificadas.
           </p>
         </div>
       </div>
@@ -676,7 +680,12 @@
       </div>
     </footer>
 
-    <div class="whatsapp-float" id="wa-button">
+    <div
+      class="whatsapp-float"
+      id="wa-button"
+      role="button"
+      aria-label="Abrir chat de asesoría por WhatsApp"
+    >
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
         alt="WhatsApp"
