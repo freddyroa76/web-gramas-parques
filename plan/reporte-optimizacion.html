@@ -3,138 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auditoría Total e Integración Estratégica - Gramas y Parques</title>
+    <title>Auditoría Final 10 Puntos - Gramas y Parques Colombia</title>
     <style>
-        :root {
-            --azul: #0c4a6e; --naranja: #f97316; --verde: #059669; --rojo: #e11d48;
-            --gris-bg: #f8fafc; --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-        }
-        body { font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; color: #1e293b; background: var(--gris-bg); margin: 0; padding: 20px; }
-        .container { max-width: 1100px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: var(--shadow); }
-        h1 { color: var(--azul); border-bottom: 4px solid var(--naranja); padding-bottom: 10px; text-align: center; }
-        .area-section { margin-top: 35px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fff; }
-        .area-header { background: var(--azul); color: white; padding: 15px 20px; font-size: 1.2rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
-        .item-card { padding: 20px; border-bottom: 1px solid #e2e8f0; }
-        .item-card:last-child { border-bottom: none; }
-        .label { font-weight: 800; text-transform: uppercase; font-size: 0.75rem; display: block; margin-bottom: 5px; }
-        .problem { color: var(--rojo); font-weight: 600; }
-        .solution { color: var(--verde); font-weight: 600; }
-        pre { background: #0f172a; color: #f8fafc; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; margin-top: 10px; border: 1px solid #334155; }
-        .badge { background: #f97316; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; }
+        :root { --azul: #0c4a6e; --naranja: #f97316; --verde: #059669; --rojo: #e11d48; --gris: #f8fafc; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; background: var(--gris); padding: 20px; }
+        .container { max-width: 1000px; margin: auto; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .card { border-left: 6px solid var(--azul); margin-bottom: 25px; padding: 20px; background: #fff; border-radius: 0 8px 8px 0; }
+        .problem { font-weight: bold; color: var(--rojo); }
+        .solution { font-weight: bold; color: var(--verde); margin-top: 10px; display: block; }
+        pre { background: #1e293b; color: #f8fafc; padding: 15px; border-radius: 6px; overflow-x: auto; font-size: 0.85rem; }
+        .badge { background: var(--naranja); color: white; padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Reporte Maestro de Auditoría e Integración (10 Áreas)</h1>
-        <p>Este documento consolida la auditoría técnica del repositorio con la planeación de Keywords, AST y E-A-T suministrada.</p>
+        <h1>Plan de Acción: Auditoría Técnica y Estratégica</h1>
+        <p>Integración de los 10 puntos de auditoría + Planeación SEO + Solución de Duplicidad.</p>
 
-        <div class="area-section">
-            <div class="area-header"><span>1. SEO Y POSICIONAMIENTO (AST)</span> <span class="badge">Crítico</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>Títulos sin "Intención de Búsqueda" y falta de etiquetas Canónicas.</p>
-                <span class="label solution">Solución:</span> <p>Implementar Keywords transaccionales y normalización de URLs.</p>
-                <pre>&lt;title&gt;Grama Sintética Económica | Precio m2 en Colombia | Cotice Aquí&lt;/title&gt;
-&lt;link rel="canonical" href="https://gramasyparquescolombia.com/productos/gramas.html" /&gt;
-&lt;meta property="og:title" content="Gramas y Parques Colombia | Expertos en Recreación" /&gt;</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 1: SEO y Duplicidad</span>
+            <p class="problem">Riesgo: Contenido duplicado entre GitHub y el dominio pago.</p>
+            <span class="solution">Solución: Usar etiquetas Canónicas indicando que el dominio pago es el "Jefe".</span>
+            <pre>
+&lt;!-- En el head de TODAS las páginas --&gt;
+&lt;link rel="canonical" href="https://www.gramasyparquescolombia.com/productos/parques.html" /&gt;
+&lt;!-- Esto le dice a Google: 'Ignora la versión de GitHub, la oficial es esta' --&gt;</pre>
         </div>
 
-        <div class="area-section">
-            <div class="area-header"><span>2. EXPERIENCIA DE USUARIO (UX)</span> <span class="badge">Importante</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>Salto visual (CLS) por inyección de menú dinámico mediante JS.</p>
-                <span class="label solution">Solución:</span> <p>Definir la barra de categorías como sticky mediante CSS puro.</p>
-                <pre>/* En style.css */
-.category-nav { position: sticky; top: 0; z-index: 100; background: #fff; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 2: UX e Interactividad</span>
+            <p class="problem">Problema: El menú sticky generado por JS causa inestabilidad visual (CLS).</p>
+            <span class="solution">Solución: Definir el menú sticky por CSS puro para una carga instantánea.</span>
+            <pre>
+/* En style.css */
+.category-nav { position: sticky; top: 0; z-index: 1000; background: white; }</pre>
         </div>
 
-        <div class="area-section">
-            <div class="area-header"><span>3. DISEÑO UI Y ESTÉTICA</span> <span class="badge">Mejora</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>Contraste deficiente en CTAs naranja/blanco (Falla WCAG AA).</p>
-                <span class="label solution">Solución:</span> <p>Ajustar el color naranja a un tono con mayor luminancia negativa.</p>
-                <pre>.btn-quote { background: #ea580c; color: #fff; font-weight: 800; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 3: UI y Contraste</span>
+            <p class="problem">Problema: Botones naranja con poco contraste para lectura (Falla WCAG).</p>
+            <span class="solution">Solución: Ajustar el color a un naranja más profundo (#ea580c).</span>
+            <pre>.btn-quote { background: #ea580c; font-weight: 800; }</pre>
         </div>
 
-        <div class="area-section">
-            <div class="area-header"><span>4. CÓDIGO HTML (SEMÁNTICA)</span> <span class="badge">Técnico</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>Jerarquía de encabezados (H1-H6) inconsistente en páginas de producto.</p>
-                <span class="label solution">Solución:</span> <p>Asegurar un único H1 con keyword principal y H2 para categorías.</p>
-                <pre>&lt;h1&gt;Gimnasios &lt;span&gt;Biosaludables&lt;/span&gt; en Barranquilla&lt;/h1&gt;
-&lt;h2 id="cardio"&gt;Línea Cardiovascular&lt;/h2&gt;</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 4: Semántica HTML</span>
+            <p class="problem">Problema: Jerarquía de encabezados H1-H6 desordenada.</p>
+            <span class="solution">Solución: Usar un solo H1 con las keywords transaccionales del Excel.</span>
+            <pre>&lt;h1&gt;Grama Sintética &lt;span&gt;Económica&lt;/span&gt; en Barranquilla&lt;/h1&gt;</pre>
         </div>
 
-        <div class="area-section">
-            <div class="area-header"><span>5. CÓDIGO CSS (OPTIMIZACIÓN)</span> <span class="badge">WPO</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>Estilos redundantes e internos en los archivos HTML.</p>
-                <span class="label solution">Solución:</span> <p>Migrar clases de productos a style.css y usar metodología BEM.</p>
-                <pre>/* En style.css */
-.park-card { display: flex; flex-direction: column; border: 1px solid #eee; }
-.park-card__img { object-fit: cover; transition: transform 0.3s; }</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 5: Rendimiento CSS</span>
+            <p class="problem">Problema: Estilos incrustados en archivos HTML (Parques, Biosaludables).</p>
+            <span class="solution">Solución: Mover todos los estilos al archivo style.css global.</span>
         </div>
 
-        <div class="area-section">
-            <div class="area-header"><span>6. CÓDIGO JAVASCRIPT</span> <span class="badge">Funcionalidad</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>El modal de WhatsApp no se resetea tras el envío, acumulando datos.</p>
-                <span class="label solution">Solución:</span> <p>Resetear valores de los inputs en el evento click del botón de envío.</p>
-                <pre>// En main.js
-document.getElementById("btn-send-wa").addEventListener("click", () => {
-    // ... abrir whatsapp ...
-    document.getElementById("wa-name").value = "";
-    document.getElementById("wa-desc").value = "";
-});</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 6: Lógica JS</span>
+            <p class="problem">Problema: El modal de WhatsApp no limpia los datos tras el envío.</p>
+            <span class="solution">Solución: Resetear campos en main.js al hacer click en enviar.</span>
+            <pre>
+// En main.js
+document.getElementById("wa-name").value = "";
+document.getElementById("wa-desc").value = "";</pre>
         </div>
 
-        <div class="area-section">
-            <div class="area-header"><span>7. PERFORMANCE Y OPTIMIZACIÓN</span> <span class="badge">Core Web Vitals</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>Falta de Lazy Loading en imágenes críticas de catálogo.</p>
-                <span class="label solution">Solución:</span> <p>Añadir loading="lazy" a todas las imágenes por debajo del "above the fold".</p>
-                <pre>&lt;img src="img/eliptica.webp" class="park-img" loading="lazy" alt="Elíptica Biosaludable"&gt;</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 7: Velocidad (WPO)</span>
+            <p class="problem">Problema: Falta de Lazy Loading en imágenes del catálogo.</p>
+            <span class="solution">Solución: Añadir el atributo nativo de carga diferida.</span>
+            <pre>&lt;img src="..." loading="lazy" alt="..."&gt;</pre>
         </div>
 
-        <div class="area-section">
-            <div class="area-header"><span>8. ACCESIBILIDAD</span> <span class="badge">Inclusión</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>Atributos ALT genéricos ("Alejo", "Banca") que no ayudan al SEO.</p>
-                <span class="label solution">Solución:</span> <p>Usar descripciones técnicas basadas en el catálogo y keywords.</p>
-                <pre>&lt;img src="..." alt="Bancas de granito pulido para parques exteriores en Barranquilla"&gt;</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 8: SEO de Imágenes</span>
+            <p class="problem">Problema: Atributos ALT genéricos como "Alejo" o "Banca".</p>
+            <span class="solution">Solución: Usar keywords específicas del catálogo: "Bancas de concreto", "Parques de madera".</span>
         </div>
 
-        <div class="area-section">
-            <div class="area-header"><span>9. SEGURIDAD</span> <span class="badge">Técnico</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>Inputs de formulario sin validación de tipo ni protección básica.</p>
-                <span class="label solution">Solución:</span> <p>Añadir atributos de validación nativos de HTML5.</p>
-                <pre>&lt;input type="text" id="wa-name" required minlength="3" placeholder="Tu nombre" /&gt;</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 9: Seguridad de Datos</span>
+            <p class="problem">Problema: Formulario de cotización sin validación de campos obligatorios.</p>
+            <span class="solution">Solución: Añadir el atributo 'required' a los inputs del modal.</span>
         </div>
 
-        <div class="area-section">
-            <div class="area-header"><span>10. AUTORIDAD Y CONFIANZA (E-A-T)</span> <span class="badge">Estratégico</span></div>
-            <div class="item-card">
-                <span class="label problem">Problema:</span> <p>Falta de "Prueba Social" y Datos Estructurados de Negocio Local.</p>
-                <span class="label solution">Solución:</span> <p>Implementar JSON-LD de LocalBusiness y sección de logos de aliados.</p>
-                <pre>&lt;script type="application/ld+json"&gt;
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Gramas y Parques Colombia",
-  "telephone": "+573112531330",
-  "address": { "@type": "PostalAddress", "streetAddress": "Cra 19D #52-85", "addressLocality": "Barranquilla" }
-}
-&lt;/script&gt;</pre>
-            </div>
+        <div class="card">
+            <span class="badge">Área 10: Confianza (E-A-T)</span>
+            <p class="problem">Problema: No hay testimonios ni logos de clientes en la web.</p>
+            <span class="solution">Solución: Crear sección de logos de aliados (Alcaldías, Constructoras) antes del footer.</span>
         </div>
     </div>
 </body>
