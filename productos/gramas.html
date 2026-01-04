@@ -115,7 +115,69 @@
   </head>
   
   <body>
-    <div id="menu-universal"></div>
+    <div class="top-bar">
+  📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el país
+</div>
+<header>
+  <div class="container navbar">
+    <a href="../index.html" class="logo-container">
+      <img src="../img/logo.png" alt="Gramas y Parques Colombia" class="logo-img" width="180" height="60" fetchpriority="high" />
+    </a>
+    <div class="mobile-toggle" role="button" aria-label="Abrir menú de navegación" tabindex="0">&#9776;</div>
+    <nav class="nav-menu">
+      <div class="dropdown">
+        <a href="./gramas.html" class="dropbtn" id="link-gramas">GRAMAS</a>
+        <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
+        <div class="dropdown-content">
+          <a href="./gramas.html"><strong>Ver Todo Gramas</strong></a>
+          <a href="./gramas.html#paisajismo">Paisajismo y Decoración</a>
+          <a href="./gramas.html#deportivas">Deportivas</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="./canchas-sinteticas.html" class="dropbtn" id="link-canchas">CANCHAS DEPORTIVAS</a>
+        <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
+        <div class="dropdown-content">
+          <a href="./canchas-sinteticas.html"><strong>Ver Portafolio</strong></a>
+          <a href="./canchas-sinteticas.html#sinteticas">Sintéticas y Múltiples</a>
+          <a href="./canchas-sinteticas.html#cubiertas">Cubiertas y Estructuras</a>
+          <a href="./canchas-sinteticas.html#cerramientos">Cerramientos y Mallas</a>
+          <a href="./canchas-sinteticas.html#dotacion">Dotación Profesional</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="./parques.html" class="dropbtn" id="link-parques">PARQUES</a>
+        <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
+        <div class="dropdown-content">
+          <a href="./parques.html"><strong>Ver Todo Parques</strong></a>
+          <a href="./parques.html#metalica">Línea Metálica (Alto Tráfico)</a>
+          <a href="./parques.html#madera">Línea Madera Inmunizada</a>
+          <a href="./parques.html#playground">Playground Importados</a>
+          <a href="./parques.html#mantenimiento">Mantenimiento y Repuestos</a>
+        </div>
+      </div>
+
+      <a href="./biosaludables.html" id="link-biosaludables">BIOSALUDABLES</a>
+
+      <div class="dropdown">
+        <a href="./mobiliario-urbano.html" class="dropbtn" id="link-mobiliario">MOBILIARIO</a>
+        <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
+        <div class="dropdown-content">
+          <a href="./mobiliario-urbano.html"><strong>Ver Todo Mobiliario</strong></a>
+          <a href="./mobiliario-urbano.html#concreto">Bancas de Concreto</a>
+          <a href="./mobiliario-urbano.html#madera">Bancas de Madera</a>
+          <a href="./mobiliario-urbano.html#canecas">Canecas Acero Inox</a>
+          <a href="./mobiliario-urbano.html#mesas">Mesas de Picnic</a>
+        </div>
+      </div>
+
+      <a href="../blog.html" style="font-weight: 700" id="link-blog">BLOG</a>
+      <a href="../contacto.html" class="contacto-link" id="link-contacto">CONTÁCTENOS</a>
+    </nav>
+  </div>
+</header>
 
     <nav class="breadcrumbs">
       <div class="container">
@@ -1101,7 +1163,7 @@
     <div class="wa-modal-overlay" id="wa-modal">
       <div class="wa-modal-content">
 
-<span class="close-modal" id="close-wa" role="button" aria-label="Cerrar ventana de contacto">&times;</span>
+          <span class="close-modal" id="close-wa" role="button" aria-label="Cerrar ventana">&times;</span>
 
         <div class="wa-header">
           <h3>💬 Asesoría en Línea</h3>
@@ -1111,10 +1173,10 @@
           <p style="font-size: 0.8rem; margin-bottom: 10px; color: #555">
             Hola, para atenderte mejor por favor indícanos:
           </p>
-          <label for="wa-name">Tu Nombre:</label>
-          <input type="text" id="wa-name" />
-          <label for="wa-interest">¿En qué estás interesado?</label>
-          <select id="wa-interest">
+                    <label for="wa-name">Tu Nombre:</label>
+          <input type="text" id="wa-name" required />
+          <label for="wa-interest">¿En qué estás interesado? </label>
+          <select id="wa-interest" required>
             <option value="Cotización General">Quiero una cotización</option>
             <option value="Gramas Sintéticas">Grama Sintética</option>
             <option value="Canchas Deportivas">Canchas Deportivas</option>
