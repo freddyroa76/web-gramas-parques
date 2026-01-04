@@ -397,7 +397,13 @@
 
     <div class="wa-modal-overlay" id="wa-modal">
       <div class="wa-modal-content">
-        <span class="close-modal" id="close-wa">&times;</span>
+        <span
+          class="close-modal"
+          id="close-wa"
+          role="button"
+          aria-label="Cerrar ventana de contacto"
+          >&times;</span
+        >
         <div class="wa-header">
           <h3>💬 Asesoría en Línea</h3>
           <p>Ingeniería Recreativa</p>
@@ -407,7 +413,12 @@
             Hola, para atenderte mejor por favor indícanos:
           </p>
           <label for="wa-name">Tu Nombre:</label>
-          <input type="text" id="wa-name" />
+          <input
+            type="text"
+            id="wa-name"
+            required
+            placeholder="Escribe tu nombre aquí"
+          />
           <label for="wa-interest">¿En qué estás interesado?</label>
           <select id="wa-interest">
             <option value="Cotización General">Quiero una cotización</option>
@@ -430,7 +441,7 @@
       href="#"
       class="btn-scroll-top"
       id="scrollTopBtn"
-      aria-label="Subir al inicio"
+      aria-label="Volver a la parte superior de la página"
     >
       <i class="fas fa-arrow-up"></i>
     </a>

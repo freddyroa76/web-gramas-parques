@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const ruta = isSubfolder ? "../" : "./";
   const rutaProd = isSubfolder ? "./" : "./productos/";
 
+  /* === REEMPLAZO DENTRO DE js/main.js === */
   const menuHTML = `
     <div class="top-bar">
       📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el país
@@ -17,13 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
     <header>
       <div class="container navbar">
         <a href="${ruta}index.html" class="logo-container">
-          <img src="${ruta}img/logo.png" alt="Gramas y Parques Colombia" class="logo-img" width="150" height="auto" />
+          <img src="${ruta}img/logo.png" alt="Gramas y Parques Colombia" class="logo-img" width="180" height="60" fetchpriority="high" />
         </a>
-        <div class="mobile-toggle" aria-label="Abrir menú de navegación">&#9776;</div>
+        <div class="mobile-toggle" role="button" aria-label="Abrir menú de navegación" tabindex="0">&#9776;</div>
         <nav class="nav-menu">
           <div class="dropdown">
             <a href="${rutaProd}gramas.html" class="dropbtn" id="link-gramas">GRAMAS</a>
-            <span class="submenu-toggle">▼</span>
+            <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
             <div class="dropdown-content">
               <a href="${rutaProd}gramas.html"><strong>Ver Todo Gramas</strong></a>
               <a href="${rutaProd}gramas.html#paisajismo">Paisajismo y Decoración</a>
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <div class="dropdown">
             <a href="${rutaProd}canchas-sinteticas.html" class="dropbtn" id="link-canchas">CANCHAS DEPORTIVAS</a>
-            <span class="submenu-toggle">▼</span>
+            <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
             <div class="dropdown-content">
               <a href="${rutaProd}canchas-sinteticas.html"><strong>Ver Portafolio</strong></a>
               <a href="${rutaProd}canchas-sinteticas.html#sinteticas">Sintéticas y Múltiples</a>
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
           <div class="dropdown">
             <a href="${rutaProd}parques.html" class="dropbtn" id="link-parques">PARQUES</a>
-            <span class="submenu-toggle">▼</span>
+            <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
             <div class="dropdown-content">
               <a href="${rutaProd}parques.html"><strong>Ver Todo Parques</strong></a>
               <a href="${rutaProd}parques.html#metalica">Línea Metálica (Alto Tráfico)</a>
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="${rutaProd}biosaludables.html" id="link-biosaludables">BIOSALUDABLES</a>
           <div class="dropdown">
             <a href="${rutaProd}mobiliario-urbano.html" class="dropbtn" id="link-mobiliario">MOBILIARIO</a>
-            <span class="submenu-toggle">▼</span>
+            <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
             <div class="dropdown-content">
               <a href="${rutaProd}mobiliario-urbano.html"><strong>Ver Todo Mobiliario</strong></a>
               <a href="${rutaProd}mobiliario-urbano.html#concreto">Bancas de Concreto</a>

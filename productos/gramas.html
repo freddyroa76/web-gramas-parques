@@ -160,6 +160,9 @@
                 src="../img/productos/gramas/grama-monofilamento.webp"
                 alt="Grama Monofilamento 50mm"
                 class="main-photo"
+                width="400"
+                height="300"
+                fetchpriority="high"
               />
               <div
                 class="zoom-circle"
@@ -1097,7 +1100,9 @@
 
     <div class="wa-modal-overlay" id="wa-modal">
       <div class="wa-modal-content">
-        <span class="close-modal" id="close-wa">&times;</span>
+
+<span class="close-modal" id="close-wa" role="button" aria-label="Cerrar ventana de contacto">&times;</span>
+
         <div class="wa-header">
           <h3>💬 Asesoría en Línea</h3>
           <p>Ingeniería Recreativa</p>
@@ -1126,14 +1131,9 @@
       </div>
     </div>
 
-    <a
-      href="#"
-      class="btn-scroll-top"
-      id="scrollTopBtn"
-      aria-label="Subir al inicio"
-    >
-      <i class="fas fa-arrow-up"></i>
-    </a>
+<a href="#" class="btn-scroll-top" id="scrollTopBtn" aria-label="Volver a la parte superior de la página">
+    <i class="fas fa-arrow-up"></i>
+</a>
 
     <script src="../js/main.js" defer></script>
   </body>
