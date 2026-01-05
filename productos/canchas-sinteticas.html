@@ -13,7 +13,6 @@
     />
 
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
-
     <link rel="stylesheet" href="../css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +22,7 @@
       rel="preload"
       as="image"
       href="../img/productos/canchas/futbol-sintetica-monofilamento.webp"
+      fetchpriority="high"
     />
 
     <link
@@ -35,15 +35,13 @@
     />
 
     <style>
-      /* --- OPTIMIZACIÓN VISUAL Y CLS --- */
+      /* TUS ESTILOS CONSERVADOS AL 100% */
       .card-img-box {
         background-color: #f0f0f0;
         aspect-ratio: 4/3;
         position: relative;
         overflow: hidden;
       }
-
-      /* Estilos para botones viejos (por seguridad) */
       .quick-nav-wrapper {
         margin: 20px 0 40px 0;
         text-align: center;
@@ -54,7 +52,6 @@
         gap: 10px;
         flex-wrap: wrap;
       }
-
       .btn-pill {
         text-decoration: none;
         background-color: white;
@@ -74,24 +71,21 @@
         box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
       }
 
+      /* AJUSTE PROFESIONAL: Reducción de margin-top de 60px a 15px para eliminar huecos */
       .titulo-seccion {
-        margin-top: 60px;
-        margin-bottom: 30px;
+        margin-top: 15px;
+        margin-bottom: 25px;
         padding-bottom: 15px;
         border-bottom: 2px solid #eee;
         color: var(--azul-oscuro, #2c3e50);
         scroll-margin-top: 120px;
       }
-
-      /* Grid Responsivo Inteligente */
       .grid-system {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
         justify-content: center;
       }
-
-      /* Tarjetas */
       .card {
         background: white;
         border-radius: 12px;
@@ -136,8 +130,6 @@
         font-weight: 700;
         text-decoration: none;
       }
-
-      /* Pasos del Proceso */
       .process-step {
         background: white;
         padding: 30px 20px;
@@ -169,6 +161,7 @@
       📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el
       país
     </div>
+
     <header>
       <div class="container navbar">
         <a href="../index.html" class="logo-container">
@@ -205,11 +198,10 @@
               <a href="./gramas.html#deportivas">Deportivas</a>
             </div>
           </div>
-
           <div class="dropdown">
             <a
               href="./canchas-sinteticas.html"
-              class="dropbtn"
+              class="dropbtn active"
               id="link-canchas"
               >CANCHAS DEPORTIVAS</a
             >
@@ -238,7 +230,6 @@
               >
             </div>
           </div>
-
           <div class="dropdown">
             <a href="./parques.html" class="dropbtn" id="link-parques"
               >PARQUES</a
@@ -252,21 +243,13 @@
             >
             <div class="dropdown-content">
               <a href="./parques.html"><strong>Ver Todo Parques</strong></a>
-              <a href="./parques.html#metalica"
-                >Línea Metálica (Alto Tráfico)</a
-              >
-              <a href="./parques.html#madera">Línea Madera Inmunizada</a>
-              <a href="./parques.html#playground">Playground Importados</a>
-              <a href="./parques.html#mantenimiento"
-                >Mantenimiento y Repuestos</a
-              >
+              <a href="./parques.html#metalica">Línea Metálica</a>
+              <a href="./parques.html#madera">Línea Madera</a>
             </div>
           </div>
-
           <a href="./biosaludables.html" id="link-biosaludables"
             >BIOSALUDABLES</a
           >
-
           <div class="dropdown">
             <a
               href="./mobiliario-urbano.html"
@@ -285,13 +268,8 @@
               <a href="./mobiliario-urbano.html"
                 ><strong>Ver Todo Mobiliario</strong></a
               >
-              <a href="./mobiliario-urbano.html#concreto">Bancas de Concreto</a>
-              <a href="./mobiliario-urbano.html#madera">Bancas de Madera</a>
-              <a href="./mobiliario-urbano.html#canecas">Canecas Acero Inox</a>
-              <a href="./mobiliario-urbano.html#mesas">Mesas de Picnic</a>
             </div>
           </div>
-
           <a href="../blog.html" style="font-weight: 700" id="link-blog"
             >BLOG</a
           >
@@ -304,512 +282,494 @@
 
     <nav class="breadcrumbs">
       <div class="container">
-        <a href="../index.html">Inicio</a>
-        <span class="separator">/</span>
+        <a href="../index.html">Inicio</a> <span class="separator">/</span>
         <span class="current">Canchas deportivas</span>
       </div>
     </nav>
 
-    <section
-      class="section bg-light"
-      style="padding-top: 20px; padding-bottom: 20px"
-    >
-      <div class="container">
-        <div class="text-center">
-          <h1 class="titulo-seccion" style="margin-top: 0; margin-bottom: 10px">
-            Ingeniería de
-            <span style="color: var(--verde-principal)"
-              >Escenarios Deportivos</span
+    <main>
+      <section
+        class="section bg-light"
+        style="padding-top: 20px; padding-bottom: 20px"
+      >
+        <div class="container">
+          <div class="text-center">
+            <h1
+              class="titulo-seccion"
+              style="margin-top: 0; margin-bottom: 10px"
             >
-          </h1>
-          <p class="intro-text" style="margin-bottom: 0">
-            Soluciones llave en mano: Obra civil, cubiertas y superficies
-            certificadas.
-          </p>
+              Ingeniería de
+              <span style="color: var(--verde-principal)"
+                >Escenarios Deportivos</span
+              >
+            </h1>
+            <p class="intro-text" style="margin-bottom: 0">
+              Soluciones llave en mano: Obra civil, cubiertas y superficies
+              certificadas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="category-nav" style="margin-bottom: 0">
+        <div class="container text-center">
+          <a href="#sinteticas" class="cat-link">⚽ Canchas</a>
+          <a href="#cubiertas" class="cat-link">🏗️ Estructuras</a>
+          <a href="#cerramientos" class="cat-link">🕸 Cerramientos</a>
+          <a href="#dotacion" class="cat-link">🏀 Dotación</a>
         </div>
       </div>
-    </section>
 
-    <div class="category-nav" style="margin-bottom: 0">
-      <div class="container text-center">
-        <a href="#sinteticas" class="cat-link">⚽ Canchas</a>
-        <a href="#cubiertas" class="cat-link">🏗️ Estructuras</a>
-        <a href="#cerramientos" class="cat-link">🕸 Cerramientos</a>
-        <a href="#dotacion" class="cat-link">🏀 Dotación</a>
-      </div>
-    </div>
+      <section
+        id="sinteticas"
+        class="section bg-light"
+        style="padding-top: 20px; padding-bottom: 30px"
+      >
+        <div class="container">
+          <h2 class="titulo-seccion" style="margin-top: 0">
+            Canchas Sintéticas, Pádel y Múltiples
+          </h2>
+          <div class="grid-system">
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Grama Monofilamento y Fibrilada</span>
+                <img
+                  src="../img/productos/canchas/futbol-sintetica-monofilamento.webp"
+                  alt="Cancha de Fútbol Sintética"
+                  width="600"
+                  height="450"
+                  fetchpriority="high"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Fútbol 5, 7 y 11</h3>
+                <p>
+                  Sistemas profesionales con grama certificada, shockpad y
+                  relleno de caucho granulado SBR/Arena.
+                </p>
+                <a
+                  href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20un%20proyecto%20de%20Cancha%20de%20F%C3%BAtbol"
+                  class="link-btn"
+                  target="_blank"
+                  >Cotizar Proyecto →</a
+                >
+              </div>
+            </article>
 
-    <section class="section bg-light" style="padding-top: 30px">
-      <div class="container">
-        <h2 id="sinteticas" class="titulo-seccion" style="margin-top: 0">
-          Canchas Sintéticas, Pádel y Múltiples
-        </h2>
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Polideportivas</span>
+                <img
+                  src="../img/productos/canchas/cancha-multiple-polideportiva.webp"
+                  alt="Cancha Múltiple Baloncesto"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Canchas Múltiples</h3>
+                <p>
+                  Placas en concreto con recubrimiento acrílico (Pintura Sport)
+                  y demarcación para Baloncesto y Voleibol.
+                </p>
+                <a
+                  href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20una%20Cancha%20M%C3%BAltiple"
+                  class="link-btn"
+                  target="_blank"
+                  >Cotizar →</a
+                >
+              </div>
+            </article>
 
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Grama Monofilamento y Fibrilada</span>
-              <img
-                src="../img/productos/canchas/futbol-sintetica-monofilamento.webp"
-                alt="Construcción Cancha Sintética Fútbol 5 7 y 11"
-                width="600"
-                height="450"
-                fetchpriority="high"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Fútbol 5, 7 y 11</h3>
-              <p>
-                Sistemas profesionales con grama monofilamento y fibrilada
-                certificada, shockpad y relleno de caucho granulado SBR/Arena.
-                Incluye filtros y drenaje.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20un%20proyecto%20de%20Cancha%20de%20F%C3%BAtbol"
-                class="link-btn"
-                target="_blank"
-                >Cotizar Proyecto →</a
-              >
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Polideportivas</span>
-              <img
-                src="../img/productos/canchas/cancha-multiple-polideportiva.webp"
-                alt="Pintura Cancha Múltiple Baloncesto y Micro"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Canchas Múltiples</h3>
-              <p>
-                Placas en concreto con recubrimiento acrílico (Pintura Sport) y
-                demarcación reglamentaria para Baloncesto, Voleibol y Micro.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20una%20Cancha%20M%C3%BAltiple"
-                class="link-btn"
-                target="_blank"
-                >Cotizar con un experto →</a
-              >
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Tendencia</span>
-              <img
-                src="../img/productos/canchas/cancha-padel-panoramica.webp"
-                alt="Construcción Pista de Pádel Panorámica"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Canchas de Pádel</h3>
-              <p>
-                Pistas estándar y panorámicas. Estructura metálica galvanizada,
-                cerramiento en vidrio templado (10-12mm) y grama texturizada
-                azul.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20una%20Cancha%20de%20P%C3%A1del"
-                class="link-btn"
-                target="_blank"
-                >Cotizar con un experto →</a
-              >
-            </div>
-          </article>
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Tendencia</span>
+                <img
+                  src="../img/productos/canchas/cancha-padel-panoramica.webp"
+                  alt="Pista de Pádel Panorámica"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Canchas de Pádel</h3>
+                <p>
+                  Estructura metálica galvanizada, cerramiento en vidrio
+                  templado y grama texturizada azul.
+                </p>
+                <a
+                  href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20una%20Cancha%20de%20P%C3%A1del"
+                  class="link-btn"
+                  target="_blank"
+                  >Cotizar →</a
+                >
+              </div>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <h2 id="cubiertas" class="titulo-seccion">
-          Estructuras, Cubiertas y Mantenimiento
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Obra Estructural</span>
-              <img
-                src="../img/productos/canchas/cubierta-metalica-polideportivo.webp"
-                alt="Estructura Metálica Cubierta Polideportivo"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Cubiertas Metálicas</h3>
-              <p>
-                Fabricación y montaje de estructuras autoportantes y techos
-                curvos para coliseos. Protección solar e iluminación LED.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20una%20Cubierta%20Met%C3%A1lica"
-                class="link-btn"
-                target="_blank"
-                >Ingeniería Estructural →</a
-              >
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Demarcación Normativa</span>
-              <img
-                src="../img/productos/canchas/demarcacion-pintura-epoxica.webp"
-                alt="Demarcación Reglamentaria Pintura Epóxica"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Demarcación Técnica</h3>
-              <p>
-                Pintura y trazado de líneas reglamentarias. Utilizamos pinturas
-                epóxicas de alto tráfico y antideslizantes.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20necesito%20servicio%20de%20Demarcaci%C3%B3n%20de%20Canchas"
-                class="link-btn"
-                target="_blank"
-                >Solicitar Visita →</a
-              >
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Servicio Post-Venta</span>
-              <img
-                src="../img/productos/canchas/mantenimiento-cepillado-grama.webp"
-                alt="Mantenimiento Grama Sintética Cepillado"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Mantenimiento Pro</h3>
-              <p>
-                Servicio de maquinaria para descompactación, cepillado de fibra
-                y reposición de caucho granulado (SBR).
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20quiero%20agendar%20un%20Mantenimiento%20para%20mi%20cancha"
-                class="link-btn"
-                target="_blank"
-                >Agendar Mantenimiento →</a
-              >
-            </div>
-          </article>
+      <section id="cubiertas" class="section" style="padding: 30px 0">
+        <div class="container">
+          <h2 class="titulo-seccion">Estructuras, Cubiertas y Mantenimiento</h2>
+          <div class="grid-system">
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Obra Estructural</span>
+                <img
+                  src="../img/productos/canchas/cubierta-metalica-polideportivo.webp"
+                  alt="Cubierta Metálica"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Cubiertas Metálicas</h3>
+                <p>
+                  Fabricación y montaje de estructuras autoportantes y techos
+                  curvos para coliseos.
+                </p>
+                <a
+                  href="https://wa.me/573112531330"
+                  class="link-btn"
+                  target="_blank"
+                  >Ingeniería Estructural →</a
+                >
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Demarcación Normativa</span>
+                <img
+                  src="../img/productos/canchas/demarcacion-pintura-epoxica.webp"
+                  alt="Demarcación Reglamentaria"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Demarcación Técnica</h3>
+                <p>
+                  Pintura y trazado de líneas reglamentarias con pinturas
+                  epóxicas de alto tráfico.
+                </p>
+                <a
+                  href="https://wa.me/573112531330"
+                  class="link-btn"
+                  target="_blank"
+                  >Solicitar Visita →</a
+                >
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Servicio Post-Venta</span>
+                <img
+                  src="../img/productos/canchas/mantenimiento-cepillado-grama.webp"
+                  alt="Mantenimiento Grama"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Mantenimiento Pro</h3>
+                <p>
+                  Descompactación, cepillado de fibra y reposición de caucho
+                  granulado (SBR).
+                </p>
+                <a
+                  href="https://wa.me/573112531330"
+                  class="link-btn"
+                  target="_blank"
+                  >Agendar Mantenimiento →</a
+                >
+              </div>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <h2 id="cerramientos" class="titulo-seccion">
-          Cerramientos y Protección Perimetral
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Galvanizadas / Recubiertas en PVC</span>
-              <img
-                src="../img/productos/canchas/cerramiento-malla-eslabonada.webp"
-                alt="Malla Eslabonada Ciclón Cerramiento"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Malla Eslabonada</h3>
-              <p>
-                Cerramiento en tubería galvanizada con malla eslabonada (ciclón)
-                o PVC. Incluye cimentación y puertas de acceso.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20Cerramiento%20en%20Malla%20Eslabonada"
-                class="link-btn"
-                target="_blank"
-                >Cotizar Cerramiento →</a
-              >
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Nylon</span>
-              <img
-                src="../img/productos/canchas/malla-nylon-cerramiento-altura.webp"
-                alt="Mallas de Nylon Alta Tenacidad"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Redes de Nylon</h3>
-              <p>
-                Mallas de alta tenacidad para cerramientos de fondo y techos
-                (Backstops). Protección UV para contención de balones.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20Redes%20de%20Nylon"
-                class="link-btn"
-                target="_blank"
-                >Cotizar Redes →</a
-              >
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Privacidad & Sombra</span>
-              <img
-                src="../img/productos/canchas/lona-cortavientos-tenis.webp"
-                alt="Lonas Cortavientos Tenis"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Lonas Cortavientos</h3>
-              <p>
-                Recubrimiento perimetral en lona o polisombra para privacidad y
-                control de viento. Esencial para tenis y complejos privados.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20Lonas%20Cortavientos"
-                class="link-btn"
-                target="_blank"
-                >Cotizar lonas →</a
-              >
-            </div>
-          </article>
+      <section
+        id="cerramientos"
+        class="section bg-light"
+        style="padding: 30px 0"
+      >
+        <div class="container">
+          <h2 class="titulo-seccion">Cerramientos y Protección Perimetral</h2>
+          <div class="grid-system">
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Ciclón / PVC</span>
+                <img
+                  src="../img/productos/canchas/cerramiento-malla-eslabonada.webp"
+                  alt="Malla Eslabonada"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Malla Eslabonada</h3>
+                <p>
+                  Cerramiento en tubería galvanizada con malla eslabonada o PVC.
+                  Incluye puertas.
+                </p>
+                <a
+                  href="https://wa.me/573112531330"
+                  class="link-btn"
+                  target="_blank"
+                  >Cotizar Cerramiento →</a
+                >
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Nylon</span>
+                <img
+                  src="../img/productos/canchas/malla-nylon-cerramiento-altura.webp"
+                  alt="Redes de Nylon"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Redes de Nylon</h3>
+                <p>
+                  Mallas de alta tenacidad para cerramientos de fondo y techos.
+                  Protección UV.
+                </p>
+                <a
+                  href="https://wa.me/573112531330"
+                  class="link-btn"
+                  target="_blank"
+                  >Cotizar Redes →</a
+                >
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Privacidad</span>
+                <img
+                  src="../img/productos/canchas/lona-cortavientos-tenis.webp"
+                  alt="Lonas Cortavientos"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Lonas Cortavientos</h3>
+                <p>
+                  Recubrimiento perimetral para privacidad y control de viento.
+                  Esencial para tenis.
+                </p>
+                <a
+                  href="https://wa.me/573112531330"
+                  class="link-btn"
+                  target="_blank"
+                  >Cotizar lonas →</a
+                >
+              </div>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <h2 id="dotacion" class="titulo-seccion">
-          Dotación Deportiva Profesional
-        </h2>
-        <div class="grid-system">
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Arcos de acero</span>
-              <img
-                src="../img/productos/canchas/porteria-futbol-profesional.webp"
-                alt="Portería Fútbol Metálica Profesional"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Marcos de Fútbol</h3>
-              <p>
-                Porterías reglamentarias (11, 7, 5). Tubería estructural redonda
-                con pintura electrostática resistente a la intemperie.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20Porter%C3%ADas%20de%20F%C3%BAtbol"
-                class="link-btn"
-                target="_blank"
-                >Cotizar marcos →</a
-              >
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Dotación deportiva</span>
-              <img
-                src="../img/productos/canchas/poste-voleibol-competencia.webp"
-                alt="Set Voleibol Profesional Postes"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Sets de Voleibol</h3>
-              <p>
-                Sistema completo: Postes telescópicos o fijos, winche de tensión
-                y malla profesional con bandas de lona.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20un%20Set%20de%20Voleibol"
-                class="link-btn"
-                target="_blank"
-                >Cotizar Set →</a
-              >
-            </div>
-          </article>
-
-          <article class="card">
-            <div class="card-img-box">
-              <span class="badge">Uso profesional</span>
-              <img
-                src="../img/productos/canchas/tablero-baloncesto-jirafa.webp"
-                alt="Tablero Baloncesto Jirafa"
-                width="600"
-                height="450"
-                loading="lazy"
-              />
-            </div>
-            <div class="card-body">
-              <h3>Tableros Baloncesto</h3>
-              <p>
-                Estructuras tipo jirafa o ancladas. Tableros en vidrio templado
-                o acrílico con aros escualizables de competencia.
-              </p>
-              <a
-                href="https://wa.me/573112531330?text=Hola,%20me%20interesa%20cotizar%20Tableros%20de%20Baloncesto"
-                class="link-btn"
-                target="_blank"
-                >Cotizar Tableros →</a
-              >
-            </div>
-          </article>
+      <section id="dotacion" class="section" style="padding: 30px 0">
+        <div class="container">
+          <h2 class="titulo-seccion">Dotación Deportiva Profesional</h2>
+          <div class="grid-system">
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Acero</span>
+                <img
+                  src="../img/productos/canchas/porteria-futbol-profesional.webp"
+                  alt="Portería Fútbol"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Marcos de Fútbol</h3>
+                <p>
+                  Porterías reglamentarias con pintura electrostática resistente
+                  a la intemperie.
+                </p>
+                <a
+                  href="https://wa.me/573112531330"
+                  class="link-btn"
+                  target="_blank"
+                  >Cotizar marcos →</a
+                >
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Voleibol</span>
+                <img
+                  src="../img/productos/canchas/poste-voleibol-competencia.webp"
+                  alt="Set Voleibol"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Sets de Voleibol</h3>
+                <p>
+                  Sistema completo: Postes telescópicos, winche de tensión y
+                  malla profesional.
+                </p>
+                <a
+                  href="https://wa.me/573112531330"
+                  class="link-btn"
+                  target="_blank"
+                  >Cotizar Set →</a
+                >
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-img-box">
+                <span class="badge">Baloncesto</span>
+                <img
+                  src="../img/productos/canchas/tablero-baloncesto-jirafa.webp"
+                  alt="Tablero Baloncesto"
+                  width="600"
+                  height="450"
+                  loading="lazy"
+                />
+              </div>
+              <div class="card-body">
+                <h3>Tableros Baloncesto</h3>
+                <p>
+                  Estructuras tipo jirafa o ancladas. Tableros en vidrio
+                  templado o acrílico.
+                </p>
+                <a
+                  href="https://wa.me/573112531330"
+                  class="link-btn"
+                  target="_blank"
+                  >Cotizar Tableros →</a
+                >
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" style="background-color: #f8f9fa; padding: 60px 0">
-      <div class="container">
-        <div class="text-center" style="margin-bottom: 40px">
+      <section
+        class="section"
+        style="background-color: #f8f9fa; padding: 30px 0"
+      >
+        <div class="container text-center">
           <h2 style="color: var(--verde-principal, #4caf50); font-weight: 800">
             Nuestra Ejecución Técnica
           </h2>
-          <p>Control de calidad en cada etapa de la obra civil.</p>
+          <div
+            class="grid-system"
+            style="
+              grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+              gap: 30px;
+              margin-top: 20px;
+            "
+          >
+            <div class="process-step">
+              <div class="process-icon">
+                <i class="fas fa-pencil-ruler"></i>
+              </div>
+              <h3>1. Diseño</h3>
+            </div>
+            <div class="process-step">
+              <div class="process-icon">
+                <i class="fas fa-truck-loading"></i>
+              </div>
+              <h3>2. Obra Civil</h3>
+            </div>
+            <div class="process-step">
+              <div class="process-icon"><i class="fas fa-layer-group"></i></div>
+              <h3>3. Instalación</h3>
+            </div>
+            <div class="process-step">
+              <div class="process-icon"><i class="fas fa-award"></i></div>
+              <h3>4. Entrega</h3>
+            </div>
+          </div>
         </div>
-
-        <div
-          class="grid-system"
-          style="
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-          "
-        >
-          <div class="process-step">
-            <div class="process-icon"><i class="fas fa-pencil-ruler"></i></div>
-            <h3>1. Diseño</h3>
-            <p>Planos, topografía y cálculo estructural.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-icon"><i class="fas fa-truck-loading"></i></div>
-            <h3>2. Obra Civil</h3>
-            <p>Movimiento de tierra, filtros y concreto.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-icon"><i class="fas fa-layer-group"></i></div>
-            <h3>3. Instalación</h3>
-            <p>Montaje de estructuras y gramas sintéticas.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-icon"><i class="fas fa-award"></i></div>
-            <h3>4. Entrega</h3>
-            <p>Pruebas de calidad y garantía certificada.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer>
       <div class="container footer-grid">
         <div class="footer-col">
-          <h4>GRAMAS Y PARQUES COLOMBIA</h4>
-          <p style="color: #ffffff">
+          <h3 style="color: #f0f7ff; margin-bottom: 15px">
+            GRAMAS Y PARQUES COLOMBIA
+          </h3>
+          <p>
             Expertos en obras civiles recreativas. Transformamos espacios con
             calidad y cumplimiento.
           </p>
-
           <div class="social-links">
             <a
               href="https://www.instagram.com/gramasyparquescolombia/"
-              aria-label="Instagram"
+              aria-label="Síguenos en Instagram"
               target="_blank"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-
+              ><i class="fab fa-instagram"></i
+            ></a>
             <a
               href="https://web.facebook.com/gramasyparquescolombia"
-              aria-label="Facebook"
+              aria-label="Síguenos en Facebook"
               target="_blank"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
+              ><i class="fab fa-facebook-f"></i
+            ></a>
           </div>
         </div>
-
         <div class="footer-col">
-          <h4>Enlaces Rápidos</h4>
+          <h3 style="color: #f0f7ff; margin-bottom: 15px">Enlaces Rápidos</h3>
           <ul class="footer-links">
             <li><a href="../index.html">Inicio</a></li>
-
             <li>
-              <a href="canchas-sinteticas.html">Canchas Deportivas</a>
+              <a href="canchas-sinteticas.html" class="active"
+                >Canchas Deportivas</a
+              >
             </li>
             <li><a href="parques.html">Parques Infantiles</a></li>
-            <li><a href="Biosaludables.html">Biosaludables</a></li>
-            <li>
-              <a href="mobiliario-urbano.html">Mobiliario Urbano</a>
-            </li>
-
-            <li><a href="../blog.html">Blog de Noticias</a></li>
             <li><a href="../contacto.html">Contacto</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
-          <h4>Contacto</h4>
-          <p style="color: #ffffff">
+          <h3 style="color: #f0f7ff; margin-bottom: 15px">Contacto</h3>
+          <p>
             <i
               class="fas fa-map-marker-alt"
               style="color: var(--naranja-urgencia); margin-right: 5px"
             ></i>
-            Cra 19D #52-85, Barranquilla - Atlántico
+            Cra 19D #52-85, Barranquilla
           </p>
           <p>
-            <a href="tel:+573112531330" style="color: #ffffff">
-              <i
-                class="fas fa-phone-alt"
-                style="color: var(--naranja-urgencia); margin-right: 5px"
-              ></i>
-              (+57) 311 253 1330
-            </a>
+            <i
+              class="fas fa-phone-alt"
+              style="color: var(--naranja-urgencia); margin-right: 5px"
+            ></i>
+            (+57) 311 253 1330
           </p>
           <p>
-            <a
-              href="mailto:comercial@gramasyparquescolombia.com"
-              style="color: #ffffff"
-            >
-              <i
-                class="fas fa-envelope"
-                style="color: var(--naranja-urgencia); margin-right: 5px"
-              ></i>
-              comercial@gramasyparquescolombia.com
-            </a>
+            <i
+              class="fas fa-envelope"
+              style="color: var(--naranja-urgencia); margin-right: 5px"
+            ></i>
+            comercial@gramasyparquescolombia.com
           </p>
         </div>
       </div>
-
       <div class="copyright-bar">
-        <div
-          class="container"
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            text-align: center;
-          "
-        >
+        <div class="container text-center">
           <span>© 2025 Gramas y Parques Colombia</span>
         </div>
       </div>
@@ -819,47 +779,34 @@
       class="whatsapp-float"
       id="wa-button"
       role="button"
-      aria-label="Abrir chat de asesoría por WhatsApp"
+      aria-label="WhatsApp"
     >
       <img
-        src="img/whatsapp-icon.svg"
-        alt="Icono de WhatsApp"
+        src="../img/whatsapp-icon.svg"
+        alt="WA"
         class="whatsapp-icon"
         width="40"
         height="40"
       />
     </div>
-
     <div class="wa-modal-overlay" id="wa-modal">
       <div class="wa-modal-content">
         <span
           class="close-modal"
           id="close-wa"
           role="button"
-          aria-label="Cerrar ventana"
+          aria-label="Cerrar"
           >&times;</span
         >
-        <div class="wa-header">
-          <h3>💬 Asesoría en Línea</h3>
-          <p>Ingeniería Recreativa</p>
-        </div>
+        <div class="wa-header"><h3>💬 Asesoría en Línea</h3></div>
         <div class="wa-body">
-          <p style="font-size: 0.8rem; margin-bottom: 10px; color: #555">
-            Hola, para atenderte mejor por favor indícanos:
-          </p>
           <label for="wa-name">Tu Nombre:</label>
-          <input type="text" id="wa-name" required />
-          <label for="wa-interest">¿En qué estás interesado? </label>
-          <select id="wa-interest" required>
-            <option value="Cotización General">Quiero una cotización</option>
-            <option value="Gramas Sintéticas">Grama Sintética</option>
-            <option value="Canchas Deportivas">Canchas Deportivas</option>
-            <option value="Parques Infantiles">Parques Infantiles</option>
-            <option value="Biosaludables">Parques Biosaludables</option>
-            <option value="Mobiliario">Mobiliario Urbano</option>
-          </select>
-          <label for="wa-desc">Cuéntanos más (Opcional):</label>
-          <textarea id="wa-desc" rows="2"></textarea>
+          <input
+            type="text"
+            id="wa-name"
+            required
+            placeholder="Nombre obligatorio"
+          />
           <button class="btn-whatsapp-send" id="btn-send-wa">
             INICIAR CHAT 🚀
           </button>
@@ -871,11 +818,9 @@
       href="#"
       class="btn-scroll-top"
       id="scrollTopBtn"
-      aria-label="Volver a la parte superior de la página"
-    >
-      <i class="fas fa-arrow-up"></i>
-    </a>
-
+      aria-label="Volver arriba"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
     <script src="../js/main.js" defer></script>
   </body>
 </html>

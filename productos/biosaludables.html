@@ -4,25 +4,107 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gimnasios Biosaludables | Gramas y Parques Colombia</title>
-    <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;600&display=swap&font-display=swap"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <style>
-      /* ESTILOS CORREGIDOS - SIMIL PARQUES / MERCADO LIBRE */
+      :root {
+        --azul-oscuro: #0c4a6e;
+        --naranja-urgencia: #f97316;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #fff;
+        line-height: 1.5;
+      }
+      .top-bar {
+        height: 40px;
+        background: #333;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+      header {
+        height: 80px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+        padding: 0 15px;
+      }
+      .logo-img {
+        width: 180px;
+        height: 60px;
+      }
+      .bg-light {
+        background-color: #f8f9fa;
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+      }
+      .titulo-seccion {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        color: var(--azul-oscuro);
+        margin: 0;
+        font-size: 2rem;
+      }
       .products-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 25px;
         margin-top: 30px;
+        min-height: 1000px;
       }
+    </style>
 
+    <link rel="preload" href="../css/style.css" as="style" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <link
+      rel="preload"
+      as="image"
+      href="../img/logo.png"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="../img/productos/biosaludables/eliptica.webp"
+      fetchpriority="high"
+    />
+
+    <style>
+      /* TUS ESTILOS CONSERVADOS */
       .park-card {
         background: white;
         border-radius: 10px;
@@ -34,44 +116,37 @@
         position: relative;
         overflow: hidden;
       }
-
       .park-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-        border-color: #0c4a6e; /* Azul confianza */
+        border-color: #0c4a6e;
       }
-
       .park-img-box {
         position: relative;
         height: 220px;
         background: #f9f9f9;
-        overflow: hidden; /* Agregado para que el zoom no se salga */
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid #eee;
       }
-
       .park-img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Cambiado de 'contain' a 'cover' para llenar el cuadro */
-        transition: transform 0.4s ease; /* Efecto de suavizado */
-        padding: 0; /* Eliminado el padding de 10px para que pegue al borde */
+        object-fit: cover;
+        transition: transform 0.4s ease;
+        padding: 0;
       }
-
-      /* Efecto de Zoom idéntico a Parques */
       .park-card:hover .park-img {
         transform: scale(1.05);
       }
-
       .park-content {
         padding: 18px;
         flex-grow: 1;
         display: flex;
         flex-direction: column;
       }
-
       .park-title {
         font-size: 1.05rem;
         font-weight: 800;
@@ -79,7 +154,6 @@
         margin-bottom: 8px;
         text-transform: uppercase;
       }
-
       .specs-list {
         list-style: none;
         padding: 0;
@@ -87,21 +161,18 @@
         font-size: 0.85rem;
         color: #555;
       }
-
       .specs-list li {
         margin-bottom: 4px;
         padding-left: 15px;
         position: relative;
       }
-
       .specs-list li::before {
         content: "•";
-        color: #f97316; /* Naranja urgencia */
+        color: #f97316;
         position: absolute;
         left: 0;
         font-weight: bold;
       }
-
       .btn-quote {
         margin-top: auto;
         display: block;
@@ -115,328 +186,509 @@
         font-size: 0.9rem;
         transition: background 0.3s;
       }
-
       .btn-quote:hover {
         background: #e65c00;
       }
     </style>
   </head>
-  
+
   <body>
     <div class="top-bar">
-  📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el país
-</div>
-<header>
-  <div class="container navbar">
-    <a href="../index.html" class="logo-container">
-      <img src="../img/logo.png" alt="Gramas y Parques Colombia" class="logo-img" width="180" height="60" fetchpriority="high" />
-    </a>
-    <div class="mobile-toggle" role="button" aria-label="Abrir menú de navegación" tabindex="0">&#9776;</div>
-    <nav class="nav-menu">
-      <div class="dropdown">
-        <a href="./gramas.html" class="dropbtn" id="link-gramas">GRAMAS</a>
-        <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
-        <div class="dropdown-content">
-          <a href="./gramas.html"><strong>Ver Todo Gramas</strong></a>
-          <a href="./gramas.html#paisajismo">Paisajismo y Decoración</a>
-          <a href="./gramas.html#deportivas">Deportivas</a>
+      📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el
+      país
+    </div>
+
+    <header>
+      <div class="container navbar">
+        <a href="../index.html" class="logo-container">
+          <img
+            src="../img/logo.png"
+            alt="Gramas y Parques Colombia"
+            class="logo-img"
+            width="180"
+            height="60"
+            fetchpriority="high"
+          />
+        </a>
+        <div
+          class="mobile-toggle"
+          role="button"
+          aria-label="Abrir menú de navegación"
+          tabindex="0"
+        >
+          &#9776;
         </div>
+        <nav class="nav-menu">
+          <div class="dropdown">
+            <a href="./gramas.html" class="dropbtn" id="link-gramas">GRAMAS</a>
+            <span
+              class="submenu-toggle"
+              role="button"
+              aria-label="Ver subcategorías"
+              tabindex="0"
+              >▼</span
+            >
+            <div class="dropdown-content">
+              <a href="./gramas.html"><strong>Ver Todo Gramas</strong></a>
+              <a href="./gramas.html#paisajismo">Paisajismo y Decoración</a>
+              <a href="./gramas.html#deportivas">Deportivas</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a
+              href="./canchas-sinteticas.html"
+              class="dropbtn"
+              id="link-canchas"
+              >CANCHAS DEPORTIVAS</a
+            >
+            <span
+              class="submenu-toggle"
+              role="button"
+              aria-label="Ver subcategorías"
+              tabindex="0"
+              >▼</span
+            >
+            <div class="dropdown-content">
+              <a href="./canchas-sinteticas.html"
+                ><strong>Ver Portafolio</strong></a
+              >
+              <a href="./canchas-sinteticas.html#sinteticas"
+                >Sintéticas y Múltiples</a
+              >
+              <a href="./canchas-sinteticas.html#cubiertas"
+                >Cubiertas y Estructuras</a
+              >
+              <a href="./canchas-sinteticas.html#cerramientos"
+                >Cerramientos y Mallas</a
+              >
+              <a href="./canchas-sinteticas.html#dotacion"
+                >Dotación Profesional</a
+              >
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="./parques.html" class="dropbtn" id="link-parques"
+              >PARQUES</a
+            >
+            <span
+              class="submenu-toggle"
+              role="button"
+              aria-label="Ver subcategorías"
+              tabindex="0"
+              >▼</span
+            >
+            <div class="dropdown-content">
+              <a href="./parques.html"><strong>Ver Todo Parques</strong></a>
+              <a href="./parques.html#metalica"
+                >Línea Metálica (Alto Tráfico)</a
+              >
+              <a href="./parques.html#madera">Línea Madera Inmunizada</a>
+              <a href="./parques.html#playground">Playground Importados</a>
+              <a href="./parques.html#mantenimiento"
+                >Mantenimiento y Repuestos</a
+              >
+            </div>
+          </div>
+          <a href="./biosaludables.html" id="link-biosaludables" class="active"
+            >BIOSALUDABLES</a
+          >
+          <div class="dropdown">
+            <a
+              href="./mobiliario-urbano.html"
+              class="dropbtn"
+              id="link-mobiliario"
+              >MOBILIARIO</a
+            >
+            <span
+              class="submenu-toggle"
+              role="button"
+              aria-label="Ver subcategorías"
+              tabindex="0"
+              >▼</span
+            >
+            <div class="dropdown-content">
+              <a href="./mobiliario-urbano.html"
+                ><strong>Ver Todo Mobiliario</strong></a
+              >
+              <a href="./mobiliario-urbano.html#concreto">Bancas de Concreto</a>
+              <a href="./mobiliario-urbano.html#madera">Bancas de Madera</a>
+              <a href="./mobiliario-urbano.html#canecas">Canecas Acero Inox</a>
+              <a href="./mobiliario-urbano.html#mesas">Mesas de Picnic</a>
+            </div>
+          </div>
+          <a href="../blog.html" style="font-weight: 700" id="link-blog"
+            >BLOG</a
+          >
+          <a href="../contacto.html" class="contacto-link" id="link-contacto"
+            >CONTÁCTENOS</a
+          >
+        </nav>
       </div>
-
-      <div class="dropdown">
-        <a href="./canchas-sinteticas.html" class="dropbtn" id="link-canchas">CANCHAS DEPORTIVAS</a>
-        <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
-        <div class="dropdown-content">
-          <a href="./canchas-sinteticas.html"><strong>Ver Portafolio</strong></a>
-          <a href="./canchas-sinteticas.html#sinteticas">Sintéticas y Múltiples</a>
-          <a href="./canchas-sinteticas.html#cubiertas">Cubiertas y Estructuras</a>
-          <a href="./canchas-sinteticas.html#cerramientos">Cerramientos y Mallas</a>
-          <a href="./canchas-sinteticas.html#dotacion">Dotación Profesional</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <a href="./parques.html" class="dropbtn" id="link-parques">PARQUES</a>
-        <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
-        <div class="dropdown-content">
-          <a href="./parques.html"><strong>Ver Todo Parques</strong></a>
-          <a href="./parques.html#metalica">Línea Metálica (Alto Tráfico)</a>
-          <a href="./parques.html#madera">Línea Madera Inmunizada</a>
-          <a href="./parques.html#playground">Playground Importados</a>
-          <a href="./parques.html#mantenimiento">Mantenimiento y Repuestos</a>
-        </div>
-      </div>
-
-      <a href="./biosaludables.html" id="link-biosaludables">BIOSALUDABLES</a>
-
-      <div class="dropdown">
-        <a href="./mobiliario-urbano.html" class="dropbtn" id="link-mobiliario">MOBILIARIO</a>
-        <span class="submenu-toggle" role="button" aria-label="Ver subcategorías" tabindex="0">▼</span>
-        <div class="dropdown-content">
-          <a href="./mobiliario-urbano.html"><strong>Ver Todo Mobiliario</strong></a>
-          <a href="./mobiliario-urbano.html#concreto">Bancas de Concreto</a>
-          <a href="./mobiliario-urbano.html#madera">Bancas de Madera</a>
-          <a href="./mobiliario-urbano.html#canecas">Canecas Acero Inox</a>
-          <a href="./mobiliario-urbano.html#mesas">Mesas de Picnic</a>
-        </div>
-      </div>
-
-      <a href="../blog.html" style="font-weight: 700" id="link-blog">BLOG</a>
-      <a href="../contacto.html" class="contacto-link" id="link-contacto">CONTÁCTENOS</a>
-    </nav>
-  </div>
-</header>
+    </header>
 
     <nav class="breadcrumbs">
       <div class="container">
-        <a href="../index.html">Inicio</a>
-        <span class="separator">/</span>
+        <a href="../index.html">Inicio</a> <span class="separator">/</span>
         <span class="current">Biosaludables</span>
       </div>
     </nav>
 
     <main>
-      <section class="section bg-light" style="padding-top: 20px; padding-bottom: 30px;">
+      <section
+        class="section bg-light"
+        style="padding-top: 20px; padding-bottom: 30px"
+      >
         <div class="container text-center">
-          <h1 class="titulo-seccion" style="margin-top: 0; margin-bottom: 10px;">
+          <h1 class="titulo-seccion" style="margin-top: 0; margin-bottom: 10px">
             Gimnasios <span style="color: #f97316">Biosaludables</span>
           </h1>
-          <p style="margin-bottom: 0;">Fabricados en Barranquilla con acero galvanizado y pintura electrostática al horno</p>
+          <p style="margin-bottom: 0">
+            Fabricados en Barranquilla con acero galvanizado y pintura
+            electrostática al horno
+          </p>
         </div>
       </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="products-grid">
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/eliptica.webp"
-                alt="Elíptica"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Elíptica</h3>
-              <ul class="specs-list">
-                <li>Ejercita pierna y cadera</li>
-                <li>Fortalece pulmón y corazón</li>
-                <li>Acero Galvanizado SAE 1008</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+      <section class="section">
+        <div class="container">
+          <div class="products-grid">
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/eliptica.webp"
+                  alt="Elíptica"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  fetchpriority="high"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Elíptica</h3>
+                <ul class="specs-list">
+                  <li>Ejercita pierna y cadera</li>
+                  <li>Fortalece pulmón y corazón</li>
+                  <li>Acero Galvanizado SAE 1008</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/press-pecho.webp"
-                alt="Press de Pecho"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Press de Pecho</h3>
-              <ul class="specs-list">
-                <li>Ejercita pecho y espalda</li>
-                <li>Mejora capacidad pulmonar</li>
-                <li>Tubería Galvanizada</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/press-pecho.webp"
+                  alt="Press de Pecho"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Press de Pecho</h3>
+                <ul class="specs-list">
+                  <li>Ejercita pecho y espalda</li>
+                  <li>Mejora capacidad pulmonar</li>
+                  <li>Tubería Galvanizada</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/banco-abdominal.webp"
-                alt="Banco Abdominal"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Banco Abdominal</h3>
-              <ul class="specs-list">
-                <li>Zona abdominal y cardio</li>
-                <li>Pintura electrostática UV</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/banco-abdominal.webp"
+                  alt="Banco Abdominal"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Banco Abdominal</h3>
+                <ul class="specs-list">
+                  <li>Zona abdominal y cardio</li>
+                  <li>Pintura electrostática UV</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/caminador-aereo.webp"
-                alt="Caminador Aéreo"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Caminador Aéreo</h3>
-              <ul class="specs-list">
-                <li>Fortalece cintura y piernas</li>
-                <li>Mejora estabilidad y flexibilidad</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/caminador-aereo.webp"
+                  alt="Caminador Aéreo"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Caminador Aéreo</h3>
+                <ul class="specs-list">
+                  <li>Fortalece cintura y piernas</li>
+                  <li>Mejora estabilidad y flexibilidad</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/prensa-horizontal.webp"
-                alt="Prensa Horizontal"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Prensa Horizontal</h3>
-              <ul class="specs-list">
-                <li>Fortalecimiento de piernas</li>
-                <li>Estación para 2 personas</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/prensa-horizontal.webp"
+                  alt="Prensa Horizontal"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Prensa Horizontal</h3>
+                <ul class="specs-list">
+                  <li>Fortalecimiento de piernas</li>
+                  <li>Estación para 2 personas</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/remo.webp"
-                alt="Remo"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Remo</h3>
-              <ul class="specs-list">
-                <li>Espalda, hombros y bíceps</li>
-                <li>Entrenamiento de estabilidad</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/remo.webp"
+                  alt="Remo"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Remo</h3>
+                <ul class="specs-list">
+                  <li>Espalda, hombros y bíceps</li>
+                  <li>Entrenamiento de estabilidad</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/twister.webp"
-                alt="Twister"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Twister</h3>
-              <ul class="specs-list">
-                <li>Estación para 3 personas</li>
-                <li>Fortalece espalda y cadera</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/twister.webp"
+                  alt="Twister"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Twister</h3>
+                <ul class="specs-list">
+                  <li>Estación para 3 personas</li>
+                  <li>Fortalece espalda y cadera</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/surf.webp"
-                alt="Surf"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Surf / Péndulo</h3>
-              <ul class="specs-list">
-                <li>Ejercita columna y lumbar</li>
-                <li>Mejora flexibilidad y agilidad</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/surf.webp"
+                  alt="Surf"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Surf / Péndulo</h3>
+                <ul class="specs-list">
+                  <li>Ejercita columna y lumbar</li>
+                  <li>Mejora flexibilidad y agilidad</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/volantes.webp"
-                alt="Volantes"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Volantes</h3>
-              <ul class="specs-list">
-                <li>Hombros y brazos</li>
-                <li>Agilidad y movilidad</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/volantes.webp"
+                  alt="Volantes"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Volantes</h3>
+                <ul class="specs-list">
+                  <li>Hombros y brazos</li>
+                  <li>Agilidad y movilidad</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/timon.webp"
-                alt="Timón"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Timón</h3>
-              <ul class="specs-list">
-                <li>Mejora movilidad de hombros</li>
-                <li>Fortalece articulaciones</li>
-                <li>Estación triple de alta resistencia</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/timon.webp"
+                  alt="Timón"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Timón</h3>
+                <ul class="specs-list">
+                  <li>Mejora movilidad de hombros</li>
+                  <li>Fortalece articulaciones</li>
+                  <li>Estación triple de alta resistencia</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
 
-          <article class="park-card">
-            <div class="park-img-box">
-              <img
-                src="../img/productos/biosaludables/barras-paralelas.webp"
-                alt="Barras Paralelas"
-                class="park-img"
-                width="280"
-                height="220"
-              />
-            </div>
-            <div class="park-content">
-              <h3 class="park-title">Barras Paralelas</h3>
-              <ul class="specs-list">
-                <li>Fortalece pecho, tríceps y hombros</li>
-                <li>Mejora la fuerza del tren superior</li>
-                <li>Estructura de acero reforzado</li>
-              </ul>
-              <a href="https://wa.me/573112531330" class="btn-quote">COTIZAR</a>
-            </div>
-          </article>
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/barras-paralelas.webp"
+                  alt="Barras Paralelas"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Barras Paralelas</h3>
+                <ul class="specs-list">
+                  <li>Fortalece pecho, tríceps y hombros</li>
+                  <li>Mejora la fuerza del tren superior</li>
+                  <li>Estructura de acero reforzado</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
+
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/poni.webp"
+                  alt="Poni Cabalgata"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Poni (Cabalgata)</h3>
+                <ul class="specs-list">
+                  <li>Fortalece brazos y piernas</li>
+                  <li>Mejora coordinación motriz</li>
+                  <li>Estructura reforzada</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
+
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/barras-horizontales.webp"
+                  alt="barras"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Barras Horizontales</h3>
+                <ul class="specs-list">
+                  <li>Desarrolla tren superior</li>
+                  <li>Mejora la descompresión espinal</li>
+                  <li>Alta durabilidad</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
+
+            <article class="park-card">
+              <div class="park-img-box">
+                <img
+                  src="../img/productos/biosaludables/bicicleta.webp"
+                  alt="Bicicleta Estática"
+                  class="park-img"
+                  width="280"
+                  height="220"
+                  loading="lazy"
+                />
+              </div>
+              <div class="park-content">
+                <h3 class="park-title">Bicicleta Estática</h3>
+                <ul class="specs-list">
+                  <li>Cardio de bajo impacto</li>
+                  <li>Fortalece tren inferior</li>
+                  <li>Diseño ergonómico</li>
+                </ul>
+                <a href="https://wa.me/573112531330" class="btn-quote"
+                  >COTIZAR</a
+                >
+              </div>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
-    <section class="section" style="background-color: #f8f9fa; padding: 60px 0">
-      <div class="container">
-        <div class="text-center" style="margin-bottom: 40px">
+      </section>
+
+      <section
+        class="section"
+        style="background-color: #f8f9fa; padding: 60px 0"
+      >
+        <div class="container text-center">
           <h2 style="color: #0c4a6e; font-weight: 800">
             Implementación de <span style="color: #f97316">Gimnasios</span>
           </h2>
@@ -444,68 +696,73 @@
             Instalación técnica para garantizar la durabilidad y salud de la
             comunidad.
           </p>
+          <div
+            class="grid-system"
+            style="
+              grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+              gap: 30px;
+              margin-top: 40px;
+            "
+          >
+            <div class="process-step" style="border-bottom-color: #f97316">
+              <div
+                class="process-icon"
+                style="color: #f97316; background-color: #fff7ed"
+              >
+                <i class="fas fa-comments"></i>
+              </div>
+              <h3>1. Consultoría</h3>
+              <p>
+                Selección de equipos según el área y perfil de los usuarios.
+              </p>
+            </div>
+            <div class="process-step" style="border-bottom-color: #f97316">
+              <div
+                class="process-icon"
+                style="color: #f97316; background-color: #fff7ed"
+              >
+                <i class="fas fa-layer-group"></i>
+              </div>
+              <h3>2. Fabricación</h3>
+              <p>
+                Corte y doblado de tubería, soldadura y pintura electrostática.
+              </p>
+            </div>
+            <div class="process-step" style="border-bottom-color: #f97316">
+              <div
+                class="process-icon"
+                style="color: #f97316; background-color: #fff7ed"
+              >
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3>3. Anclaje</h3>
+              <p>
+                Instalación de equipos con pernos de alta resistencia al
+                impacto.
+              </p>
+            </div>
+            <div class="process-step" style="border-bottom-color: #f97316">
+              <div
+                class="process-icon"
+                style="color: #f97316; background-color: #fff7ed"
+              >
+                <i class="fas fa-check-double"></i>
+              </div>
+              <h3>4. Puesta a Punto</h3>
+              <p>Verificación de mecanismos y entrega con señalización.</p>
+            </div>
+          </div>
         </div>
-
-        <div
-          class="grid-system"
-          style="
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-          "
-        >
-          <div class="process-step" style="border-bottom-color: #f97316">
-            <div
-              class="process-icon"
-              style="color: #f97316; background-color: #fff7ed"
-            >
-              <i class="fas fa-comments"></i>
-            </div>
-            <h3>1. Consultoría</h3>
-            <p>Selección de equipos según el área y perfil de los usuarios.</p>
-          </div>
-          <div class="process-step" style="border-bottom-color: #f97316">
-            <div
-              class="process-icon"
-              style="color: #f97316; background-color: #fff7ed"
-            >
-              <i class="fas fa-layer-group"></i>
-            </div>
-            <h3>2. Fabricación y pintura</h3>
-            <p>
-              Corte y doblado de tubería, soldadura y pintura electrostática.
-            </p>
-          </div>
-          <div class="process-step" style="border-bottom-color: #f97316">
-            <div
-              class="process-icon"
-              style="color: #f97316; background-color: #fff7ed"
-            >
-              <i class="fas fa-tools"></i>
-            </div>
-            <h3>3. Anclaje</h3>
-            <p>
-              Instalación de equipos con pernos de alta resistencia al impacto.
-            </p>
-          </div>
-          <div class="process-step" style="border-bottom-color: #f97316">
-            <div
-              class="process-icon"
-              style="color: #f97316; background-color: #fff7ed"
-            >
-              <i class="fas fa-check-double"></i>
-            </div>
-            <h3>4. Puesta a Punto</h3>
-            <p>Verificación de mecanismos y entrega con señalización.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer>
       <div class="container footer-grid">
         <div class="footer-col">
-          <h4>GRAMAS Y PARQUES COLOMBIA</h4>
-          <p style="color: #ffffff">
+          <h3 style="color: #f0f7ff; margin-bottom: 15px">
+            GRAMAS Y PARQUES COLOMBIA
+          </h3>
+          <p>
             Expertos en obras civiles recreativas. Transformamos espacios con
             calidad y cumplimiento.
           </p>
@@ -513,14 +770,14 @@
           <div class="social-links">
             <a
               href="https://www.instagram.com/gramasyparquescolombia/"
-              aria-label="Instagram"
+              aria-label="Síguenos en Instagram"
               target="_blank"
             >
               <i class="fab fa-instagram"></i>
             </a>
             <a
               href="https://web.facebook.com/gramasyparquescolombia"
-              aria-label="Facebook"
+              aria-label="Síguenos en Facebook"
               target="_blank"
             >
               <i class="fab fa-facebook-f"></i>
@@ -529,7 +786,7 @@
         </div>
 
         <div class="footer-col">
-          <h4>Enlaces Rápidos</h4>
+          <h3 style="color: #f0f7ff; margin-bottom: 15px">Enlaces Rápidos</h3>
           <ul class="footer-links">
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="canchas-sinteticas.html">Canchas Deportivas</a></li>
@@ -542,8 +799,8 @@
         </div>
 
         <div class="footer-col">
-          <h4>Contacto</h4>
-          <p style="color: #ffffff">
+          <h3 style="color: #f0f7ff; margin-bottom: 15px">Contacto</h3>
+          <p>
             <i
               class="fas fa-map-marker-alt"
               style="color: var(--naranja-urgencia); margin-right: 5px"
@@ -551,25 +808,18 @@
             Cra 19D #52-85, Barranquilla - Atlántico
           </p>
           <p>
-            <a href="tel:+573112531330" style="color: #ffffff">
-              <i
-                class="fas fa-phone-alt"
-                style="color: var(--naranja-urgencia); margin-right: 5px"
-              ></i>
-              (+57) 311 253 1330
-            </a>
+            <i
+              class="fas fa-phone-alt"
+              style="color: var(--naranja-urgencia); margin-right: 5px"
+            ></i>
+            (+57) 311 253 1330
           </p>
           <p>
-            <a
-              href="mailto:comercial@gramasyparquescolombia.com"
-              style="color: #ffffff"
-            >
-              <i
-                class="fas fa-envelope"
-                style="color: var(--naranja-urgencia); margin-right: 5px"
-              ></i>
-              comercial@gramasyparquescolombia.com
-            </a>
+            <i
+              class="fas fa-envelope"
+              style="color: var(--naranja-urgencia); margin-right: 5px"
+            ></i>
+            comercial@gramasyparquescolombia.com
           </p>
         </div>
       </div>
@@ -587,6 +837,23 @@
           "
         >
           <span>© 2025 Gramas y Parques Colombia</span>
+
+          <div
+            class="legal-links"
+            style="font-size: 0.8rem; opacity: 0.6; font-weight: 300"
+          >
+            <a
+              href="../politica-de-privacidad.html"
+              style="color: inherit; text-decoration: none"
+              >Política de Privacidad</a
+            >
+            <span style="margin: 0 5px">|</span>
+            <a
+              href="../terminos-y-condiciones.html"
+              style="color: inherit; text-decoration: none"
+              >Términos y Condiciones</a
+            >
+          </div>
         </div>
       </div>
     </footer>
@@ -595,41 +862,40 @@
       class="whatsapp-float"
       id="wa-button"
       role="button"
-      aria-label="Abrir chat de asesoría por WhatsApp"
+      aria-label="WhatsApp"
     >
       <img
-        src="img/whatsapp-icon.svg"
-        alt="Icono de WhatsApp"
+        src="../img/whatsapp-icon.svg"
+        alt="WhatsApp"
         class="whatsapp-icon"
         width="40"
         height="40"
       />
     </div>
-
     <div class="wa-modal-overlay" id="wa-modal">
       <div class="wa-modal-content">
-        <span class="close-modal" id="close-wa" role="button" aria-label="Cerrar ventana">&times;</span>
+        <span
+          class="close-modal"
+          id="close-wa"
+          role="button"
+          aria-label="Cerrar ventana"
+          >&times;</span
+        >
         <div class="wa-header">
           <h3>💬 Asesoría en Línea</h3>
           <p>Ingeniería Recreativa</p>
         </div>
         <div class="wa-body">
           <p style="font-size: 0.8rem; margin-bottom: 10px; color: #555">
-            Hola, para atenderte mejor por favor indícanos:
+            Hola, indícanos tu nombre para atenderte:
           </p>
-                    <label for="wa-name">Tu Nombre:</label>
-          <input type="text" id="wa-name" required />
-          <label for="wa-interest">¿En qué estás interesado? </label>
-          <select id="wa-interest" required>
-            <option value="Cotización General">Quiero una cotización</option>
-            <option value="Gramas Sintéticas">Grama Sintética</option>
-            <option value="Canchas Deportivas">Canchas Deportivas</option>
-            <option value="Parques Infantiles">Parques Infantiles</option>
-            <option value="Biosaludables">Parques Biosaludables</option>
-            <option value="Mobiliario">Mobiliario Urbano</option>
-          </select>
-          <label for="wa-desc">Cuéntanos más (Opcional):</label>
-          <textarea id="wa-desc" rows="2"></textarea>
+          <label for="wa-name">Tu Nombre:</label>
+          <input
+            type="text"
+            id="wa-name"
+            required
+            placeholder="Nombre obligatorio"
+          />
           <button class="btn-whatsapp-send" id="btn-send-wa">
             INICIAR CHAT 🚀
           </button>
@@ -637,16 +903,18 @@
       </div>
     </div>
 
-<a href="#" class="btn-scroll-top" id="scrollTopBtn" aria-label="Volver a la parte superior de la página">
-    <i class="fas fa-arrow-up"></i>
-</a>
-
-    <script src="../js/main.js" defer></script>
-
+    <a
+      href="#"
+      class="btn-scroll-top"
+      id="scrollTopBtn"
+      aria-label="Volver arriba"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
     <div id="myLightbox" class="lightbox-modal">
-      <span class="close-lightbox">&times;</span>
-      <img class="lightbox-content" id="img01" alt="Vista ampliada" />
+      <span class="close-lightbox">&times;</span
+      ><img class="lightbox-content" id="img01" alt="Zoom" />
       <div id="caption"></div>
     </div>
+    <script src="../js/main.js" defer></script>
   </body>
 </html>
