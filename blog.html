@@ -9,34 +9,41 @@
       name="description"
       content="Noticias, guías de mantenimiento y normativa sobre canchas sintéticas, parques infantiles y mobiliario urbano en Colombia."
     />
+    <link rel="canonical" href="./blog.html" />
 
-    <link
-      rel="canonical"
-      href="https://freddyroa76.github.io/web-gramas-parques/blog.html"
-    />
-
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:type" content="website" />
     <meta
       property="og:title"
       content="Blog de Ingeniería Recreativa | Gramas y Parques Colombia"
     />
     <meta
       property="og:description"
-      content="Guías y noticias sobre gramas sintéticas y parques en Colombia."
+      content="Guías técnicas y consejos expertos sobre gramas sintéticas y parques infantiles."
+    />
+    <meta property="og:url" content="./blog.html" />
+    <meta property="og:site_name" content="Gramas y Parques Colombia" />
+    <meta property="og:image" content="img/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Blog de Ingeniería Recreativa | Gramas y Parques"
     />
     <meta
-      property="og:image"
-      content="https://freddyroa76.github.io/web-gramas-parques/img/og-image.jpg"
+      name="twitter:description"
+      content="Aprende sobre normativa NTC 5176 y mantenimiento de canchas en Colombia."
     />
-    <meta
-      property="og:url"
-      content="https://freddyroa76.github.io/web-gramas-parques/blog.html"
-    />
-    <meta property="og:type" content="website" />
+    <meta name="twitter:image" content="img/og-image.jpg" />
 
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
@@ -47,7 +54,7 @@
     />
 
     <style>
-      /* Tus estilos se mantienen igual... */
+      /* Mantenemos tu base de diseño funcional */
       .blog-card {
         background: white;
         border-radius: 12px;
@@ -58,7 +65,72 @@
         flex-direction: column;
         height: 100%;
       }
-      /* ... resto de tu CSS ... */
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+      .blog-img-box {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+      }
+      .blog-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .blog-tag {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: white;
+        text-transform: uppercase;
+      }
+      .tag-green {
+        background: #28a745;
+      }
+      .tag-blue {
+        background: #007bff;
+      }
+      .tag-orange {
+        background: #fd7e14;
+      }
+      .blog-body {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .blog-meta {
+        font-size: 0.85rem;
+        color: #777;
+        margin-bottom: 10px;
+      }
+      .blog-title {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        line-height: 1.4;
+      }
+      .blog-title a {
+        color: #333;
+        text-decoration: none;
+      }
+      .blog-excerpt {
+        font-size: 0.95rem;
+        color: #555;
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+      .blog-link {
+        color: var(--naranja-urgencia, #ff6600);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
     </style>
   </head>
 
@@ -67,6 +139,7 @@
       📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el
       país
     </div>
+
     <header>
       <div class="container navbar">
         <a href="index.html" class="logo-container">
@@ -82,138 +155,49 @@
         <div
           class="mobile-toggle"
           role="button"
-          aria-label="Abrir menú de navegación"
+          aria-label="Abrir menú"
           tabindex="0"
         >
           &#9776;
         </div>
+
         <nav class="nav-menu">
           <div class="dropdown">
-            <a href="productos/gramas.html" class="dropbtn" id="link-gramas"
-              >GRAMAS</a
-            >
-            <span
-              class="submenu-toggle"
-              role="button"
-              aria-label="Ver subcategorías"
-              tabindex="0"
-              >▼</span
-            >
+            <a href="productos/gramas.html" class="dropbtn">GRAMAS</a>
             <div class="dropdown-content">
-              <a href="productos/gramas.html"
-                ><strong>Ver Todo Gramas</strong></a
-              >
-              <a href="productos/gramas.html#paisajismo"
-                >Paisajismo y Decoración</a
-              >
+              <a href="productos/gramas.html">Ver Todo</a>
+              <a href="productos/gramas.html#paisajismo">Paisajismo</a>
               <a href="productos/gramas.html#deportivas">Deportivas</a>
             </div>
           </div>
 
           <div class="dropdown">
-            <a
-              href="productos/canchas-sinteticas.html"
-              class="dropbtn"
-              id="link-canchas"
+            <a href="productos/canchas-sinteticas.html" class="dropbtn"
               >CANCHAS DEPORTIVAS</a
             >
-            <span
-              class="submenu-toggle"
-              role="button"
-              aria-label="Ver subcategorías"
-              tabindex="0"
-              >▼</span
-            >
             <div class="dropdown-content">
-              <a href="productos/canchas-sinteticas.html"
-                ><strong>Ver Portafolio</strong></a
-              >
+              <a href="productos/canchas-sinteticas.html">Portafolio</a>
               <a href="productos/canchas-sinteticas.html#sinteticas"
-                >Sintéticas y Múltiples</a
+                >Sintéticas</a
               >
               <a href="productos/canchas-sinteticas.html#cubiertas"
-                >Cubiertas y Estructuras</a
-              >
-              <a href="productos/canchas-sinteticas.html#cerramientos"
-                >Cerramientos y Mallas</a
-              >
-              <a href="productos/canchas-sinteticas.html#dotacion"
-                >Dotación Profesional</a
+                >Cubiertas</a
               >
             </div>
           </div>
 
           <div class="dropdown">
-            <a href="productos/parques.html" class="dropbtn" id="link-parques"
-              >PARQUES</a
-            >
-            <span
-              class="submenu-toggle"
-              role="button"
-              aria-label="Ver subcategorías"
-              tabindex="0"
-              >▼</span
-            >
+            <a href="productos/parques.html" class="dropbtn">PARQUES</a>
             <div class="dropdown-content">
-              <a href="productos/parques.html"
-                ><strong>Ver Todo Parques</strong></a
-              >
-              <a href="productos/parques.html#metalica"
-                >Línea Metálica (Alto Tráfico)</a
-              >
-              <a href="productos/parques.html#madera"
-                >Línea Madera Inmunizada</a
-              >
-              <a href="productos/parques.html#playground"
-                >Playground Importados</a
-              >
-              <a href="productos/parques.html#mantenimiento"
-                >Mantenimiento y Repuestos</a
-              >
+              <a href="productos/parques.html">Ver Todo</a>
+              <a href="productos/parques.html#metalica">Línea Metálica</a>
+              <a href="productos/parques.html#madera">Madera</a>
             </div>
           </div>
 
-          <a href="productos/biosaludables.html" id="link-biosaludables"
-            >BIOSALUDABLES</a
-          >
-
-          <div class="dropdown">
-            <a
-              href="productos/mobiliario-urbano.html"
-              class="dropbtn"
-              id="link-mobiliario"
-              >MOBILIARIO</a
-            >
-            <span
-              class="submenu-toggle"
-              role="button"
-              aria-label="Ver subcategorías"
-              tabindex="0"
-              >▼</span
-            >
-            <div class="dropdown-content">
-              <a href="productos/mobiliario-urbano.html"
-                ><strong>Ver Todo Mobiliario</strong></a
-              >
-              <a href="productos/mobiliario-urbano.html#concreto"
-                >Bancas de Concreto</a
-              >
-              <a href="productos/mobiliario-urbano.html#madera"
-                >Bancas de Madera</a
-              >
-              <a href="productos/mobiliario-urbano.html#canecas"
-                >Canecas Acero Inox</a
-              >
-              <a href="productos/mobiliario-urbano.html#mesas"
-                >Mesas de Picnic</a
-              >
-            </div>
-          </div>
-
-          <a href="blog.html" style="font-weight: 700" id="link-blog">BLOG</a>
-          <a href="contacto.html" class="contacto-link" id="link-contacto"
-            >CONTÁCTENOS</a
-          >
+          <a href="productos/biosaludables.html">BIOSALUDABLES</a>
+          <a href="blog.html" style="font-weight: 700">BLOG</a>
+          <a href="contacto.html" class="contacto-link">CONTÁCTENOS</a>
         </nav>
       </div>
     </header>
@@ -226,120 +210,119 @@
       </div>
     </nav>
 
-    <section
-      class="section bg-light"
-      style="padding-top: 20px; padding-bottom: 20px"
-    >
-      <div class="container text-center">
-        <h1 class="titulo-seccion" style="margin-top: 0; margin-bottom: 10px">
-          Blog de <span style="color: var(--naranja-urgencia)">Noticias</span>
-        </h1>
-        <p class="section-desc" style="margin-bottom: 0">
-          Guías técnicas y consejos para el mantenimiento de tus espacios.
-        </p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div
-          class="grid-system"
-          style="
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-          "
-        >
-          <article class="blog-card">
-            <div class="blog-img-box">
-              <span class="blog-tag tag-green">Técnico</span>
-              <img
-                src="blog/img/mantenimiento-portada.webp"
-                alt="Mantenimiento de cancha sintética con maquinaria"
-                loading="lazy"
-              />
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <i class="far fa-calendar"></i> Actualizado 2025
-              </div>
-              <h3 class="blog-title">
-                <a href="blog/mantenimiento-canchas-sinteticas.html">
-                  Mantenimiento de Canchas Sintéticas: Guía para no perder tu
-                  garantía
-                </a>
-              </h3>
-              <p class="blog-excerpt">
-                El cepillado y la descompactación son claves. Descubre cada
-                cuánto debes hacerlo para que tu cancha dure 10 años.
-              </p>
-              <a
-                href="blog/mantenimiento-canchas-sinteticas.html"
-                class="blog-link"
-              >
-                Leer artículo <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </article>
-
-          <article class="blog-card">
-            <div class="blog-img-box">
-              <span class="blog-tag tag-blue">Legal</span>
-              <img
-                src="blog/img/normativa-parques-portada.webp"
-                alt="Norma NTC 5176 parques infantiles Colombia"
-                loading="lazy"
-              />
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <i class="far fa-calendar"></i> Actualizado 2025
-              </div>
-              <h3 class="blog-title">
-                <a href="blog/normativa-parques-ntc-5176.html">
-                  Norma NTC 5176: ¿Tu parque infantil cumple con la ley en
-                  Colombia?
-                </a>
-              </h3>
-              <p class="blog-excerpt">
-                Evita demandas y accidentes. Conoce los requisitos obligatorios
-                de atrapamientos y superficies para conjuntos y colegios.
-              </p>
-              <a href="blog/normativa-parques-ntc-5176.html" class="blog-link">
-                Leer artículo <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </article>
-
-          <article class="blog-card">
-            <div class="blog-img-box">
-              <span class="blog-tag tag-orange">Ahorro</span>
-              <img
-                src="blog/img/comparativa-gramas-portada.webp"
-                alt="Grama sintética vs natural costos"
-                loading="lazy"
-              />
-            </div>
-            <div class="blog-body">
-              <div class="blog-meta">
-                <i class="far fa-calendar"></i> Actualizado 2025
-              </div>
-              <h3 class="blog-title">
-                <a href="blog/grama-sintetica-vs-natural.html">
-                  Grama Sintética vs. Natural: ¿Cuál es más rentable?
-                </a>
-              </h3>
-              <p class="blog-excerpt">
-                Análisis financiero de agua y mantenimiento. Te demostramos cómo
-                recuperas la inversión en 2.5 años.
-              </p>
-              <a href="blog/grama-sintetica-vs-natural.html" class="blog-link">
-                Leer artículo <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </article>
+    <main>
+      <section
+        class="section bg-light"
+        style="padding-top: 40px; padding-bottom: 20px"
+      >
+        <div class="container text-center">
+          <h1 class="titulo-seccion" style="margin-bottom: 10px">
+            Blog de <span style="color: #ff6600">Noticias</span>
+          </h1>
+          <p class="section-desc" style="margin-bottom: 0">
+            Guías técnicas y consejos para el mantenimiento de tus espacios.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="section" style="padding-top: 30px">
+        <div class="container">
+          <div
+            class="grid-system"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+              gap: 30px;
+            "
+          >
+            <article class="blog-card">
+              <div class="blog-img-box">
+                <span class="blog-tag tag-green">Técnico</span>
+                <img
+                  src="blog/img/mantenimiento-portada.webp"
+                  alt="Mantenimiento de cancha sintética"
+                  loading="lazy"
+                />
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <i class="far fa-calendar"></i> 2025
+                </div>
+                <h3 class="blog-title">
+                  <a href="blog/mantenimiento-canchas-sinteticas.html"
+                    >Guía de Mantenimiento de Canchas Sintéticas</a
+                  >
+                </h3>
+                <p class="blog-excerpt">
+                  El cepillado y la descompactación son claves para que tu
+                  cancha dure 10 años.
+                </p>
+                <a
+                  href="blog/mantenimiento-canchas-sinteticas.html"
+                  class="blog-link"
+                  >Leer más <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-img-box">
+                <span class="blog-tag tag-blue">Legal</span>
+                <img
+                  src="blog/img/normativa-parques-portada.webp"
+                  alt="Norma NTC 5176"
+                  loading="lazy"
+                />
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <i class="far fa-calendar"></i> 2025
+                </div>
+                <h3 class="blog-title">
+                  <a href="blog/normativa-parques-ntc-5176.html"
+                    >Norma NTC 5176: Seguridad en Parques</a
+                  >
+                </h3>
+                <p class="blog-excerpt">
+                  ¿Tu parque cumple con la ley en Colombia? Evita demandas y
+                  accidentes.
+                </p>
+                <a href="blog/normativa-parques-ntc-5176.html" class="blog-link"
+                  >Leer más <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-img-box">
+                <span class="blog-tag tag-orange">Ahorro</span>
+                <img
+                  src="blog/img/comparativa-gramas-portada.webp"
+                  alt="Grama sintética vs natural"
+                  loading="lazy"
+                />
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <i class="far fa-calendar"></i> 2025
+                </div>
+                <h3 class="blog-title">
+                  <a href="blog/grama-sintetica-vs-natural.html"
+                    >Grama Sintética vs. Natural: Rentabilidad</a
+                  >
+                </h3>
+                <p class="blog-excerpt">
+                  Análisis financiero: Recupera tu inversión en menos de 3 años.
+                </p>
+                <a href="blog/grama-sintetica-vs-natural.html" class="blog-link"
+                  >Leer más <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer>
       <div class="container footer-grid">
@@ -448,66 +431,28 @@
       </div>
     </footer>
 
-    <div
-      class="whatsapp-float"
-      id="wa-button"
-      role="button"
-      aria-label="Abrir chat de asesoría por WhatsApp"
-    >
-      <img
-        src="img/whatsapp-icon.svg"
-        alt="Icono de WhatsApp"
-        class="whatsapp-icon"
-        width="40"
-        height="40"
-      />
+    <div class="whatsapp-float" id="wa-button">
+      <img src="img/whatsapp-icon.svg" alt="WhatsApp" width="40" height="40" />
     </div>
 
     <div class="wa-modal-overlay" id="wa-modal">
       <div class="wa-modal-content">
-        <span
-          class="close-modal"
-          id="close-wa"
-          role="button"
-          aria-label="Cerrar ventana"
-          >&times;</span
-        >
-        <div class="wa-header">
-          <h3>💬 Asesoría en Línea</h3>
-          <p>Ingeniería Recreativa</p>
-        </div>
+        <span class="close-modal" id="close-wa">&times;</span>
+        <div class="wa-header"><h3>💬 Asesoría en Línea</h3></div>
         <div class="wa-body">
-          <p style="font-size: 0.8rem; margin-bottom: 10px; color: #555">
-            Hola, para atenderte mejor por favor indícanos:
-          </p>
-          <label for="wa-name">Tu Nombre:</label>
-          <input type="text" id="wa-name" required />
-          <label for="wa-interest">¿En qué estás interesado? </label>
-          <select id="wa-interest" required>
-            <option value="Cotización General">Quiero una cotización</option>
-            <option value="Gramas Sintéticas">Grama Sintética</option>
-            <option value="Canchas Deportivas">Canchas Deportivas</option>
-            <option value="Parques Infantiles">Parques Infantiles</option>
-            <option value="Biosaludables">Parques Biosaludables</option>
-            <option value="Mobiliario">Mobiliario Urbano</option>
+          <label>Tu Nombre:</label>
+          <input type="text" id="wa-name" />
+          <label>Interés:</label>
+          <select id="wa-interest">
+            <option value="Cotización">Cotización General</option>
+            <option value="Gramas">Grama Sintética</option>
           </select>
-          <label for="wa-desc">Cuéntanos más (Opcional):</label>
-          <textarea id="wa-desc" rows="2"></textarea>
           <button class="btn-whatsapp-send" id="btn-send-wa">
             INICIAR CHAT 🚀
           </button>
         </div>
       </div>
     </div>
-
-    <a
-      href="#"
-      class="btn-scroll-top"
-      id="scrollTopBtn"
-      aria-label="Volver a la parte superior de la página"
-    >
-      <i class="fas fa-arrow-up"></i>
-    </a>
 
     <script src="js/main.js" defer></script>
   </body>
