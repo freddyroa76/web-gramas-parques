@@ -3,17 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Título del Artículo Aquí | Blog Gramas y Parques</title>
+
+    <title>
+      Título del Artículo | Blog de Ingeniería | Gramas y Parques Colombia
+    </title>
     <meta
       name="description"
-      content="Resumen atractivo del artículo para Google. Enfocado en la solución que ofreces."
+      content="Escribe aquí un resumen de 155 caracteres optimizado para SEO."
     />
-    <link
-      rel="canonical"
-      href="https://gramasyparquescolombia.com/blog/url-articulo.html"
-    />
+    <link rel="canonical" href="./nombre-del-archivo.html" />
+
+    <meta property="og:title" content="Título del Artículo" />
+    <meta property="og:description" content="Resumen para redes sociales." />
+    <meta property="og:image" content="img/portada-articulo.jpg" />
+    <meta property="og:url" content="./nombre-del-archivo.html" />
+    <meta property="og:type" content="article" />
+
     <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
@@ -24,80 +34,67 @@
     />
 
     <style>
-      /* Layout */
+      /* Estilos específicos para la legibilidad del artículo */
       .blog-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
         display: grid;
         grid-template-columns: 1fr;
         gap: 40px;
-        padding: 40px 0;
       }
       @media (min-width: 992px) {
         .blog-container {
-          grid-template-columns: 2.5fr 1fr;
+          grid-template-columns: 70% 30%;
         }
       }
-
-      /* Tipografía de Venta */
       .article-content {
         font-family: "Inter", sans-serif;
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 1.1rem;
+        line-height: 1.8;
         color: #444;
       }
       .article-content h1 {
         font-family: "Montserrat", sans-serif;
-        font-size: 2rem;
+        font-size: 2.5rem;
         line-height: 1.2;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         color: #111;
         font-weight: 800;
       }
       .article-content h2 {
         font-family: "Montserrat", sans-serif;
-        color: var(--azul-oscuro, #0a2342);
+        color: #0a2342;
         margin-top: 35px;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         font-weight: 700;
         margin-bottom: 15px;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 10px;
-      }
-      .article-content img {
-        max-width: 100%;
-        border-radius: 8px;
-        margin: 25px 0;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-      .article-content ul {
-        padding-left: 20px;
-        margin-bottom: 20px;
-      }
-      .article-content li {
-        margin-bottom: 10px;
+        border-left: 5px solid #ff6600;
+        padding-left: 15px;
       }
 
-      /* Sidebar */
+      .category-badge {
+        display: inline-block;
+        background: #ff6600;
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 15px;
+      }
+
       .sidebar-widget {
         background: #fff;
         padding: 25px;
         border-radius: 12px;
-        margin-bottom: 30px;
-        border: 1px solid #e0e0e0;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      }
-      .breadcrumbs {
-        background: #f8f9fa;
-        padding: 15px 0;
-        font-size: 0.85rem;
-        color: #666;
-        margin-bottom: 20px;
-      }
-      .breadcrumbs a {
-        color: #0277bd;
-        text-decoration: none;
+        border: 1px solid #eee;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        position: sticky;
+        top: 100px;
       }
 
-      /* BOTÓN FINAL DE ARTÍCULO (Naranja - Acción Principal) */
       .btn-orange-cta {
         display: inline-block;
         background-color: #ff6600 !important;
@@ -106,147 +103,327 @@
         border-radius: 50px;
         text-decoration: none;
         font-weight: 800;
-        font-size: 1.1rem;
+        text-align: center;
+        width: 100%;
         box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
         transition: transform 0.2s ease;
-        text-transform: uppercase;
       }
       .btn-orange-cta:hover {
         transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
       }
 
-      /* BOTÓN SIDEBAR (Verde WhatsApp - Contacto Rápido) */
-      .btn-sidebar-whatsapp {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        width: 100%;
-        background-color: #25d366 !important; /* Verde WhatsApp Oficial */
-        color: white !important;
-        padding: 12px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 0.95rem;
-        box-shadow: 0 3px 8px rgba(37, 211, 102, 0.3);
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-        text-transform: uppercase;
+      .breadcrumbs {
+        padding: 15px 0;
+        font-size: 0.9rem;
+        color: #666;
       }
-      .btn-sidebar-whatsapp:hover {
-        background-color: #128c7e !important; /* Verde Oscuro al pasar mouse */
-        transform: translateY(-2px);
+      .breadcrumbs a {
+        color: #ff6600;
+        text-decoration: none;
       }
     </style>
   </head>
   <body>
-    <div id="menu-universal"></div>
-
-    <div class="breadcrumbs">
-      <div class="container">
-        <a href="../index.html">Inicio</a> / <a href="../blog.html">Blog</a> /
-        <span>Tema del Artículo</span>
-      </div>
+    <div class="top-bar">
+      📍 Envíos e Instalación en Barranquilla, Cartagena, Santa Marta y todo el
+      país
     </div>
 
-    <section class="container blog-container">
-      <article class="article-content">
-        <h1>Título Atractivo que Prometa un Beneficio Claro</h1>
-
+    <header>
+      <div class="container navbar">
+        <a href="../index.html" class="logo-container">
+          <img
+            src="../img/logo.png"
+            alt="Gramas y Parques Colombia"
+            class="logo-img"
+            width="180"
+            height="60"
+            fetchpriority="high"
+          />
+        </a>
         <div
-          class="article-meta"
-          style="
-            font-size: 0.85rem;
-            color: #888;
-            margin-bottom: 25px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-          "
+          class="mobile-toggle"
+          role="button"
+          aria-label="Abrir menú"
+          tabindex="0"
         >
-          <i class="far fa-calendar"></i> 2025 |
-          <span style="color: var(--naranja-urgencia)"
-            >Ingeniería Gramas y Parques</span
-          >
+          &#9776;
         </div>
+        <nav class="nav-menu">
+          <div class="dropdown">
+            <a href="../productos/gramas.html" class="dropbtn">GRAMAS</a>
+            <span class="submenu-toggle" role="button">▼</span>
+            <div class="dropdown-content">
+              <a href="../productos/gramas.html"
+                ><strong>Ver Todo Gramas</strong></a
+              >
+              <a href="../productos/gramas.html#paisajismo"
+                >Paisajismo y Decoración</a
+              >
+              <a href="../productos/gramas.html#deportivas">Deportivas</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="../productos/canchas-sinteticas.html" class="dropbtn"
+              >CANCHAS DEPORTIVAS</a
+            >
+            <span class="submenu-toggle" role="button">▼</span>
+            <div class="dropdown-content">
+              <a href="../productos/canchas-sinteticas.html"
+                ><strong>Ver Portafolio</strong></a
+              >
+              <a href="../productos/canchas-sinteticas.html#sinteticas"
+                >Sintéticas y Múltiples</a
+              >
+              <a href="../productos/canchas-sinteticas.html#cubiertas"
+                >Cubiertas y Estructuras</a
+              >
+              <a href="../productos/canchas-sinteticas.html#cerramientos"
+                >Cerramientos y Mallas</a
+              >
+              <a href="../productos/canchas-sinteticas.html#dotacion"
+                >Dotación Profesional</a
+              >
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="../productos/parques.html" class="dropbtn">PARQUES</a>
+            <span class="submenu-toggle" role="button">▼</span>
+            <div class="dropdown-content">
+              <a href="../productos/parques.html"
+                ><strong>Ver Todo Parques</strong></a
+              >
+              <a href="../productos/parques.html#metalica"
+                >Línea Metálica (Alto Tráfico)</a
+              >
+              <a href="../productos/parques.html#madera"
+                >Línea Madera Inmunizada</a
+              >
+              <a href="../productos/parques.html#playground"
+                >Playground Importados</a
+              >
+              <a href="../productos/parques.html#mantenimiento"
+                >Mantenimiento y Repuestos</a
+              >
+            </div>
+          </div>
+          <a href="../productos/biosaludables.html">BIOSALUDABLES</a>
+          <div class="dropdown">
+            <a href="../productos/mobiliario-urbano.html" class="dropbtn"
+              >MOBILIARIO</a
+            >
+            <span class="submenu-toggle" role="button">▼</span>
+            <div class="dropdown-content">
+              <a href="../productos/mobiliario-urbano.html"
+                ><strong>Ver Todo Mobiliario</strong></a
+              >
+              <a href="../productos/mobiliario-urbano.html#concreto"
+                >Bancas de Concreto</a
+              >
+              <a href="../productos/mobiliario-urbano.html#madera"
+                >Bancas de Madera</a
+              >
+              <a href="../productos/mobiliario-urbano.html#canecas"
+                >Canecas Acero Inox</a
+              >
+              <a href="../productos/mobiliario-urbano.html#mesas"
+                >Mesas de Picnic</a
+              >
+            </div>
+          </div>
+          <a href="../blog.html" style="font-weight: 700; color: #ff6600"
+            >BLOG</a
+          >
+          <a href="../contacto.html" class="contacto-link">CONTÁCTENOS</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container breadcrumbs">
+      <a href="../index.html">Inicio</a> / <a href="../blog.html">Blog</a> /
+      <span>Título del Artículo</span>
+    </div>
+
+    <main class="blog-container">
+      <article class="article-content" data-category="CATEGORIA-SLUG">
+        <div class="category-badge">NOMBRE CATEGORÍA</div>
+        <h1>Título Principal del Artículo</h1>
 
         <img
-          src="img/nombre-imagen-portada.webp"
-          alt="Descripción optimizada para SEO"
-          style="width: 100%; height: auto; display: block"
+          src="img/portada.webp"
+          alt="Descripción SEO"
+          style="width: 100%; border-radius: 10px; margin-bottom: 25px"
         />
 
-        <p
-          class="lead"
-          style="
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: #333;
-            margin-bottom: 30px;
-          "
-        >
-          Párrafo de introducción que enganche al lector presentando el problema
-          y prometiendo la solución en las siguientes líneas.
-        </p>
-
-        <h2>Subtítulo Relevante</h2>
-        <p>
-          Desarrollo del contenido enfocado en beneficios, no solo
-          características.
-        </p>
-
-        <div
-          style="
-            text-align: center;
-            margin-top: 50px;
-            padding: 30px;
-            background: #fff5eb;
-            border-radius: 10px;
-          "
-        >
-          <h3 style="margin-top: 0; color: #333">
-            ¿Listo para iniciar tu proyecto?
-          </h3>
-          <p style="margin-bottom: 20px">
-            No dejes tu obra en manos inexpertas.
-          </p>
-          <a href="../contacto.html" class="btn-orange-cta"
-            >SOLICITAR COTIZACIÓN</a
+        <div class="article-body">
+          <p
+            class="lead"
+            style="font-size: 1.2rem; font-weight: 600; margin-bottom: 20px"
           >
+            Párrafo introductorio de alto impacto.
+          </p>
+          <p>Contenido detallado del artículo...</p>
         </div>
       </article>
 
       <aside>
-        <div
-          class="sidebar-widget text-center"
-          style="position: sticky; top: 20px"
-        >
-          <h4 style="margin-bottom: 10px; color: #222">¿Necesitas Asesoría?</h4>
-          <p
-            style="
-              font-size: 0.9rem;
-              color: #666;
-              margin-bottom: 20px;
-              line-height: 1.4;
-            "
-          >
-            Nuestros ingenieros te responden en menos de 10 minutos.
+        <div class="sidebar-widget">
+          <h4 style="margin-bottom: 15px; color: #0a2342">
+            ¿Buscas una cotización?
+          </h4>
+          <p style="font-size: 0.9rem; margin-bottom: 20px; color: #666">
+            Ingeniería Recreativa aplicada a tus proyectos. Bodega directa en
+            Barranquilla.
           </p>
-          <a href="https://wa.me/573112531330" class="btn-sidebar-whatsapp">
-            <i class="fab fa-whatsapp" style="font-size: 1.2rem"></i> Cotizar
-            por WhatsApp
-          </a>
+          <a href="https://wa.me/573112531330" class="btn-orange-cta"
+            >SOLICITAR COTIZACIÓN</a
+          >
         </div>
       </aside>
-    </section>
+    </main>
 
     <footer>
-      <div class="container text-center" style="padding: 20px">
-        <p>© 2025 Gramas y Parques Colombia</p>
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <h3 style="color: #f0f7ff; margin-bottom: 15px">
+            GRAMAS Y PARQUES COLOMBIA
+          </h3>
+          <p>
+            Expertos en obras civiles recreativas. Transformamos espacios con
+            calidad y cumplimiento.
+          </p>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/gramasyparquescolombia/"
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://web.facebook.com/gramasyparquescolombia"
+              target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: #f0f7ff; margin-bottom: 15px">Enlaces Rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li>
+              <a href="../productos/canchas-sinteticas.html"
+                >Canchas Deportivas</a
+              >
+            </li>
+            <li><a href="../productos/parques.html">Parques Infantiles</a></li>
+            <li><a href="../productos/biosaludables.html">Biosaludables</a></li>
+            <li>
+              <a href="../productos/mobiliario-urbano.html"
+                >Mobiliario Urbano</a
+              >
+            </li>
+            <li><a href="../blog.html">Blog de Noticias</a></li>
+            <li><a href="../contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 style="color: #f0f7ff; margin-bottom: 15px">Contacto</h3>
+          <p>
+            <i
+              class="fas fa-map-marker-alt"
+              style="color: #ff6600; margin-right: 5px"
+            ></i>
+            Cra 19D #52-85, Barranquilla
+          </p>
+          <p>
+            <i
+              class="fas fa-phone-alt"
+              style="color: #ff6600; margin-right: 5px"
+            ></i>
+            (+57) 311 253 1330
+          </p>
+          <p>
+            <i
+              class="fas fa-envelope"
+              style="color: #ff6600; margin-right: 5px"
+            ></i>
+            comercial@gramasyparquescolombia.com
+          </p>
+        </div>
+      </div>
+
+      <div class="copyright-bar">
+        <div
+          class="container"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          "
+        >
+          <span>© 2025 Gramas y Parques Colombia</span>
+          <div
+            class="legal-links"
+            style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px"
+          >
+            <a
+              href="../politica-de-privacidad.html"
+              style="color: inherit; text-decoration: none"
+              >Política de Privacidad</a
+            >
+            |
+            <a
+              href="../terminos-y-condiciones.html"
+              style="color: inherit; text-decoration: none"
+              >Términos y Condiciones</a
+            >
+          </div>
+        </div>
       </div>
     </footer>
-    <script src="../js/main.js"></script>
+    <div
+      class="whatsapp-float"
+      id="wa-button"
+      role="button"
+      aria-label="Abrir WhatsApp"
+    >
+      <img
+        src="../img/whatsapp-icon.svg"
+        alt="WhatsApp"
+        width="40"
+        height="40"
+      />
+    </div>
+
+    <div class="wa-modal-overlay" id="wa-modal">
+      <div class="wa-modal-content">
+        <span class="close-modal" id="close-wa" role="button">&times;</span>
+        <div class="wa-header">
+          <h3>💬 Asesoría en Línea</h3>
+          <p>Ingeniería Recreativa</p>
+        </div>
+        <div class="wa-body">
+          <label for="wa-name">Tu Nombre:</label>
+          <input type="text" id="wa-name" required />
+          <label for="wa-interest">¿Interés?</label>
+          <select id="wa-interest">
+            <option value="Cotización General">Cotización General</option>
+            <option value="Gramas">Gramas</option>
+            <option value="Parques">Parques</option>
+          </select>
+          <button class="btn-whatsapp-send" id="btn-send-wa">
+            INICIAR CHAT 🚀
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <a href="#" class="btn-scroll-top" id="scrollTopBtn" aria-label="Arriba"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+
+    <script src="../js/main.js" defer></script>
   </body>
 </html>

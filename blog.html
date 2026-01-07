@@ -26,18 +26,6 @@
     <meta property="og:image" content="img/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/jpeg" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Blog de Ingeniería Recreativa | Gramas y Parques"
-    />
-    <meta
-      name="twitter:description"
-      content="Aprende sobre normativa NTC 5176 y mantenimiento de canchas en Colombia."
-    />
-    <meta name="twitter:image" content="img/og-image.jpg" />
 
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
@@ -54,13 +42,13 @@
     />
 
     <style>
-      /* Mantenemos tu base de diseño funcional */
+      /* Estilos de experto para las tarjetas */
       .blog-card {
         background: white;
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease; /* Opacity para el filtro JS */
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -96,9 +84,7 @@
       .tag-blue {
         background: #007bff;
       }
-      .tag-orange {
-        background: #fd7e14;
-      }
+
       .blog-body {
         padding: 20px;
         flex-grow: 1;
@@ -114,6 +100,7 @@
         font-size: 1.25rem;
         margin-bottom: 10px;
         line-height: 1.4;
+        font-weight: 700;
       }
       .blog-title a {
         color: #333;
@@ -126,10 +113,33 @@
         flex-grow: 1;
       }
       .blog-link {
-        color: var(--naranja-urgencia, #ff6600);
+        color: #ff6600;
         text-decoration: none;
         font-weight: 700;
         font-size: 0.9rem;
+      }
+
+      /* Estilos para los botones de categoría */
+      .cat-btn {
+        padding: 8px 18px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        color: #555;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+      .cat-btn:hover,
+      .cat-btn.active {
+        border-color: #ff6600;
+        color: #ff6600;
+      }
+      .cat-btn.active {
+        background: #ff6600;
+        color: white;
+        border-color: #ff6600;
       }
     </style>
   </head>
@@ -170,7 +180,6 @@
               <a href="productos/gramas.html#deportivas">Deportivas</a>
             </div>
           </div>
-
           <div class="dropdown">
             <a href="productos/canchas-sinteticas.html" class="dropbtn"
               >CANCHAS DEPORTIVAS</a
@@ -185,18 +194,16 @@
               >
             </div>
           </div>
-
           <div class="dropdown">
             <a href="productos/parques.html" class="dropbtn">PARQUES</a>
             <div class="dropdown-content">
               <a href="productos/parques.html">Ver Todo</a>
               <a href="productos/parques.html#metalica">Línea Metálica</a>
-              <a href="productos/parques.html#madera">Madera</a>
+              <a href="productos/parques.html#madera">Línea Madera</a>
             </div>
           </div>
-
           <a href="productos/biosaludables.html">BIOSALUDABLES</a>
-          <a href="blog.html" style="font-weight: 700">BLOG</a>
+          <a href="blog.html" style="font-weight: 700; color: #ff6600">BLOG</a>
           <a href="contacto.html" class="contacto-link">CONTÁCTENOS</a>
         </nav>
       </div>
@@ -204,28 +211,60 @@
 
     <nav class="breadcrumbs">
       <div class="container">
-        <a href="index.html">Inicio</a>
-        <span class="separator">/</span>
-        <span class="current">Blog</span>
+        <a href="index.html">Inicio</a> / <span class="current">Blog</span>
       </div>
     </nav>
 
     <main>
-      <section
-        class="section bg-light"
-        style="padding-top: 40px; padding-bottom: 20px"
-      >
+      <section class="section bg-light" style="padding: 30px 0 15px 0">
         <div class="container text-center">
-          <h1 class="titulo-seccion" style="margin-bottom: 10px">
-            Blog de <span style="color: #ff6600">Noticias</span>
+          <h1 class="titulo-seccion" style="margin-bottom: 5px">
+            Blog de <span style="color: #ff6600">Noticias e Ingeniería</span>
           </h1>
-          <p class="section-desc" style="margin-bottom: 0">
+          <p class="section-desc" style="margin-bottom: 20px; opacity: 0.8">
             Guías técnicas y consejos para el mantenimiento de tus espacios.
           </p>
+
+          <div
+            class="category-filter"
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 10px;
+            "
+          >
+            <a href="#" class="cat-btn active" data-filter="all">Todos</a>
+            <a href="#" class="cat-btn" data-filter="gramas-sinteticas"
+              >Gramas Sintéticas</a
+            >
+            <a href="#" class="cat-btn" data-filter="parques-infantiles"
+              >Parques Infantiles</a
+            >
+            <a href="#" class="cat-btn" data-filter="biosaludables"
+              >Biosaludables</a
+            >
+            <a href="#" class="cat-btn" data-filter="canchas-deportivas"
+              >Canchas Deportivas</a
+            >
+            <a href="#" class="cat-btn" data-filter="decoracion">Decoración</a>
+            <a href="#" class="cat-btn" data-filter="jardines">Jardines</a>
+            <a href="#" class="cat-btn" data-filter="bancas">Bancas</a>
+            <a href="#" class="cat-btn" data-filter="paisajismo">Paisajismo</a>
+            <a href="#" class="cat-btn" data-filter="pisos-caucho"
+              >Pisos de Caucho</a
+            >
+            <a href="#" class="cat-btn" data-filter="cerramientos"
+              >Cerramientos</a
+            >
+            <a href="#" class="cat-btn" data-filter="escenarios-deportivos"
+              >Escenarios Deportivos</a
+            >
+          </div>
         </div>
       </section>
 
-      <section class="section" style="padding-top: 30px">
+      <section class="section" style="padding-top: 25px">
         <div class="container">
           <div
             class="grid-system"
@@ -235,12 +274,12 @@
               gap: 30px;
             "
           >
-            <article class="blog-card">
+            <article class="blog-card" data-category="gramas-sinteticas">
               <div class="blog-img-box">
-                <span class="blog-tag tag-green">Técnico</span>
+                <span class="blog-tag tag-green">Gramas Sintéticas</span>
                 <img
                   src="blog/img/mantenimiento-portada.webp"
-                  alt="Mantenimiento de cancha sintética"
+                  alt="Mantenimiento"
                   loading="lazy"
                 />
               </div>
@@ -254,20 +293,20 @@
                   >
                 </h3>
                 <p class="blog-excerpt">
-                  El cepillado y la descompactación son claves para que tu
-                  cancha dure 10 años.
+                  Cepillado y descompactación: claves para que tu grama dure 10
+                  años.
                 </p>
                 <a
                   href="blog/mantenimiento-canchas-sinteticas.html"
                   class="blog-link"
-                  >Leer más <i class="fas fa-arrow-right"></i
-                ></a>
+                  >Leer guía técnica →</a
+                >
               </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="parques-infantiles">
               <div class="blog-img-box">
-                <span class="blog-tag tag-blue">Legal</span>
+                <span class="blog-tag tag-blue">Parques Infantiles</span>
                 <img
                   src="blog/img/normativa-parques-portada.webp"
                   alt="Norma NTC 5176"
@@ -284,21 +323,21 @@
                   >
                 </h3>
                 <p class="blog-excerpt">
-                  ¿Tu parque cumple con la ley en Colombia? Evita demandas y
-                  accidentes.
+                  Todo sobre atrapamientos y superficies amortiguantes bajo la
+                  ley colombiana.
                 </p>
                 <a href="blog/normativa-parques-ntc-5176.html" class="blog-link"
-                  >Leer más <i class="fas fa-arrow-right"></i
-                ></a>
+                  >Ver normativa →</a
+                >
               </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="gramas-sinteticas">
               <div class="blog-img-box">
-                <span class="blog-tag tag-orange">Ahorro</span>
+                <span class="blog-tag tag-green">Gramas Sintéticas</span>
                 <img
                   src="blog/img/comparativa-gramas-portada.webp"
-                  alt="Grama sintética vs natural"
+                  alt="Rentabilidad"
                   loading="lazy"
                 />
               </div>
@@ -312,10 +351,45 @@
                   >
                 </h3>
                 <p class="blog-excerpt">
-                  Análisis financiero: Recupera tu inversión en menos de 3 años.
+                  Análisis de ahorro en agua y mantenimiento a largo plazo.
                 </p>
                 <a href="blog/grama-sintetica-vs-natural.html" class="blog-link"
-                  >Leer más <i class="fas fa-arrow-right"></i
+                  >Ver comparativa →</a
+                >
+              </div>
+            </article>
+
+            <article class="blog-card" data-category="biosaludables">
+              <div class="blog-img-box">
+                <span
+                  class="blog-tag tag-orange"
+                  style="background-color: #fd7e14"
+                  >Biosaludables</span
+                >
+                <img
+                  src="blog/img/maquinas-biosaludables-portada.webp"
+                  alt="Máquinas biosaludables en parques de Barranquilla"
+                  loading="lazy"
+                />
+              </div>
+              <div class="blog-body">
+                <div class="blog-meta">
+                  <i class="far fa-calendar"></i> Nuevo - 2026
+                </div>
+                <h3 class="blog-title">
+                  <a href="blog/maquinas-biosaludables-inversion.html"
+                    >Máquinas Biosaludables: La Inversión que Transforma tu
+                    Conjunto</a
+                  >
+                </h3>
+                <p class="blog-excerpt">
+                  Descubre por qué los gimnasios al aire libre son la opción #1
+                  para valorizar proyectos residenciales.
+                </p>
+                <a
+                  href="blog/maquinas-biosaludables-inversion.html"
+                  class="blog-link"
+                  >Leer artículo completo <i class="fas fa-arrow-right"></i
                 ></a>
               </div>
             </article>
@@ -334,125 +408,54 @@
             Expertos en obras civiles recreativas. Transformamos espacios con
             calidad y cumplimiento.
           </p>
-
           <div class="social-links">
             <a
               href="https://www.instagram.com/gramasyparquescolombia/"
-              aria-label="Síguenos en Instagram"
               target="_blank"
-            >
-              <i class="fab fa-instagram"></i>
-            </a>
-
+              ><i class="fab fa-instagram"></i
+            ></a>
             <a
               href="https://web.facebook.com/gramasyparquescolombia"
-              aria-label="Síguenos en Facebook"
               target="_blank"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
+              ><i class="fab fa-facebook-f"></i
+            ></a>
           </div>
         </div>
-
         <div class="footer-col">
           <h3 style="color: #f0f7ff; margin-bottom: 15px">Enlaces Rápidos</h3>
           <ul class="footer-links">
             <li><a href="index.html">Inicio</a></li>
-            <li>
-              <a href="productos/canchas-sinteticas.html">Canchas Deportivas</a>
-            </li>
-            <li><a href="productos/parques.html">Parques Infantiles</a></li>
-            <li><a href="productos/biosaludables.html">Biosaludables</a></li>
-            <li>
-              <a href="productos/mobiliario-urbano.html">Mobiliario Urbano</a>
-            </li>
-            <li><a href="blog.html">Blog de Noticias</a></li>
+            <li><a href="productos/gramas.html">Gramas</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </div>
-
         <div class="footer-col">
           <h3 style="color: #f0f7ff; margin-bottom: 15px">Contacto</h3>
           <p>
-            <i
-              class="fas fa-map-marker-alt"
-              style="color: var(--naranja-urgencia); margin-right: 5px"
-            ></i>
-            Cra 19D #52-85, Barranquilla - Atlántico
+            <i class="fas fa-map-marker-alt" style="color: #ff6600"></i> Cra 19D
+            #52-85, Barranquilla
           </p>
           <p>
-            <i
-              class="fas fa-phone-alt"
-              style="color: var(--naranja-urgencia); margin-right: 5px"
-            ></i>
-            (+57) 311 253 1330
-          </p>
-          <p>
-            <i
-              class="fas fa-envelope"
-              style="color: var(--naranja-urgencia); margin-right: 5px"
-            ></i>
-            comercial@gramasyparquescolombia.com
+            <i class="fas fa-phone-alt" style="color: #ff6600"></i> (+57) 311
+            253 1330
           </p>
         </div>
       </div>
-
-      <div class="copyright-bar">
-        <div
-          class="container"
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            text-align: center;
-          "
+      <div class="copyright-bar" style="text-align: center; padding: 20px">
+        © 2025 Gramas y Parques Colombia |
+        <a href="politica-de-privacidad.html" style="color: inherit"
+          >Privacidad</a
         >
-          <span>© 2025 Gramas y Parques Colombia</span>
-
-          <div
-            class="legal-links"
-            style="font-size: 0.8rem; opacity: 0.6; font-weight: 300"
-          >
-            <a
-              href="politica-de-privacidad.html"
-              style="color: inherit; text-decoration: none"
-              >Política de Privacidad</a
-            >
-            <span style="margin: 0 5px">|</span>
-            <a
-              href="terminos-y-condiciones.html"
-              style="color: inherit; text-decoration: none"
-              >Términos y Condiciones</a
-            >
-          </div>
-        </div>
       </div>
     </footer>
 
     <div class="whatsapp-float" id="wa-button">
       <img src="img/whatsapp-icon.svg" alt="WhatsApp" width="40" height="40" />
     </div>
-
-    <div class="wa-modal-overlay" id="wa-modal">
-      <div class="wa-modal-content">
-        <span class="close-modal" id="close-wa">&times;</span>
-        <div class="wa-header"><h3>💬 Asesoría en Línea</h3></div>
-        <div class="wa-body">
-          <label>Tu Nombre:</label>
-          <input type="text" id="wa-name" />
-          <label>Interés:</label>
-          <select id="wa-interest">
-            <option value="Cotización">Cotización General</option>
-            <option value="Gramas">Grama Sintética</option>
-          </select>
-          <button class="btn-whatsapp-send" id="btn-send-wa">
-            INICIAR CHAT 🚀
-          </button>
-        </div>
-      </div>
-    </div>
+    <a href="#" class="btn-scroll-top" id="scrollTopBtn"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
 
     <script src="js/main.js" defer></script>
   </body>

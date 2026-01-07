@@ -1588,3 +1588,34 @@ main > .section:first-of-type,
 .section:first-of-type h1 {
   margin-top: 0 !important;
 }
+/* Botones de categoría tipo "Pills" */
+.cat-btn {
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.cat-btn:hover {
+  border-color: #ff6600;
+  color: #ff6600;
+}
+
+.cat-btn.active {
+  background: #ff6600;
+  color: white;
+  border-color: #ff6600;
+}
+
+/* Ajuste de etiquetas en las tarjetas */
+.tag-green {
+  background: #28a745;
+} /* Gramas */
+.tag-blue {
+  background: #007bff;
+} /* Parques */

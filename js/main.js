@@ -1,26 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("⚡ JS Limpio: Gramas y Parques");
+  console.log(
+    "⚡ JS Experto: Gramas y Parques - Sistema de Filtrado Integrado"
+  );
 
   // ======================================================
-  // 1. INTERACCIONES DEL SITIO (NO TOCAR)
+  // 1. COMPONENTES DE NAVEGACIÓN Y DISEÑO
   // ======================================================
+
   const toggleButton = document.querySelector(".mobile-toggle");
   const navMenu = document.querySelector(".nav-menu");
   const header = document.querySelector("header");
   const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-  // A. Menú Móvil (Abre y cierra el menú en celulares)
+  // A. Menú Móvil: Gestiona la apertura/cierre del menú en dispositivos táctiles
   if (toggleButton && navMenu) {
     toggleButton.addEventListener("click", (e) => {
       e.stopPropagation();
       const isOpened = navMenu.classList.toggle("active");
-      toggleButton.innerHTML = isOpened ? "&#10005;" : "&#9776;";
+      toggleButton.innerHTML = isOpened ? "&#10005;" : "&#9776;"; // Cambia entre icono de hamburguesa y 'X'
       toggleButton.style.color = isOpened
         ? "var(--naranja-urgencia)"
         : "var(--verde-natural)";
     });
 
-    // Cerrar al dar click fuera
+    // Cierra el menú automáticamente si el usuario hace clic fuera de él
     document.addEventListener("click", (e) => {
       if (
         navMenu.classList.contains("active") &&
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // B. Submenús (Flechas para desplegar categorías en móvil)
+  // B. Submenús: Despliega las categorías dentro del menú móvil mediante flechas
   document.querySelectorAll(".submenu-toggle").forEach((toggle) => {
     toggle.addEventListener("click", (e) => {
       e.preventDefault();
@@ -44,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // C. Header Sombra al bajar
+  // C. Header dinámico: Añade sombra al hacer scroll para mejorar la legibilidad
   if (header) {
     window.addEventListener(
       "scroll",
@@ -56,16 +59,65 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  // D. Inicializar otros componentes
+  // ======================================================
+  // 2. SISTEMA DE FILTRADO POR CATEGORÍAS (LÓGICA EXPERTA)
+  // ======================================================
+
+  const filterButtons = document.querySelectorAll(".cat-btn");
+  const blogCards = document.querySelectorAll(".blog-card");
+
+  // Verificamos que existan botones y tarjetas para evitar errores en páginas sin blog
+  if (filterButtons.length > 0 && blogCards.length > 0) {
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault(); // Evita que la página salte al hacer clic en el botón
+
+        // Cambio visual de botón activo: Quita 'active' de todos y lo pone en el seleccionado
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        // Obtenemos el valor de filtrado (ej: 'gramas-sinteticas', 'bancas', 'all')
+        const filterValue = button.getAttribute("data-filter");
+
+        blogCards.forEach((card) => {
+          const cardCategory = card.getAttribute("data-category");
+
+          // Lógica de visualización
+          if (filterValue === "all" || cardCategory === filterValue) {
+            // Muestra los elementos que coinciden con una transición suave
+            card.style.display = "flex";
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "scale(1)";
+            }, 10);
+          } else {
+            // Oculta los elementos que no coinciden
+            card.style.opacity = "0";
+            card.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 300); // Tiempo alineado con la transición de CSS
+          }
+        });
+      });
+    });
+  }
+
+  // ======================================================
+  // 3. INICIALIZACIÓN DE HERRAMIENTAS ADICIONALES
+  // ======================================================
   initWhatsApp();
   initScrollTop(scrollTopBtn);
   initLightbox();
 });
 
 // ======================================================
-// 2. FUNCIONES DE HERRAMIENTAS (CONSERVADAS)
+// 4. FUNCIONES DE APOYO (ENCAPSULADAS)
 // ======================================================
 
+/**
+ * Gestiona el modal y envío de datos a WhatsApp
+ */
 function initWhatsApp() {
   const waButton = document.getElementById("wa-button");
   const waModal = document.getElementById("wa-modal");
@@ -86,7 +138,13 @@ function initWhatsApp() {
       const name = document.getElementById("wa-name").value.trim();
       const interest = document.getElementById("wa-interest").value;
       const desc = document.getElementById("wa-desc").value.trim();
-      const msg = `Hola, soy ${name}. Me interesa ${interest}. ${desc}`;
+
+      if (!name) {
+        alert("Por favor, ingresa tu nombre");
+        return;
+      }
+
+      const msg = `Hola, soy ${name}. Me interesa información sobre ${interest}. ${desc}`;
       window.open(
         `https://wa.me/573112531330?text=${encodeURIComponent(msg)}`,
         "_blank"
@@ -96,6 +154,9 @@ function initWhatsApp() {
   }
 }
 
+/**
+ * Controla el botón de "Volver Arriba"
+ */
 function initScrollTop(btn) {
   if (btn) {
     window.addEventListener("scroll", () =>
@@ -108,6 +169,9 @@ function initScrollTop(btn) {
   }
 }
 
+/**
+ * Galería Lightbox: Amplía imágenes al hacer clic
+ */
 function initLightbox() {
   const modal = document.getElementById("myLightbox");
   const modalImg = document.getElementById("img01");
