@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-CO">
   <head>
     <meta charset="UTF-8" />
@@ -64,34 +64,43 @@
         margin-top: 30px;
       }
 
-      /* Navegación Sticky */
+      /* Navegación Sticky con Ajuste Responsivo */
       .category-nav {
         position: sticky;
         top: 0;
         z-index: 90;
         background: rgba(255, 255, 255, 0.98);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        padding: 15px 0;
-        overflow-x: auto;
-        white-space: nowrap;
+        padding: 10px 0;
         border-bottom: 1px solid #eee;
       }
 
-      /* CORRECCIÓN 2: BOTONES CON BORDE DE 2PX */
+      /* Contenedor de botones flexible */
+      .category-nav .container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap; /* Permite que los botones bajen a otra fila si no caben */
+      }
+
+      /* CORRECCIÓN 2: BOTONES CON BORDE DE 2PX Y RESPONSIVOS */
       .cat-link {
+        flex: 1 1 auto; /* Permite que los botones crezcan para llenar el espacio */
+        min-width: 140px; /* Asegura un tamaño mínimo cómodo para clics en móvil */
+        max-width: 250px; /* Evita que se estiren demasiado en computadoras */
         display: inline-block;
-        padding: 8px 18px;
-        margin: 0 4px;
+        padding: 10px 15px;
         border-radius: 50px;
         color: #444;
         font-weight: 700;
         text-decoration: none;
-        /* Borde naranja sólido de 2px */
+        text-align: center;
         border: 2px solid var(--naranja-urgencia);
         font-size: 0.9rem;
         transition: all 0.3s ease;
         background-color: white;
       }
+
       .cat-link:hover,
       .cat-link.active {
         background: var(--naranja-urgencia);
@@ -101,12 +110,24 @@
         box-shadow: 0 4px 8px rgba(249, 115, 22, 0.2);
       }
 
+      @media (max-width: 480px) {
+        .cat-link {
+          min-width: calc(
+            50% - 10px
+          ); /* Dos botones por fila en móviles muy pequeños */
+          font-size: 0.85rem;
+          padding: 8px 10px;
+        }
+      }
+
       /* Tarjetas UNIFORMES */
       .park-card {
         background: white;
         border-radius: 10px;
         border: 1px solid #eee;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -150,7 +171,6 @@
         text-transform: uppercase;
         z-index: 2;
       }
-      /* Badge gris para los Dummies */
       .park-badge.dummy {
         background: #999;
       }
@@ -210,7 +230,6 @@
       .btn-quote:hover {
         background: #e65c00;
       }
-      /* Botón gris para dummies */
       .btn-quote.disabled {
         background: #ccc;
         pointer-events: none;
@@ -224,6 +243,7 @@
         margin-top: 60px;
       }
     </style>
+
     <link
       rel="preload"
       as="image"
@@ -893,7 +913,10 @@
                   src="../img/productos/parques/madera/columpio-madera-dos-puestos.webp"
                   alt="Columpio 2p"
                   class="park-img"
-                  onerror="this.src='https://via.placeholder.com/800x600?text=Columpio+2P'"
+                  onerror="
+                    this.src =
+                      'https://via.placeholder.com/800x600?text=Columpio+2P'
+                  "
                 />
               </div>
               <div class="park-content">
@@ -913,7 +936,10 @@
                   src="../img/productos/parques/madera/columpio-madera-tres-puestos.webp"
                   alt="Columpio 3p"
                   class="park-img"
-                  onerror="this.src='https://via.placeholder.com/800x600?text=Columpio+3P'"
+                  onerror="
+                    this.src =
+                      'https://via.placeholder.com/800x600?text=Columpio+3P'
+                  "
                 />
               </div>
               <div class="park-content">
@@ -933,7 +959,10 @@
                   src="../img/productos/parques/madera/torre-resbaladero.webp"
                   alt="Resbaladero parque de madera"
                   class="park-img"
-                  onerror="this.src='https://via.placeholder.com/800x600?text=torre-resbaladero'"
+                  onerror="
+                    this.src =
+                      'https://via.placeholder.com/800x600?text=torre-resbaladero'
+                  "
                 />
               </div>
               <div class="park-content">
@@ -953,7 +982,10 @@
                   src="../img/productos/parques/madera/sube-baja-1p.webp"
                   alt="Sube Baja 1p"
                   class="park-img"
-                  onerror="this.src='https://via.placeholder.com/800x600?text=Sube+y+Baja+1P'"
+                  onerror="
+                    this.src =
+                      'https://via.placeholder.com/800x600?text=Sube+y+Baja+1P'
+                  "
                 />
               </div>
               <div class="park-content">
@@ -973,7 +1005,10 @@
                   src="../img/productos/parques/madera/sube-baja-2p.webp"
                   alt="Sube Baja 2p"
                   class="park-img"
-                  onerror="this.src='https://via.placeholder.com/800x600?text=Sube+y+Baja+2P'"
+                  onerror="
+                    this.src =
+                      'https://via.placeholder.com/800x600?text=Sube+y+Baja+2P'
+                  "
                 />
               </div>
               <div class="park-content">
@@ -993,7 +1028,10 @@
                   src="../img/productos/parques/madera/sube-baja-3p.webp"
                   alt="Sube Baja 3p"
                   class="park-img"
-                  onerror="this.src='https://via.placeholder.com/800x600?text=Sube+y+Baja+3P'"
+                  onerror="
+                    this.src =
+                      'https://via.placeholder.com/800x600?text=Sube+y+Baja+3P'
+                  "
                 />
               </div>
               <div class="park-content">

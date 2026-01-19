@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-CO">
   <head>
     <meta charset="UTF-8" />
@@ -35,123 +35,153 @@
     />
 
     <style>
-      /* TUS ESTILOS CONSERVADOS AL 100% */
-      .card-img-box {
-        background-color: #f0f0f0;
-        aspect-ratio: 4/3;
-        position: relative;
-        overflow: hidden;
+      :root {
+        --verde-principal: #4caf50;
+        --verde-hover: #388e3c;
+        --azul-oscuro: #2c3e50;
+        --gris-suave: #f0f0f0;
+        --sombra-ligera: 0 2px 5px rgba(0, 0, 0, 0.05);
+        --sombra-pro: 0 4px 12px rgba(76, 175, 80, 0.2);
+        --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .quick-nav-wrapper {
-        margin: 20px 0 40px 0;
-        text-align: center;
+
+      /* --- CONTENEDORES DE NAVEGACIÓN --- */
+      .quick-nav-wrapper,
+      .category-nav {
+        margin: 20px 0;
+        padding: 10px 0;
+        width: 100%;
       }
-      .quick-nav-buttons {
+
+      /* Contenedor Flex Inteligente */
+      .quick-nav-buttons,
+      .category-nav .container {
         display: flex;
-        justify-content: center;
-        gap: 10px;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        padding: 0 15px;
+        max-width: 1200px;
+        margin: 0 auto;
       }
-      .btn-pill {
+
+      /* --- BOTONES ESTILO PILL (REDISEÑO EXPERTO) --- */
+      .btn-pill,
+      .cat-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         text-decoration: none;
-        background-color: white;
+        background-color: #ffffff;
         color: #333;
-        border: 1px solid var(--verde-principal, #4caf50);
-        padding: 8px 25px;
+        border: 1.5px solid var(--verde-principal);
+        padding: 10px 24px;
         border-radius: 50px;
         font-weight: 600;
         font-size: 0.95rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-      }
-      .btn-pill:hover {
-        background-color: var(--verde-principal, #4caf50);
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+        transition: var(--transicion);
+        box-shadow: var(--sombra-ligera);
+        white-space: nowrap; /* Evita que el texto rompa dentro del botón */
+
+        /* Control de crecimiento dinámico */
+        flex: 1 1 auto;
+        min-width: 160px;
+        max-width: 280px;
       }
 
-      /* AJUSTE PROFESIONAL: Reducción de margin-top de 60px a 15px para eliminar huecos */
-      .titulo-seccion {
-        margin-top: 15px;
-        margin-bottom: 25px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid #eee;
-        color: var(--azul-oscuro, #2c3e50);
-        scroll-margin-top: 120px;
+      .btn-pill:hover,
+      .cat-link:hover {
+        background-color: var(--verde-principal);
+        color: #fff !important;
+        transform: translateY(-3px);
+        box-shadow: var(--sombra-pro);
       }
+
+      /* --- GRID DE TARJETAS Y CONTENIDO --- */
       .grid-system {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
+        gap: 25px;
         justify-content: center;
       }
+
       .card {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
         overflow: hidden;
-        transition: transform 0.3s ease;
+        transition: var(--transicion);
         display: flex;
         flex-direction: column;
       }
+
       .card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
       }
+
+      .card-img-box {
+        background-color: var(--gris-suave);
+        aspect-ratio: 16 / 9; /* Formato más cinemático y moderno */
+        overflow: hidden;
+        position: relative;
+      }
+
       .card img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.5s ease;
+        transition: transform 0.6s ease;
       }
-      .card:hover img {
-        transform: scale(1.05);
+
+      /* --- REGLAS DE ORO RESPONSIVAS --- */
+
+      /* Tablets y móviles grandes */
+      @media (max-width: 768px) {
+        .btn-pill,
+        .cat-link {
+          flex: 1 1 calc(50% - 12px); /* 2 columnas exactas */
+          font-size: 0.85rem;
+          padding: 10px 12px;
+        }
+
+        .titulo-seccion {
+          font-size: 1.75rem;
+          margin-top: 10px;
+        }
       }
-      .card-body {
-        padding: 25px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
+
+      /* Móviles pequeños (iPhone SE / Pantallas < 380px) */
+      @media (max-width: 400px) {
+        .btn-pill,
+        .cat-link {
+          flex: 1 1 100%; /* 1 columna completa para máxima legibilidad */
+          min-width: 0; /* Evita desbordamiento en pantallas minúsculas */
+        }
+
+        .quick-nav-buttons {
+          gap: 8px; /* Reducimos espacio para ganar verticalidad */
+        }
       }
-      .card-body h3 {
-        margin-top: 0;
-        color: #333;
-        font-size: 1.25rem;
+
+      /* Estilos de Título y Proceso */
+      .titulo-seccion {
+        margin: 15px 0 25px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #f0f0f0;
+        color: var(--azul-oscuro);
+        font-weight: 800;
+        scroll-margin-top: 120px;
       }
-      .card-body p {
-        color: #666;
-        line-height: 1.6;
-        flex-grow: 1;
-      }
-      .link-btn {
-        display: inline-block;
-        margin-top: 15px;
-        color: var(--verde-principal, #4caf50);
-        font-weight: 700;
-        text-decoration: none;
-      }
+
       .process-step {
-        background: white;
+        background: #fff;
         padding: 30px 20px;
         border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s ease;
-        border-bottom: 4px solid var(--verde-principal, #4caf50);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        border-bottom: 4px solid var(--verde-principal);
+        transition: var(--transicion);
         text-align: center;
-      }
-      .process-icon {
-        font-size: 2rem;
-        color: var(--verde-principal, #4caf50);
-        margin-bottom: 15px;
-        background-color: #e8f5e9;
-        width: 70px;
-        height: 70px;
-        line-height: 70px;
-        border-radius: 50%;
       }
     </style>
   </head>
@@ -312,7 +342,7 @@
       </section>
 
       <div class="category-nav" style="margin-bottom: 0">
-        <div class="container text-center">
+        <div class="container">
           <a href="#sinteticas" class="cat-link">⚽ Canchas</a>
           <a href="#cubiertas" class="cat-link">🏗️ Estructuras</a>
           <a href="#cerramientos" class="cat-link">🕸 Cerramientos</a>

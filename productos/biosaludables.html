@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es-CO">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gimnasios Biosaludables | Gramas y Parques Colombia</title>
-
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,22 +38,23 @@
         font-size: 0.8rem;
         text-align: center;
       }
+      /* CORRECCIÓN: Quitamos height: 80px para que el menú móvil pueda expandirse */
       header {
-        height: 80px;
         background: white;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         position: sticky;
         top: 0;
         z-index: 1000;
       }
+      /* CORRECCIÓN: Quitamos height: 100% para evitar conflictos en móvil */
       .navbar {
         display: flex;
         justify-content: space-between;
         align-items: center;
         max-width: 1200px;
         margin: 0 auto;
-        height: 100%;
         padding: 0 15px;
+        min-height: 80px;
       }
       .logo-img {
         width: 180px;
@@ -65,19 +66,26 @@
         display: flex;
         align-items: center;
       }
-      .titulo-seccion {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 800;
-        color: var(--azul-oscuro);
-        margin: 0;
-        font-size: 2rem;
-      }
+
+      /* CAMBIO: Se eliminó la clase .titulo-seccion que forzaba el tamaño a 2rem */
+
       .products-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 25px;
         margin-top: 30px;
         min-height: 1000px;
+      }
+      /* CORRECCIÓN: Hace que el menú empuje el contenido hacia abajo en móviles */
+      @media (max-width: 900px) {
+        .navbar {
+          flex-wrap: wrap; /* Permite que el menú baje a una segunda fila */
+        }
+        .nav-menu {
+          position: static !important; /* Quita el modo "flotante" y lo pone en el flujo del sitio */
+          width: 100%;
+          order: 3; /* Asegura que aparezca debajo del logo y las 3 rayitas */
+        }
       }
     </style>
 
@@ -87,7 +95,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
 
     <link
@@ -96,20 +104,15 @@
       href="../img/logo.png"
       fetchpriority="high"
     />
-    <link
-      rel="preload"
-      as="image"
-      href="../img/productos/biosaludables/eliptica.webp"
-      fetchpriority="high"
-    />
 
     <style>
-      /* TUS ESTILOS CONSERVADOS */
       .park-card {
         background: white;
         border-radius: 10px;
         border: 1px solid #eee;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -335,11 +338,11 @@
 
     <main>
       <section
-        class="section bg-light"
+        class="section bg-light page-header"
         style="padding-top: 20px; padding-bottom: 30px"
       >
         <div class="container text-center">
-          <h1 class="titulo-seccion" style="margin-top: 0; margin-bottom: 10px">
+          <h1 style="margin-top: 0; margin-bottom: 10px">
             Gimnasios <span style="color: #f97316">Biosaludables</span>
           </h1>
           <p style="margin-bottom: 0">
@@ -872,6 +875,7 @@
         height="40"
       />
     </div>
+
     <div class="wa-modal-overlay" id="wa-modal">
       <div class="wa-modal-content">
         <span
@@ -896,6 +900,19 @@
             required
             placeholder="Nombre obligatorio"
           />
+
+          <label for="wa-interest">¿En qué estás interesado? </label>
+          <select id="wa-interest" required>
+            <option value="Biosaludables" selected>Biosaludables</option>
+            <option value="Gramas Sintéticas">Grama Sintética</option>
+            <option value="Canchas Deportivas">Canchas Deportivas</option>
+            <option value="Parques Infantiles">Parques Infantiles</option>
+            <option value="Mobiliario">Mobiliario Urbano</option>
+          </select>
+
+          <label for="wa-desc">Cuéntanos más (Opcional):</label>
+          <textarea id="wa-desc" rows="2"></textarea>
+
           <button class="btn-whatsapp-send" id="btn-send-wa">
             INICIAR CHAT 🚀
           </button>
@@ -910,11 +927,13 @@
       aria-label="Volver arriba"
       ><i class="fas fa-arrow-up"></i
     ></a>
+
     <div id="myLightbox" class="lightbox-modal">
       <span class="close-lightbox">&times;</span
       ><img class="lightbox-content" id="img01" alt="Zoom" />
       <div id="caption"></div>
     </div>
+
     <script src="../js/main.js" defer></script>
   </body>
 </html>
