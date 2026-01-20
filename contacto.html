@@ -22,14 +22,44 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
 
-    <style>
+<style>
       @media (max-width: 900px) {
+        /* 1. Forzamos una sola columna y evitamos desbordes */
         .contact-grid {
-          grid-template-columns: 1fr !important; /* Cambia a una sola columna en móviles */
-          gap: 30px !important;
+          grid-template-columns: 1fr !important;
+          gap: 25px !important;
+          width: 100% !important;
+          margin: 0 auto;
         }
+
+        /* 2. Ajustamos los rellenos para ganar espacio interno */
         .contact-form-card {
-          padding: 25px !important; /* Ajusta el relleno interno para que no se vea apretado */
+          padding: 20px !important;
+          width: 100% !important;
+        }
+
+        .info-card {
+          padding: 20px !important;
+        }
+
+        /* 3. CORRECCIÓN CLAVE: Obliga a los textos largos (como el email) a romperse */
+        .contact-item p, 
+        .contact-item a {
+          word-break: break-word !important;
+          overflow-wrap: break-word !important;
+          display: block;
+        }
+
+        /* 4. Ajuste fino de los iconos para que no ocupen espacio de más */
+        .contact-item {
+          gap: 10px !important;
+        }
+
+        /* 5. Aseguramos que el contenedor general no sea más ancho que el dispositivo */
+        .container {
+          width: 100% !important;
+          padding: 0 15px !important;
+          box-sizing: border-box !important;
         }
       }
     </style>
