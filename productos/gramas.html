@@ -56,7 +56,6 @@
         background: white;
         padding: 30px 20px;
         border-radius: 12px;
-        /* Quitamos la sombra aquí porque el contenedor padre ya tendrá una */
         border: 1px solid #f0f0f0;
         transition: transform 0.3s ease;
         border-bottom: 4px solid var(--naranja-urgencia);
@@ -71,7 +70,7 @@
         font-size: 2rem;
         color: var(--naranja-urgencia);
         margin-bottom: 15px;
-        background-color: #fff7ed; /* Naranja muy suave */
+        background-color: #fff7ed;
         width: 70px;
         height: 70px;
         line-height: 70px;
@@ -83,35 +82,80 @@
         justify-content: center;
       }
 
-      /* Navegación rápida */
-      .quick-nav-wrapper {
-        margin: 20px 0 40px 0;
-        text-align: center;
+      /* --- CORRECCIÓN MAESTRA: NAVEGACIÓN Y BOTONES RESPONSIVOS --- */
+      .quick-nav-wrapper,
+      .category-nav {
+        margin: 20px 0;
+        padding: 10px 0;
+        width: 100%;
+        /* Forzamos que no haya scroll horizontal heredado */
+        white-space: normal !important;
+        overflow-x: hidden !important;
       }
-      .quick-nav-buttons {
+
+      .quick-nav-buttons,
+      .category-nav .container {
         display: flex;
-        justify-content: center;
-        gap: 10px;
         flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        padding: 0 15px;
       }
-      .btn-pill {
+
+      .btn-pill,
+      .cat-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         text-decoration: none;
-        background-color: white;
+        background-color: #ffffff;
         color: #333;
-        border: 1px solid var(--naranja-urgencia);
-        padding: 8px 25px;
+        border: 2px solid var(--naranja-urgencia);
+        padding: 10px 24px;
         border-radius: 50px;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 0.95rem;
         transition: all 0.3s ease;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        white-space: nowrap;
+
+        /* Control de crecimiento dinámico */
+        flex: 1 1 auto;
+        min-width: 160px;
+        max-width: 280px;
       }
-      .btn-pill:hover {
+
+      .btn-pill:hover,
+      .cat-link:hover {
         background-color: var(--naranja-urgencia);
-        color: white;
-        transform: translateY(-2px);
+        color: white !important;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 12px rgba(211, 84, 0, 0.2);
+      }
+
+      /* Regla para Tablets y Móviles (2 columnas perfectas) */
+      @media (max-width: 768px) {
+        .btn-pill,
+        .cat-link {
+          flex: 1 1 calc(50% - 12px);
+          min-width: 140px;
+          font-size: 0.85rem;
+          padding: 10px 12px;
+        }
+      }
+
+      /* Regla para Móviles pequeños (1 columna completa) */
+      @media (max-width: 400px) {
+        .btn-pill,
+        .cat-link {
+          flex: 1 1 100%;
+          min-width: 0;
+        }
       }
     </style>
+
   </head>
   
   <body>
