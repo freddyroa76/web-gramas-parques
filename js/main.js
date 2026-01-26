@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log(
-    "⚡ JS Experto: Gramas y Parques - Sistema de Filtrado Integrado"
+    "⚡ JS Experto: Gramas y Parques - Sistema de Filtrado Integrado",
   );
 
   // ======================================================
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.scrollY > 50) header.classList.add("scrolled");
         else header.classList.remove("scrolled");
       },
-      { passive: true }
+      { passive: true },
     );
   }
 
@@ -128,7 +128,7 @@ function initWhatsApp() {
     waButton.addEventListener("click", () => (waModal.style.display = "block"));
     closeModal.addEventListener(
       "click",
-      () => (waModal.style.display = "none")
+      () => (waModal.style.display = "none"),
     );
     window.addEventListener("click", (event) => {
       if (event.target == waModal) waModal.style.display = "none";
@@ -147,7 +147,7 @@ function initWhatsApp() {
       const msg = `Hola, soy ${name}. Me interesa información sobre ${interest}. ${desc}`;
       window.open(
         `https://wa.me/573112531330?text=${encodeURIComponent(msg)}`,
-        "_blank"
+        "_blank",
       );
       waModal.style.display = "none";
     });
@@ -159,8 +159,10 @@ function initWhatsApp() {
  */
 function initScrollTop(btn) {
   if (btn) {
-    window.addEventListener("scroll", () =>
-      btn.classList.toggle("show", window.scrollY > 300)
+    window.addEventListener(
+      "scroll",
+      () => btn.classList.toggle("show", window.scrollY > 300),
+      { passive: true },
     );
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -177,7 +179,7 @@ function initLightbox() {
   const modalImg = document.getElementById("img01");
   const captionText = document.getElementById("caption");
   const images = document.querySelectorAll(
-    ".park-img, .main-photo, .tech-img-box img, .card-img-box img"
+    ".park-img, .main-photo, .tech-img-box img, .card-img-box img",
   );
 
   if (modal && modalImg && images.length > 0) {

@@ -360,12 +360,18 @@ header {
   position: relative;
   height: 650px;
   background: url("../img/banner/Banner-gramas-Barranquilla.webp") center/cover
-    fixed;
+    no-repeat;
+  background-attachment: scroll; /* Scroll en móviles para evitar saltos (repaint) */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
+}
+@media (min-width: 1024px) {
+  .hero {
+    background-attachment: fixed; /* Parallax solo en escritorio */
+  }
 }
 .hero-overlay {
   position: absolute;
@@ -429,6 +435,7 @@ header {
   display: flex;
   flex-direction: column;
   height: 100%;
+  will-change: transform; /* Hint para el navegador: prepara la GPU */
 }
 .card:hover {
   transform: translateY(-10px);
@@ -512,6 +519,8 @@ footer {
   margin-top: 0;
   position: relative;
   overflow: hidden;
+  content-visibility: auto; /* Defer render off-screen content */
+  contain-intrinsic-size: 1000px; /* Evita saltos de scrollbar al renderizar */
 }
 footer::before {
   content: "";
@@ -648,7 +657,10 @@ footer::before {
     margin-top: 0;
     position: static;
     background: var(--blanco);
-    transition: max-height 0.5s ease-in-out, opacity 0.3s ease, margin 0.3s;
+    transition:
+      max-height 0.5s ease-in-out,
+      opacity 0.3s ease,
+      margin 0.3s;
     border-top: 1px solid transparent;
     justify-content: flex-start;
     flex-grow: 0;
@@ -1380,10 +1392,7 @@ footer::before {
 }
 
 /* --- SEO TÉCNICO --- */
-@font-face {
-  font-family: "Montserrat";
-  font-display: swap;
-}
+
 .sr-only {
   position: absolute;
   width: 1px;
