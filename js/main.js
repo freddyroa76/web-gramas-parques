@@ -104,11 +104,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ======================================================
-  // 3. INICIALIZACIÓN DE HERRAMIENTAS ADICIONALES
+  // 3. INICIALIZACIÓN DE HERRAMIENTAS ADICIONALES (DEFERED)
   // ======================================================
-  initWhatsApp();
-  initScrollTop(scrollTopBtn);
-  initLightbox();
+  // Deferimos la inicialización para liberar el hilo principal (TBT Improvement)
+  setTimeout(() => {
+    initWhatsApp();
+    initScrollTop(scrollTopBtn);
+    initLightbox();
+  }, 100);
 });
 
 // ======================================================
